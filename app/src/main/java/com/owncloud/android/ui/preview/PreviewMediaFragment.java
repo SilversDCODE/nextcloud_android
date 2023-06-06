@@ -271,7 +271,7 @@ public class PreviewMediaFragment extends FileFragment implements OnTouchListene
                         setThumbnailForAudio(file);
                     }
                 } catch (Throwable t) {
-                    binding.imagePreview.setImageResource(R.drawable.logo);
+                    binding.imagePreview.setImageResource(R.drawable.logo_original);
                 }
             }
         }
@@ -284,7 +284,7 @@ public class PreviewMediaFragment extends FileFragment implements OnTouchListene
         if (thumbnail != null) {
             binding.imagePreview.setImageBitmap(thumbnail);
         } else {
-            binding.imagePreview.setImageResource(R.drawable.logo);
+            binding.imagePreview.setImageResource(R.drawable.logo_original);
         }
     }
 

@@ -45,9 +45,9 @@
     <array name="whatsnew_urls"></array>
 
     <!-- Colors -->
-    <color name="primary">#0082c9</color>
-    <color name="primary_dark">#006AA3</color>
-    <color name="color_accent">#007cc2</color>
+    <color name="primary">#0DB58D</color>
+    <color name="primary_dark">#1d8539</color>
+    <color name="color_accent">#0DB58D</color>
     <color name="login_text_color">#ffffff</color>
     <color name="login_text_hint_color">#7fC0E3</color>
 
