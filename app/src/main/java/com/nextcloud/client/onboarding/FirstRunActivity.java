@@ -100,26 +100,9 @@ public class FirstRunActivity extends BaseActivity implements ViewPager.OnPageCh
         });
 
 
-        defaultViewThemeUtils.material.colorMaterialButtonOutlinedOnPrimary(binding.signup);
-        binding.signup.setVisibility(isProviderOrOwnInstallationVisible ? View.VISIBLE : View.GONE);
-        binding.signup.setOnClickListener(v -> {
-            Intent authenticatorActivityIntent = new Intent(this, AuthenticatorActivity.class);
-            authenticatorActivityIntent.putExtra(AuthenticatorActivity.EXTRA_USE_PROVIDER_AS_WEBLOGIN, true);
 
-            if (getIntent().getBooleanExtra(EXTRA_ALLOW_CLOSE, false)) {
-                startActivityForResult(authenticatorActivityIntent, FIRST_RUN_RESULT_CODE);
-            } else {
-                authenticatorActivityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(authenticatorActivityIntent);
-            }
-        });
 
-        defaultViewThemeUtils.platform.colorTextView(binding.hostOwnServer, ColorRole.ON_PRIMARY);
-        binding.hostOwnServer.setVisibility(isProviderOrOwnInstallationVisible ? View.VISIBLE : View.GONE);
 
-        if (!isProviderOrOwnInstallationVisible) {
-            binding.hostOwnServer.setOnClickListener(v -> onHostYourOwnServerClick());
-        }
 
 
         // Sometimes, accounts are not deleted when you uninstall the application so we'll do it now
@@ -234,9 +217,12 @@ public class FirstRunActivity extends BaseActivity implements ViewPager.OnPageCh
 
     public static FeatureItem[] getFirstRun() {
         return new FeatureItem[]{
-            new FeatureItem(R.drawable.logo_original, R.string.first_run_1_text, R.string.empty, true, false),
+            new FeatureItem(R.drawable.gshare_white, R.string.first_run_1_text, R.string.empty, true, false),
             new FeatureItem(R.drawable.first_run_files, R.string.first_run_2_text, R.string.empty, true, false),
             new FeatureItem(R.drawable.first_run_groupware, R.string.first_run_3_text, R.string.empty, true, false),
-            new FeatureItem(R.drawable.first_run_talk, R.string.first_run_4_text, R.string.empty, true, false)};
+            new FeatureItem(R.drawable.first_run_talk, R.string.first_run_4_text, R.string.empty, true, false),
+
+        };
     }
+
 }
