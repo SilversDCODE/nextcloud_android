@@ -403,8 +403,11 @@ public abstract class DrawerActivity extends ToolbarActivity
 
         DrawerMenuUtil.setupHomeMenuItem(menu, getResources());
 
-        DrawerMenuUtil.removeMenuItem(menu, R.id.nav_community,
-                                      !getResources().getBoolean(R.bool.participate_enabled));
+//        <!-- ປິດໄວ້ກ່ອນ -->
+//        DrawerMenuUtil.removeMenuItem(menu, R.id.nav_community,
+//                                      !getResources().getBoolean(R.bool.participate_enabled));
+
+
         DrawerMenuUtil.removeMenuItem(menu, R.id.nav_shared, !getResources().getBoolean(R.bool.shared_enabled));
         DrawerMenuUtil.removeMenuItem(menu, R.id.nav_logout, !getResources().getBoolean(R.bool.show_drawer_logout));
     }
@@ -455,9 +458,14 @@ public abstract class DrawerActivity extends ToolbarActivity
             startActivity(NotificationsActivity.class);
         } else if (itemId == R.id.nav_settings) {
             startActivity(SettingsActivity.class);
-        } else if (itemId == R.id.nav_community) {
-            startActivity(CommunityActivity.class);
-        } else if (itemId == R.id.nav_logout) {
+        }
+
+//        <!-- ປິດໄວ້ກ່ອນ -->
+//        else if (itemId == R.id.nav_community) {
+//            startActivity(CommunityActivity.class);
+//        }
+
+        else if (itemId == R.id.nav_logout) {
             mCheckedMenuItem = -1;
             menuItem.setChecked(false);
             final Optional<User> optionalUser = getUser();

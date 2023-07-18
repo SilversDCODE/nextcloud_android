@@ -52,7 +52,8 @@ public class CommunityActivity extends DrawerActivity {
         updateActionBarTitleAndHomeButtonByString(getString(R.string.drawer_community));
 
         // setup drawer
-        setupDrawer(R.id.nav_community);
+//        <!-- ປິດໄວ້ກ່ອນ -->
+//        setupDrawer(R.id.nav_community);
 
         setupContent();
     }
@@ -122,7 +123,7 @@ public class CommunityActivity extends DrawerActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        setDrawerMenuItemChecked(R.id.nav_community);
+//<!-- ປິດໄວ້ກ່ອນ -->
+//        setDrawerMenuItemChecked(R.id.nav_community);
     }
 }
