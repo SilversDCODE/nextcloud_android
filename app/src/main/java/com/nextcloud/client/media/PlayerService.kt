@@ -31,8 +31,8 @@ import androidx.core.app.NotificationCompat
 import com.nextcloud.client.account.User
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.ui.notifications.NotificationUtils
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.ui.notifications.NotificationUtils
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import dagger.android.AndroidInjection
 import java.util.Locale
@@ -62,7 +62,7 @@ class PlayerService : Service() {
 
     private val playerListener = object : Player.Listener {
 
-        override fun onRunning(file: OCFile) {
+        override fun onRunning(file: com.owncloud.gshare.datamodel.OCFile) {
             startForeground(file)
         }
 
@@ -142,7 +142,7 @@ class PlayerService : Service() {
 
     private fun onActionPlay(intent: Intent) {
         val user: User = intent.getParcelableExtra(EXTRA_USER)!!
-        val file: OCFile = intent.getParcelableExtra(EXTRA_FILE)!!
+        val file: com.owncloud.gshare.datamodel.OCFile = intent.getParcelableExtra(EXTRA_FILE)!!
         val startPos = intent.getLongExtra(EXTRA_START_POSITION_MS, 0)
         val autoPlay = intent.getBooleanExtra(EXTRA_AUTO_PLAY, true)
         val item = PlaylistItem(file = file, startPositionMs = startPos, autoPlay = autoPlay, user = user)
@@ -154,11 +154,11 @@ class PlayerService : Service() {
     }
 
     private fun onActionStopFile(args: Bundle?) {
-        val file: OCFile = args?.getParcelable(EXTRA_FILE) ?: throw IllegalArgumentException("Missing file argument")
+        val file: com.owncloud.gshare.datamodel.OCFile = args?.getParcelable(EXTRA_FILE) ?: throw IllegalArgumentException("Missing file argument")
         stopServiceAndRemoveNotification(file)
     }
 
-    private fun startForeground(currentFile: OCFile) {
+    private fun startForeground(currentFile: com.owncloud.gshare.datamodel.OCFile) {
         val ticker = String.format(getString(R.string.media_notif_ticker), getString(R.string.app_name))
         val content = getString(R.string.media_state_playing, currentFile.getFileName())
         notificationBuilder.setSmallIcon(R.drawable.ic_play_arrow)
@@ -168,14 +168,14 @@ class PlayerService : Service() {
         notificationBuilder.setContentText(content)
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            notificationBuilder.setChannelId(NotificationUtils.NOTIFICATION_CHANNEL_MEDIA)
+            notificationBuilder.setChannelId(com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_MEDIA)
         }
 
         startForeground(R.string.media_notif_ticker, notificationBuilder.build())
         isRunning = true
     }
 
-    private fun stopServiceAndRemoveNotification(file: OCFile?) {
+    private fun stopServiceAndRemoveNotification(file: com.owncloud.gshare.datamodel.OCFile?) {
         if (file == null) {
             player.stop()
         } else {

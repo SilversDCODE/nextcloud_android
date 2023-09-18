@@ -43,18 +43,18 @@ import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.core.Clock
 import com.nextcloud.client.preferences.AppPreferences
 import com.nextcloud.client.preferences.AppPreferencesImpl
-import com.owncloud.android.MainApp
+import com.owncloud.gshare.MainApp
 import com.owncloud.android.R
 import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.android.datamodel.ArbitraryDataProviderImpl
-import com.owncloud.android.datamodel.MediaFolderType
-import com.owncloud.android.datamodel.MediaFoldersModel
-import com.owncloud.android.datamodel.MediaProvider
-import com.owncloud.android.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl
+import com.owncloud.gshare.datamodel.MediaFolderType
+import com.owncloud.gshare.datamodel.MediaFoldersModel
+import com.owncloud.gshare.datamodel.MediaProvider
+import com.owncloud.gshare.datamodel.SyncedFolderProvider
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.android.ui.activity.ManageAccountsActivity.PENDING_FOR_REMOVAL
+import com.owncloud.gshare.ui.activity.ManageAccountsActivity.PENDING_FOR_REMOVAL
 import com.owncloud.android.ui.activity.SyncedFoldersActivity
-import com.owncloud.android.ui.notifications.NotificationUtils
+import com.owncloud.gshare.ui.notifications.NotificationUtils
 import com.owncloud.android.utils.SyncedFolderUtils
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import java.util.Random
@@ -69,7 +69,7 @@ class MediaFoldersDetectionWork constructor(
     private val preferences: AppPreferences,
     private val clock: Clock,
     private val viewThemeUtils: ViewThemeUtils,
-    private val syncedFolderProvider: SyncedFolderProvider
+    private val syncedFolderProvider: com.owncloud.gshare.datamodel.SyncedFolderProvider
 ) : Worker(context, params) {
 
     companion object {
@@ -79,24 +79,25 @@ class MediaFoldersDetectionWork constructor(
         private const val ACCOUNT_NAME_GLOBAL = "global"
         private const val KEY_MEDIA_FOLDERS = "media_folders"
         const val NOTIFICATION_ID = "NOTIFICATION_ID"
-        private val DISABLE_DETECTION_CLICK = MainApp.getAuthority() + "_DISABLE_DETECTION_CLICK"
+        private val DISABLE_DETECTION_CLICK = com.owncloud.gshare.MainApp.getAuthority() + "_DISABLE_DETECTION_CLICK"
     }
 
     private val randomIdGenerator = Random(clock.currentTime)
 
     @Suppress("LongMethod", "ComplexMethod", "NestedBlockDepth") // legacy code
     override fun doWork(): Result {
-        val arbitraryDataProvider: ArbitraryDataProvider = ArbitraryDataProviderImpl(context)
+        val arbitraryDataProvider: ArbitraryDataProvider =
+            com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl(context)
         val gson = Gson()
-        val mediaFoldersModel: MediaFoldersModel
-        val imageMediaFolders = MediaProvider.getImageFolders(
+        val mediaFoldersModel: com.owncloud.gshare.datamodel.MediaFoldersModel
+        val imageMediaFolders = com.owncloud.gshare.datamodel.MediaProvider.getImageFolders(
             contentResolver,
             1,
             null,
             true,
             viewThemeUtils
         )
-        val videoMediaFolders = MediaProvider.getVideoFolders(
+        val videoMediaFolders = com.owncloud.gshare.datamodel.MediaProvider.getVideoFolders(
             contentResolver,
             1,
             null,
@@ -113,7 +114,7 @@ class MediaFoldersDetectionWork constructor(
         }
         val arbitraryDataString = arbitraryDataProvider.getValue(ACCOUNT_NAME_GLOBAL, KEY_MEDIA_FOLDERS)
         if (!TextUtils.isEmpty(arbitraryDataString)) {
-            mediaFoldersModel = gson.fromJson(arbitraryDataString, MediaFoldersModel::class.java)
+            mediaFoldersModel = gson.fromJson(arbitraryDataString, com.owncloud.gshare.datamodel.MediaFoldersModel::class.java)
             // merge new detected paths with already notified ones
             for (existingImageFolderPath in mediaFoldersModel.imageMediaFolders) {
                 if (!imageMediaFolderPaths.contains(existingImageFolderPath)) {
@@ -129,7 +130,12 @@ class MediaFoldersDetectionWork constructor(
             arbitraryDataProvider.storeOrUpdateKeyValue(
                 ACCOUNT_NAME_GLOBAL,
                 KEY_MEDIA_FOLDERS,
-                gson.toJson(MediaFoldersModel(imageMediaFolderPaths, videoMediaFolderPaths))
+                gson.toJson(
+                    com.owncloud.gshare.datamodel.MediaFoldersModel(
+                        imageMediaFolderPaths,
+                        videoMediaFolderPaths
+                    )
+                )
             )
             if (preferences.isShowMediaScanNotifications) {
                 imageMediaFolderPaths.removeAll(mediaFoldersModel.imageMediaFolders)
@@ -149,7 +155,7 @@ class MediaFoldersDetectionWork constructor(
                                 user
                             )
                             if (folder == null &&
-                                SyncedFolderUtils.isQualifyingMediaFolder(imageMediaFolder, MediaFolderType.IMAGE)
+                                SyncedFolderUtils.isQualifyingMediaFolder(imageMediaFolder, com.owncloud.gshare.datamodel.MediaFolderType.IMAGE)
                             ) {
                                 val contentTitle = String.format(
                                     resources.getString(R.string.new_media_folder_detected),
@@ -160,7 +166,7 @@ class MediaFoldersDetectionWork constructor(
                                     imageMediaFolder.substring(imageMediaFolder.lastIndexOf('/') + 1),
                                     user,
                                     imageMediaFolder,
-                                    MediaFolderType.IMAGE.id
+                                    com.owncloud.gshare.datamodel.MediaFolderType.IMAGE.id
                                 )
                             }
                         }
@@ -179,7 +185,7 @@ class MediaFoldersDetectionWork constructor(
                                     videoMediaFolder.substring(videoMediaFolder.lastIndexOf('/') + 1),
                                     user,
                                     videoMediaFolder,
-                                    MediaFolderType.VIDEO.id
+                                    com.owncloud.gshare.datamodel.MediaFolderType.VIDEO.id
                                 )
                             }
                         }
@@ -187,7 +193,8 @@ class MediaFoldersDetectionWork constructor(
                 }
             }
         } else {
-            mediaFoldersModel = MediaFoldersModel(imageMediaFolderPaths, videoMediaFolderPaths)
+            mediaFoldersModel =
+                com.owncloud.gshare.datamodel.MediaFoldersModel(imageMediaFolderPaths, videoMediaFolderPaths)
             arbitraryDataProvider.storeOrUpdateKeyValue(
                 ACCOUNT_NAME_GLOBAL,
                 KEY_MEDIA_FOLDERS,
@@ -215,7 +222,7 @@ class MediaFoldersDetectionWork constructor(
         )
         val notificationBuilder = NotificationCompat.Builder(
             context,
-            NotificationUtils.NOTIFICATION_CHANNEL_GENERAL
+            com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_GENERAL
         )
             .setSmallIcon(R.drawable.notification_icon)
             .setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.notification_icon))

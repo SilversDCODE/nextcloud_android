@@ -22,7 +22,7 @@
 
 package com.nextcloud.client.utils
 
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.utils.FileSortOrder
 import org.junit.Assert
 import org.junit.Test
@@ -41,7 +41,7 @@ class OCFileSortTest {
     lateinit var title: String
 
     @Parameterized.Parameter(1)
-    lateinit var expected: Array<OCFile>
+    lateinit var expected: Array<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>
 
     @Test
     fun testFileSortOrder() {
@@ -61,11 +61,11 @@ class OCFileSortTest {
         verifySort(toSort)
     }
 
-    private fun getShuffledList(): MutableList<OCFile> {
+    private fun getShuffledList(): MutableList<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile> {
         return expected.toMutableList().apply { shuffle() }
     }
 
-    private fun verifySort(actual: MutableList<OCFile>) {
+    private fun verifySort(actual: MutableList<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>) {
         val targetNames = expected.map { it.fileName }.toTypedArray()
         val actualNames = actual.map { it.fileName }.toTypedArray()
 
@@ -80,9 +80,18 @@ class OCFileSortTest {
             arrayOf(
                 "Folder first",
                 arrayOf(
-                    OCFile("/ah.txt").setFolder(), OCFile("/Äh.txt").setFolder(), OCFile("/oh.txt").setFolder(),
-                    OCFile("/öh.txt").setFolder(), OCFile("/üh.txt").setFolder(), OCFile("/Üh.txt").setFolder(),
-                    OCFile("/äh.txt"), OCFile("/Öh.txt"), OCFile("/uh.txt"), OCFile("/Üh 2.txt")
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/ah.txt").setFolder(), _root_ide_package_.com.owncloud.gshare.datamodel.OCFile(
+                        "/Äh.txt"
+                    ).setFolder(), _root_ide_package_.com.owncloud.gshare.datamodel.OCFile(
+                        "/oh.txt"
+                    ).setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/öh.txt").setFolder(), _root_ide_package_.com.owncloud.gshare.datamodel.OCFile(
+                        "/üh.txt"
+                    ).setFolder(), _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/Üh.txt").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/äh.txt"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/Öh.txt"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/uh.txt"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/Üh 2.txt")
                 )
             ),
             arrayOf(
@@ -105,7 +114,7 @@ class OCFileSortTest {
                     "/Joplin/71563833027a49dcaa86208a3f621402.md", "/Joplin/41742897324842849667274b2d1a0bb6.md",
                     "/Joplin/a441cb730c22451aa4352129231fe898.md", "/Joplin/a551ce1ae06e6f05669a0cadc4eb2f7b.md",
                     "/Joplin/a590cd1671b648c7a3bae0d6fbb7da81.md"
-                ).map { OCFile(it) }.toTypedArray()
+                ).map { _root_ide_package_.com.owncloud.gshare.datamodel.OCFile(it) }.toTypedArray()
             ),
             arrayOf(
                 "With dots",
@@ -317,31 +326,31 @@ class OCFileSortTest {
                     "/1231232.4.8933",
                     "/1231232.40.8933",
                     "/1231232.040.8933"
-                ).map { OCFile(it) }.toTypedArray()
+                ).map { _root_ide_package_.com.owncloud.gshare.datamodel.OCFile(it) }.toTypedArray()
             ),
             arrayOf(
                 "With dot files and folders",
                 arrayOf(
-                    OCFile("/.apache2").setFolder(),
-                    OCFile("/.cache").setFolder(),
-                    OCFile("/.config").setFolder(),
-                    OCFile("/.local").setFolder(),
-                    OCFile("/.logs").setFolder(),
-                    OCFile("/.nano").setFolder(),
-                    OCFile("/.nginx").setFolder(),
-                    OCFile("/.script-credentials").setFolder(),
-                    OCFile("/.ssh").setFolder(),
-                    OCFile("/.subversion").setFolder(),
-                    OCFile("/.znc").setFolder(),
-                    OCFile("/.bash_aliases"),
-                    OCFile("/.bash_history"),
-                    OCFile("/.bash_logout"),
-                    OCFile("/.bashrc"),
-                    OCFile("/.feral_aliases"),
-                    OCFile("/.mysql_history"),
-                    OCFile("/.profile"),
-                    OCFile("/.selected_editor"),
-                    OCFile("/.wget-hsts")
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.apache2").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.cache").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.config").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.local").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.logs").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.nano").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.nginx").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.script-credentials").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.ssh").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.subversion").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.znc").setFolder(),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.bash_aliases"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.bash_history"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.bash_logout"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.bashrc"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.feral_aliases"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.mysql_history"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.profile"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.selected_editor"),
+                    _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/.wget-hsts")
                 )
             )
 

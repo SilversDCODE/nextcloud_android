@@ -31,8 +31,8 @@ import com.nextcloud.client.logger.Logger
 import com.nextcloud.client.network.ClientFactory
 import com.nextcloud.client.network.ConnectivityService
 import com.nextcloud.client.notifications.AppNotificationManager
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.UploadsStorageManager
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.UploadsStorageManager
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 import javax.inject.Named
@@ -82,7 +82,7 @@ class FileTransferService : Service() {
     lateinit var logger: Logger
 
     @Inject
-    lateinit var uploadsStorageManager: UploadsStorageManager
+    lateinit var uploadsStorageManager: com.owncloud.gshare.datamodel.UploadsStorageManager
 
     @Inject
     lateinit var connectivityService: ConnectivityService
@@ -91,7 +91,7 @@ class FileTransferService : Service() {
     lateinit var powerManagementService: PowerManagementService
 
     @Inject
-    lateinit var fileDataStorageManager: FileDataStorageManager
+    lateinit var fileDataStorageManager: com.owncloud.gshare.datamodel.FileDataStorageManager
 
     val isRunning: Boolean get() = downloaders.any { it.value.isRunning }
 

@@ -39,7 +39,7 @@ import androidx.work.workDataOf
 import com.nextcloud.client.account.User
 import com.nextcloud.client.core.Clock
 import com.nextcloud.client.documentscan.GeneratePdfFromImagesWork
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import java.util.Date
 import java.util.UUID
 import java.util.concurrent.TimeUnit
@@ -301,7 +301,7 @@ internal class BackgroundJobManagerImpl(
         return workManager.getJobInfo(request.id)
     }
 
-    override fun startImmediateFilesExportJob(files: Collection<OCFile>): LiveData<JobInfo?> {
+    override fun startImmediateFilesExportJob(files: Collection<com.owncloud.gshare.datamodel.OCFile>): LiveData<JobInfo?> {
         val ids = files.map { it.fileId }.toLongArray()
 
         val data = Data.Builder()

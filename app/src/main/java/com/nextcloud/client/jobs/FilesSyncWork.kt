@@ -34,20 +34,20 @@ import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.ConnectivityService
 import com.owncloud.android.R
 import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.android.datamodel.ArbitraryDataProviderImpl
-import com.owncloud.android.datamodel.FilesystemDataProvider
-import com.owncloud.android.datamodel.MediaFolderType
-import com.owncloud.android.datamodel.SyncedFolder
-import com.owncloud.android.datamodel.SyncedFolderProvider
-import com.owncloud.android.datamodel.UploadsStorageManager
-import com.owncloud.android.files.services.FileUploader
+import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl
+import com.owncloud.gshare.datamodel.FilesystemDataProvider
+import com.owncloud.gshare.datamodel.MediaFolderType
+import com.owncloud.gshare.datamodel.SyncedFolder
+import com.owncloud.gshare.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.UploadsStorageManager
+import com.owncloud.gshare.files.services.FileUploader
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.android.operations.UploadFileOperation
-import com.owncloud.android.ui.activity.SettingsActivity
-import com.owncloud.android.utils.FileStorageUtils
-import com.owncloud.android.utils.FilesSyncHelper
-import com.owncloud.android.utils.MimeType
-import com.owncloud.android.utils.MimeTypeUtil
+import com.owncloud.gshare.operations.UploadFileOperation
+import com.owncloud.gshare.ui.activity.SettingsActivity
+import com.owncloud.gshare.utils.FileStorageUtils
+import com.owncloud.gshare.utils.FilesSyncHelper
+import com.owncloud.gshare.utils.MimeType
+import com.owncloud.gshare.utils.MimeTypeUtil
 import java.io.File
 import java.text.ParsePosition
 import java.text.SimpleDateFormat
@@ -60,10 +60,10 @@ class FilesSyncWork(
     params: WorkerParameters,
     private val contentResolver: ContentResolver,
     private val userAccountManager: UserAccountManager,
-    private val uploadsStorageManager: UploadsStorageManager,
+    private val uploadsStorageManager: com.owncloud.gshare.datamodel.UploadsStorageManager,
     private val connectivityService: ConnectivityService,
     private val powerManagementService: PowerManagementService,
-    private val syncedFolderProvider: SyncedFolderProvider
+    private val syncedFolderProvider: com.owncloud.gshare.datamodel.SyncedFolderProvider
 ) : Worker(context, params) {
 
     companion object {
@@ -81,20 +81,20 @@ class FilesSyncWork(
         val resources = context.resources
         val lightVersion = resources.getBoolean(R.bool.syncedFolder_light)
         val skipCustom = inputData.getBoolean(SKIP_CUSTOM, false)
-        FilesSyncHelper.restartJobsIfNeeded(
+        com.owncloud.gshare.utils.FilesSyncHelper.restartJobsIfNeeded(
             uploadsStorageManager,
             userAccountManager,
             connectivityService,
             powerManagementService
         )
-        FilesSyncHelper.insertAllDBEntries(skipCustom, syncedFolderProvider)
+        com.owncloud.gshare.utils.FilesSyncHelper.insertAllDBEntries(skipCustom, syncedFolderProvider)
         // Create all the providers we'll need
-        val filesystemDataProvider = FilesystemDataProvider(contentResolver)
+        val filesystemDataProvider = com.owncloud.gshare.datamodel.FilesystemDataProvider(contentResolver)
         val currentLocale = resources.configuration.locale
         val dateFormat = SimpleDateFormat("yyyy:MM:dd HH:mm:ss", currentLocale)
         dateFormat.timeZone = TimeZone.getTimeZone(TimeZone.getDefault().id)
         for (syncedFolder in syncedFolderProvider.syncedFolders) {
-            if (syncedFolder.isEnabled && (!skipCustom || MediaFolderType.CUSTOM != syncedFolder.type)) {
+            if (syncedFolder.isEnabled && (!skipCustom || com.owncloud.gshare.datamodel.MediaFolderType.CUSTOM != syncedFolder.type)) {
                 syncFolder(
                     context,
                     resources,
@@ -114,10 +114,10 @@ class FilesSyncWork(
         context: Context,
         resources: Resources,
         lightVersion: Boolean,
-        filesystemDataProvider: FilesystemDataProvider,
+        filesystemDataProvider: com.owncloud.gshare.datamodel.FilesystemDataProvider,
         currentLocale: Locale,
         sFormatter: SimpleDateFormat,
-        syncedFolder: SyncedFolder
+        syncedFolder: com.owncloud.gshare.datamodel.SyncedFolder
     ) {
         val uploadAction: Int?
         val needsCharging: Boolean
@@ -130,7 +130,7 @@ class FilesSyncWork(
         }
         val user = optionalUser.get()
         val arbitraryDataProvider: ArbitraryDataProvider? = if (lightVersion) {
-            ArbitraryDataProviderImpl(context)
+            com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl(context)
         } else {
             null
         }
@@ -149,7 +149,7 @@ class FilesSyncWork(
             Triple(
                 localPath,
                 getRemotePath(file, syncedFolder, sFormatter, lightVersion, resources, currentLocale),
-                MimeTypeUtil.getBestMimeTypeByFilename(localPath)
+                com.owncloud.gshare.utils.MimeTypeUtil.getBestMimeTypeByFilename(localPath)
             )
         }
         val localPaths = pathsAndMimes.map { it.first }.toTypedArray()
@@ -160,7 +160,7 @@ class FilesSyncWork(
             needsCharging = resources.getBoolean(R.bool.syncedFolder_light_on_charging)
             needsWifi = arbitraryDataProvider!!.getBooleanValue(
                 accountName,
-                SettingsActivity.SYNCED_FOLDER_LIGHT_UPLOAD_ON_WIFI
+                com.owncloud.gshare.ui.activity.SettingsActivity.SYNCED_FOLDER_LIGHT_UPLOAD_ON_WIFI
             )
             val uploadActionString = resources.getString(R.string.syncedFolder_light_upload_behaviour)
             uploadAction = getUploadAction(uploadActionString)
@@ -169,7 +169,7 @@ class FilesSyncWork(
             needsWifi = syncedFolder.isWifiOnly
             uploadAction = syncedFolder.uploadAction
         }
-        FileUploader.uploadNewFile(
+        com.owncloud.gshare.files.services.FileUploader.uploadNewFile(
             context,
             user,
             localPaths,
@@ -177,7 +177,7 @@ class FilesSyncWork(
             mimetypes,
             uploadAction!!,
             true, // create parent folder if not existent
-            UploadFileOperation.CREATED_AS_INSTANT_PICTURE,
+            com.owncloud.gshare.operations.UploadFileOperation.CREATED_AS_INSTANT_PICTURE,
             needsWifi,
             needsCharging,
             syncedFolder.nameCollisionPolicy
@@ -194,7 +194,7 @@ class FilesSyncWork(
 
     private fun getRemotePath(
         file: File,
-        syncedFolder: SyncedFolder,
+        syncedFolder: com.owncloud.gshare.datamodel.SyncedFolder,
         sFormatter: SimpleDateFormat,
         lightVersion: Boolean,
         resources: Resources,
@@ -210,7 +210,7 @@ class FilesSyncWork(
             useSubfolders = syncedFolder.isSubfolderByDate
             remoteFolder = syncedFolder.remotePath
         }
-        return FileStorageUtils.getInstantUploadFilePath(
+        return com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             currentLocale,
             remoteFolder,
@@ -221,17 +221,17 @@ class FilesSyncWork(
     }
 
     private fun hasExif(file: File): Boolean {
-        val mimeType = FileStorageUtils.getMimeTypeFromName(file.absolutePath)
-        return MimeType.JPEG.equals(mimeType, ignoreCase = true) || MimeType.TIFF.equals(mimeType, ignoreCase = true)
+        val mimeType = com.owncloud.gshare.utils.FileStorageUtils.getMimeTypeFromName(file.absolutePath)
+        return com.owncloud.gshare.utils.MimeType.JPEG.equals(mimeType, ignoreCase = true) || com.owncloud.gshare.utils.MimeType.TIFF.equals(mimeType, ignoreCase = true)
     }
 
     private fun calculateLastModificationTime(
         file: File,
-        syncedFolder: SyncedFolder,
+        syncedFolder: com.owncloud.gshare.datamodel.SyncedFolder,
         formatter: SimpleDateFormat
     ): Long {
         var lastModificationTime = file.lastModified()
-        if (MediaFolderType.IMAGE == syncedFolder.type && hasExif(file)) {
+        if (com.owncloud.gshare.datamodel.MediaFolderType.IMAGE == syncedFolder.type && hasExif(file)) {
             @Suppress("TooGenericExceptionCaught") // legacy code
             try {
                 val exifInterface = ExifInterface(file.absolutePath)
@@ -250,10 +250,10 @@ class FilesSyncWork(
 
     private fun getUploadAction(action: String): Int? {
         return when (action) {
-            "LOCAL_BEHAVIOUR_FORGET" -> FileUploader.LOCAL_BEHAVIOUR_FORGET
-            "LOCAL_BEHAVIOUR_MOVE" -> FileUploader.LOCAL_BEHAVIOUR_MOVE
-            "LOCAL_BEHAVIOUR_DELETE" -> FileUploader.LOCAL_BEHAVIOUR_DELETE
-            else -> FileUploader.LOCAL_BEHAVIOUR_FORGET
+            "LOCAL_BEHAVIOUR_FORGET" -> com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_FORGET
+            "LOCAL_BEHAVIOUR_MOVE" -> com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_MOVE
+            "LOCAL_BEHAVIOUR_DELETE" -> com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_DELETE
+            else -> com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_FORGET
         }
     }
 }

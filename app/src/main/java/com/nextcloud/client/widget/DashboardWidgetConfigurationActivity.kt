@@ -43,7 +43,7 @@ import com.owncloud.android.lib.common.operations.RemoteOperationResult
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.ui.adapter.DashboardWidgetListAdapter
 import com.owncloud.android.ui.dialog.AccountChooserInterface
-import com.owncloud.android.ui.dialog.MultipleAccountsDialog
+import com.owncloud.gshare.ui.dialog.MultipleAccountsDialog
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -119,7 +119,7 @@ class DashboardWidgetConfigurationActivity :
                 visibility = View.VISIBLE
                 text = currentUser.accountName
                 setOnClickListener {
-                    val dialog = MultipleAccountsDialog()
+                    val dialog = com.owncloud.gshare.ui.dialog.MultipleAccountsDialog()
                     dialog.highlightCurrentlyActiveAccount = false
                     dialog.show(supportFragmentManager, null)
                 }

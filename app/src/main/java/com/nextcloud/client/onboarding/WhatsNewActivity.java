@@ -34,12 +34,12 @@ import com.nextcloud.android.common.ui.theme.utils.ColorRole;
 import com.nextcloud.client.appinfo.AppInfo;
 import com.nextcloud.client.di.Injectable;
 import com.nextcloud.client.preferences.AppPreferences;
-import com.owncloud.android.BuildConfig;
+import com.owncloud.gshare.BuildConfig;
 import com.owncloud.android.R;
 import com.owncloud.android.databinding.WhatsNewActivityBinding;
-import com.owncloud.android.ui.adapter.FeaturesViewAdapter;
-import com.owncloud.android.ui.adapter.FeaturesWebViewAdapter;
-import com.owncloud.android.ui.whatsnew.ProgressIndicator;
+import com.owncloud.gshare.ui.adapter.FeaturesViewAdapter;
+import com.owncloud.gshare.ui.adapter.FeaturesWebViewAdapter;
+import com.owncloud.gshare.ui.whatsnew.ProgressIndicator;
 import com.owncloud.android.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;

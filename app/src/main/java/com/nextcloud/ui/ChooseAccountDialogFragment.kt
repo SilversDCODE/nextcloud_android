@@ -37,16 +37,16 @@ import com.nextcloud.client.di.Injectable
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
 import com.owncloud.android.databinding.DialogChooseAccountBinding
-import com.owncloud.android.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.FileDataStorageManager
 import com.owncloud.android.lib.resources.users.Status
-import com.owncloud.android.ui.StatusDrawable
-import com.owncloud.android.ui.activity.BaseActivity
-import com.owncloud.android.ui.activity.DrawerActivity
-import com.owncloud.android.ui.adapter.UserListAdapter
-import com.owncloud.android.ui.adapter.UserListItem
-import com.owncloud.android.ui.asynctasks.RetrieveStatusAsyncTask
-import com.owncloud.android.utils.DisplayUtils
-import com.owncloud.android.utils.DisplayUtils.AvatarGenerationListener
+import com.owncloud.gshare.ui.StatusDrawable
+import com.owncloud.gshare.ui.activity.BaseActivity
+import com.owncloud.gshare.ui.activity.DrawerActivity
+import com.owncloud.gshare.ui.adapter.UserListAdapter
+import com.owncloud.gshare.ui.adapter.UserListItem
+import com.owncloud.gshare.ui.asynctasks.RetrieveStatusAsyncTask
+import com.owncloud.gshare.utils.DisplayUtils
+import com.owncloud.gshare.utils.DisplayUtils.AvatarGenerationListener
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
@@ -57,7 +57,7 @@ private const val STATUS_SIZE_IN_DP = 9f
 class ChooseAccountDialogFragment :
     DialogFragment(),
     AvatarGenerationListener,
-    UserListAdapter.ClickListener,
+    com.owncloud.gshare.ui.adapter.UserListAdapter.ClickListener,
     Injectable {
     private lateinit var dialogView: View
     private var currentUser: User? = null
@@ -95,12 +95,12 @@ class ChooseAccountDialogFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        accountManager = (activity as BaseActivity).userAccountManager
+        accountManager = (activity as com.owncloud.gshare.ui.activity.BaseActivity).userAccountManager
         currentUser?.let { user ->
 
             // Defining user picture
             binding.currentAccount.userIcon.tag = user.accountName
-            DisplayUtils.setAvatar(
+            _root_ide_package_.com.owncloud.gshare.utils.DisplayUtils.setAvatar(
                 user,
                 this,
                 resources.getDimension(R.dimen.list_item_avatar_icon_radius),
@@ -119,8 +119,8 @@ class ChooseAccountDialogFragment :
             binding.currentAccount.accountMenu.setImageDrawable(icon)
 
             // Creating adapter for accounts list
-            val adapter = UserListAdapter(
-                activity as BaseActivity,
+            val adapter = _root_ide_package_.com.owncloud.gshare.ui.adapter.UserListAdapter(
+                activity as com.owncloud.gshare.ui.activity.BaseActivity,
                 accountManager,
                 getAccountListItems(),
                 this,
@@ -137,27 +137,30 @@ class ChooseAccountDialogFragment :
                 dismiss()
             }
             binding.addAccount.setOnClickListener {
-                (activity as DrawerActivity).openAddAccount()
+                (activity as com.owncloud.gshare.ui.activity.DrawerActivity).openAddAccount()
             }
             binding.manageAccounts.setOnClickListener {
-                (activity as DrawerActivity).openManageAccounts()
+                (activity as com.owncloud.gshare.ui.activity.DrawerActivity).openManageAccounts()
             }
 
             binding.setStatus.setOnClickListener {
                 val setStatusDialog = SetStatusDialogFragment.newInstance(accountManager.user, currentStatus)
-                setStatusDialog.show((activity as DrawerActivity).supportFragmentManager, "fragment_set_status")
+                setStatusDialog.show((activity as com.owncloud.gshare.ui.activity.DrawerActivity).supportFragmentManager, "fragment_set_status")
 
                 dismiss()
             }
 
-            val capability = FileDataStorageManager(user, context?.contentResolver)
+            val capability = _root_ide_package_.com.owncloud.gshare.datamodel.FileDataStorageManager(
+                user,
+                context?.contentResolver
+            )
                 .getCapability(user)
 
             if (capability.userStatus.isTrue) {
                 binding.statusView.visibility = View.VISIBLE
             }
 
-            RetrieveStatusAsyncTask(user, this, clientFactory).execute()
+            _root_ide_package_.com.owncloud.gshare.ui.asynctasks.RetrieveStatusAsyncTask(user, this, clientFactory).execute()
         }
 
         themeViews()
@@ -175,13 +178,13 @@ class ChooseAccountDialogFragment :
         viewThemeUtils.dialog.colorDialogMenuText(binding.manageAccounts)
     }
 
-    private fun getAccountListItems(): List<UserListItem> {
+    private fun getAccountListItems(): List<com.owncloud.gshare.ui.adapter.UserListItem> {
         val users = accountManager.allUsers
-        val adapterUserList: MutableList<UserListItem> = ArrayList(users.size)
+        val adapterUserList: MutableList<com.owncloud.gshare.ui.adapter.UserListItem> = ArrayList(users.size)
         // Remove the current account from the adapter to display only other accounts
         for (user in users) {
             if (user != currentUser) {
-                adapterUserList.add(UserListItem(user))
+                adapterUserList.add(_root_ide_package_.com.owncloud.gshare.ui.adapter.UserListItem(user))
             }
         }
         return adapterUserList
@@ -215,7 +218,7 @@ class ChooseAccountDialogFragment :
     }
 
     override fun onAccountClicked(user: User?) {
-        (activity as DrawerActivity).accountClicked(user.hashCode())
+        (activity as com.owncloud.gshare.ui.activity.DrawerActivity).accountClicked(user.hashCode())
     }
 
     override fun onOptionItemClicked(user: User?, view: View?) {
@@ -225,9 +228,15 @@ class ChooseAccountDialogFragment :
     fun setStatus(newStatus: Status, context: Context) {
         currentStatus = newStatus
 
-        val size = DisplayUtils.convertDpToPixel(STATUS_SIZE_IN_DP, context)
+        val size = _root_ide_package_.com.owncloud.gshare.utils.DisplayUtils.convertDpToPixel(STATUS_SIZE_IN_DP, context)
         binding.currentAccount.ticker.background = null
-        binding.currentAccount.ticker.setImageDrawable(StatusDrawable(newStatus, size.toFloat(), context))
+        binding.currentAccount.ticker.setImageDrawable(
+            _root_ide_package_.com.owncloud.gshare.ui.StatusDrawable(
+                newStatus,
+                size.toFloat(),
+                context
+            )
+        )
         binding.currentAccount.ticker.visibility = View.VISIBLE
 
         binding.currentAccount.status.let {

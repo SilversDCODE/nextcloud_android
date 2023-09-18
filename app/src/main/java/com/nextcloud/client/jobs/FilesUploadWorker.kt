@@ -38,11 +38,11 @@ import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.ConnectivityService
 import com.nextcloud.client.utils.FileUploaderDelegate
 import com.owncloud.android.R
-import com.owncloud.android.authentication.AuthenticatorActivity
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.ThumbnailsCacheManager
-import com.owncloud.android.datamodel.UploadsStorageManager
-import com.owncloud.android.db.OCUpload
+import com.owncloud.gshare.authentication.AuthenticatorActivity
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
+import com.owncloud.gshare.datamodel.UploadsStorageManager
+import com.owncloud.gshare.db.OCUpload
 import com.owncloud.android.lib.common.OwnCloudAccount
 import com.owncloud.android.lib.common.OwnCloudClientManagerFactory
 import com.owncloud.android.lib.common.network.OnDatatransferProgressListener
@@ -50,18 +50,18 @@ import com.owncloud.android.lib.common.operations.RemoteOperationResult
 import com.owncloud.android.lib.common.operations.RemoteOperationResult.ResultCode
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.files.FileUtils
-import com.owncloud.android.operations.UploadFileOperation
-import com.owncloud.android.ui.activity.ConflictsResolveActivity
-import com.owncloud.android.ui.activity.UploadListActivity
-import com.owncloud.android.ui.notifications.NotificationUtils
-import com.owncloud.android.utils.ErrorMessageAdapter
+import com.owncloud.gshare.operations.UploadFileOperation
+import com.owncloud.gshare.ui.activity.ConflictsResolveActivity
+import com.owncloud.gshare.ui.activity.UploadListActivity
+import com.owncloud.gshare.ui.notifications.NotificationUtils
+import com.owncloud.gshare.utils.ErrorMessageAdapter
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import java.io.File
 import java.security.SecureRandom
 
 @Suppress("LongParameterList")
 class FilesUploadWorker(
-    val uploadsStorageManager: UploadsStorageManager,
+    val uploadsStorageManager: com.owncloud.gshare.datamodel.UploadsStorageManager,
     val connectivityService: ConnectivityService,
     val powerManagementService: PowerManagementService,
     val userAccountManager: UserAccountManager,
@@ -72,7 +72,7 @@ class FilesUploadWorker(
 ) : Worker(context, params), OnDatatransferProgressListener {
     private var lastPercent = 0
     private val notificationBuilder: NotificationCompat.Builder =
-        NotificationUtils.newNotificationBuilder(context, viewThemeUtils)
+        com.owncloud.gshare.ui.notifications.NotificationUtils.newNotificationBuilder(context, viewThemeUtils)
     private val notificationManager: NotificationManager =
         context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
     private val fileUploaderDelegate = FileUploaderDelegate()
@@ -101,7 +101,7 @@ class FilesUploadWorker(
         return Result.success()
     }
 
-    private fun handlePendingUploads(uploads: List<OCUpload>, accountName: String) {
+    private fun handlePendingUploads(uploads: List<com.owncloud.gshare.db.OCUpload>, accountName: String) {
         val user = userAccountManager.getUser(accountName)
 
         for (upload in uploads) {
@@ -128,8 +128,8 @@ class FilesUploadWorker(
     /**
      * from @{link FileUploader#retryUploads()}
      */
-    private fun createUploadFileOperation(upload: OCUpload, user: User): UploadFileOperation {
-        return UploadFileOperation(
+    private fun createUploadFileOperation(upload: com.owncloud.gshare.db.OCUpload, user: User): com.owncloud.gshare.operations.UploadFileOperation {
+        return com.owncloud.gshare.operations.UploadFileOperation(
             uploadsStorageManager,
             connectivityService,
             powerManagementService,
@@ -142,14 +142,14 @@ class FilesUploadWorker(
             upload.isUseWifiOnly,
             upload.isWhileChargingOnly,
             true,
-            FileDataStorageManager(user, context.contentResolver)
+            com.owncloud.gshare.datamodel.FileDataStorageManager(user, context.contentResolver)
         ).apply {
             addDataTransferProgressListener(this@FilesUploadWorker)
         }
     }
 
     @Suppress("TooGenericExceptionCaught")
-    private fun upload(uploadFileOperation: UploadFileOperation, user: User): RemoteOperationResult<Any?> {
+    private fun upload(uploadFileOperation: com.owncloud.gshare.operations.UploadFileOperation, user: User): RemoteOperationResult<Any?> {
         lateinit var uploadResult: RemoteOperationResult<Any?>
 
         // start notification
@@ -164,10 +164,10 @@ class FilesUploadWorker(
             uploadResult = uploadFileOperation.execute(uploadClient)
 
             // generate new Thumbnail
-            val task = ThumbnailsCacheManager.ThumbnailGenerationTask(storageManager, user)
+            val task = com.owncloud.gshare.datamodel.ThumbnailsCacheManager.ThumbnailGenerationTask(storageManager, user)
             val file = File(uploadFileOperation.originalStoragePath)
             val remoteId: String? = uploadFileOperation.file.remoteId
-            task.execute(ThumbnailsCacheManager.ThumbnailGenerationTaskObject(file, remoteId))
+            task.execute(com.owncloud.gshare.datamodel.ThumbnailsCacheManager.ThumbnailGenerationTaskObject(file, remoteId))
         } catch (e: Exception) {
             Log_OC.e(TAG, "Error uploading", e)
             uploadResult = RemoteOperationResult<Any?>(e)
@@ -187,7 +187,7 @@ class FilesUploadWorker(
     /**
      * adapted from [com.owncloud.android.files.services.FileUploader.notifyUploadStart]
      */
-    private fun createNotification(uploadFileOperation: UploadFileOperation) {
+    private fun createNotification(uploadFileOperation: com.owncloud.gshare.operations.UploadFileOperation) {
         notificationBuilder
             .setOngoing(true)
             .setSmallIcon(R.drawable.notification_icon)
@@ -202,11 +202,11 @@ class FilesUploadWorker(
             )
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            notificationBuilder.setChannelId(NotificationUtils.NOTIFICATION_CHANNEL_UPLOAD)
+            notificationBuilder.setChannelId(com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_UPLOAD)
         }
 
         // includes a pending intent in the notification showing the details
-        val intent = UploadListActivity.createIntent(
+        val intent = com.owncloud.gshare.ui.activity.UploadListActivity.createIntent(
             uploadFileOperation.file,
             uploadFileOperation.user,
             Intent.FLAG_ACTIVITY_CLEAR_TOP,
@@ -233,7 +233,7 @@ class FilesUploadWorker(
      * adapted from [com.owncloud.android.files.services.FileUploader.notifyUploadResult]
      */
     private fun notifyUploadResult(
-        uploadFileOperation: UploadFileOperation,
+        uploadFileOperation: com.owncloud.gshare.operations.UploadFileOperation,
         uploadResult: RemoteOperationResult<Any?>
     ) {
         Log_OC.d(TAG, "NotifyUploadResult with resultCode: " + uploadResult.code)
@@ -267,7 +267,7 @@ class FilesUploadWorker(
                 .setOngoing(false)
                 .setProgress(0, 0, false)
 
-            val content = ErrorMessageAdapter.getErrorCauseMessage(uploadResult, uploadFileOperation, context.resources)
+            val content = com.owncloud.gshare.utils.ErrorMessageAdapter.getErrorCauseMessage(uploadResult, uploadFileOperation, context.resources)
 
             if (needsToUpdateCredentials) {
                 createUpdateCredentialsNotification(uploadFileOperation.user.toPlatformAccount())
@@ -293,8 +293,8 @@ class FilesUploadWorker(
         }
     }
 
-    private fun createUploadListIntent(uploadFileOperation: UploadFileOperation): Intent {
-        return UploadListActivity.createIntent(
+    private fun createUploadListIntent(uploadFileOperation: com.owncloud.gshare.operations.UploadFileOperation): Intent {
+        return com.owncloud.gshare.ui.activity.UploadListActivity.createIntent(
             uploadFileOperation.file,
             uploadFileOperation.user,
             Intent.FLAG_ACTIVITY_CLEAR_TOP,
@@ -302,8 +302,8 @@ class FilesUploadWorker(
         )
     }
 
-    private fun createResolveConflictIntent(uploadFileOperation: UploadFileOperation): Intent {
-        return ConflictsResolveActivity.createIntent(
+    private fun createResolveConflictIntent(uploadFileOperation: com.owncloud.gshare.operations.UploadFileOperation): Intent {
+        return com.owncloud.gshare.ui.activity.ConflictsResolveActivity.createIntent(
             uploadFileOperation.file,
             uploadFileOperation.user,
             uploadFileOperation.ocUploadId,
@@ -314,14 +314,14 @@ class FilesUploadWorker(
 
     private fun createUpdateCredentialsNotification(account: Account) {
         // let the user update credentials with one click
-        val updateAccountCredentials = Intent(context, AuthenticatorActivity::class.java)
+        val updateAccountCredentials = Intent(context, com.owncloud.gshare.authentication.AuthenticatorActivity::class.java)
         updateAccountCredentials.putExtra(
-            AuthenticatorActivity.EXTRA_ACCOUNT,
+            com.owncloud.gshare.authentication.AuthenticatorActivity.EXTRA_ACCOUNT,
             account
         )
         updateAccountCredentials.putExtra(
-            AuthenticatorActivity.EXTRA_ACTION,
-            AuthenticatorActivity.ACTION_UPDATE_EXPIRED_TOKEN
+            com.owncloud.gshare.authentication.AuthenticatorActivity.EXTRA_ACTION,
+            com.owncloud.gshare.authentication.AuthenticatorActivity.ACTION_UPDATE_EXPIRED_TOKEN
         )
         updateAccountCredentials.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         updateAccountCredentials.addFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS)

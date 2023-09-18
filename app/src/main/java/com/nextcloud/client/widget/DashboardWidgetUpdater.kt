@@ -40,12 +40,12 @@ import com.nextcloud.android.lib.resources.dashboard.DashboardButton
 import com.nextcloud.client.account.CurrentAccountProvider
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
-import com.owncloud.android.utils.BitmapUtils
-import com.owncloud.android.utils.DisplayUtils.SVG_SIZE
-import com.owncloud.android.utils.glide.CustomGlideUriLoader
-import com.owncloud.android.utils.svg.SVGorImage
-import com.owncloud.android.utils.svg.SvgOrImageBitmapTranscoder
-import com.owncloud.android.utils.svg.SvgOrImageDecoder
+import com.owncloud.gshare.utils.BitmapUtils
+import com.owncloud.gshare.utils.DisplayUtils.SVG_SIZE
+import com.owncloud.gshare.utils.glide.CustomGlideUriLoader
+import com.owncloud.gshare.utils.svg.SVGorImage
+import com.owncloud.gshare.utils.svg.SvgOrImageBitmapTranscoder
+import com.owncloud.gshare.utils.svg.SvgOrImageDecoder
 import java.io.InputStream
 import javax.inject.Inject
 
@@ -141,7 +141,7 @@ class DashboardWidgetUpdater @Inject constructor(
         val iconTarget = object : AppWidgetTarget(context, remoteViews, R.id.icon, appWidgetId) {
             override fun onResourceReady(resource: Bitmap?, glideAnimation: GlideAnimation<in Bitmap>?) {
                 if (resource != null) {
-                    val tintedBitmap = BitmapUtils.tintImage(resource, R.color.black)
+                    val tintedBitmap = com.owncloud.gshare.utils.BitmapUtils.tintImage(resource, R.color.black)
                     super.onResourceReady(tintedBitmap, glideAnimation)
                 }
             }
@@ -149,15 +149,15 @@ class DashboardWidgetUpdater @Inject constructor(
 
         Glide.with(context)
             .using(
-                CustomGlideUriLoader(accountProvider.user, clientFactory),
+                com.owncloud.gshare.utils.glide.CustomGlideUriLoader(accountProvider.user, clientFactory),
                 InputStream::class.java
             )
             .from(Uri::class.java)
-            .`as`(SVGorImage::class.java)
-            .transcode(SvgOrImageBitmapTranscoder(SVG_SIZE, SVG_SIZE), Bitmap::class.java)
+            .`as`(com.owncloud.gshare.utils.svg.SVGorImage::class.java)
+            .transcode(com.owncloud.gshare.utils.svg.SvgOrImageBitmapTranscoder(SVG_SIZE, SVG_SIZE), Bitmap::class.java)
             .sourceEncoder(StreamEncoder())
-            .cacheDecoder(FileToStreamDecoder(SvgOrImageDecoder()))
-            .decoder(SvgOrImageDecoder())
+            .cacheDecoder(FileToStreamDecoder(com.owncloud.gshare.utils.svg.SvgOrImageDecoder()))
+            .decoder(com.owncloud.gshare.utils.svg.SvgOrImageDecoder())
             .diskCacheStrategy(DiskCacheStrategy.SOURCE)
             .load(Uri.parse(iconUrl))
             .into(iconTarget)

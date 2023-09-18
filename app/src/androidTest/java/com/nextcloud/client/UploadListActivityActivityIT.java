@@ -22,9 +22,9 @@
 
 package com.nextcloud.client;
 
-import com.owncloud.android.AbstractIT;
-import com.owncloud.android.ui.activity.UploadListActivity;
-import com.owncloud.android.utils.ScreenshotTest;
+import com.owncloud.gshare.AbstractIT;
+import com.owncloud.gshare.ui.activity.UploadListActivity;
+import com.owncloud.gshare.utils.ScreenshotTest;
 
 import org.junit.Rule;
 import org.junit.Test;

@@ -23,10 +23,10 @@ package com.nextcloud.client;
 import android.widget.TextView;
 
 import com.nextcloud.test.GrantStoragePermissionRule;
-import com.owncloud.android.AbstractIT;
+import com.owncloud.gshare.AbstractIT;
 import com.owncloud.android.R;
-import com.owncloud.android.authentication.AuthenticatorActivity;
-import com.owncloud.android.utils.ScreenshotTest;
+import com.owncloud.gshare.authentication.AuthenticatorActivity;
+import com.owncloud.gshare.utils.ScreenshotTest;
 
 import org.junit.Rule;
 import org.junit.Test;

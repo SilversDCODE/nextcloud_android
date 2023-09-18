@@ -29,8 +29,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.owncloud.android.R
 import com.owncloud.android.databinding.ActivityShowErrorBinding
-import com.owncloud.android.utils.ClipboardUtil
-import com.owncloud.android.utils.DisplayUtils
+import com.owncloud.gshare.utils.ClipboardUtil
+import com.owncloud.gshare.utils.DisplayUtils
 import java.net.URLEncoder
 
 class ShowErrorActivity : AppCompatActivity() {
@@ -51,7 +51,7 @@ class ShowErrorActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarInclude.toolbar)
         supportActionBar!!.title = createErrorTitle()
 
-        val snackbar = DisplayUtils.createSnackbar(
+        val snackbar = com.owncloud.gshare.utils.DisplayUtils.createSnackbar(
             binding.errorPageContainer,
             R.string.error_report_issue_text,
             Snackbar.LENGTH_INDEFINITE
@@ -64,7 +64,7 @@ class ShowErrorActivity : AppCompatActivity() {
     private fun createErrorTitle() = String.format(getString(R.string.error_crash_title), getString(R.string.app_name))
 
     private fun reportIssue() {
-        ClipboardUtil.copyToClipboard(this, binding.textViewError.text.toString(), false)
+        com.owncloud.gshare.utils.ClipboardUtil.copyToClipboard(this, binding.textViewError.text.toString(), false)
         val issueLink = getString(R.string.report_issue_link)
         if (issueLink.isNotEmpty()) {
             val uriUrl = Uri.parse(
@@ -74,7 +74,7 @@ class ShowErrorActivity : AppCompatActivity() {
                 )
             )
             val intent = Intent(Intent.ACTION_VIEW, uriUrl)
-            DisplayUtils.startIntentIfAppAvailable(intent, this, R.string.no_browser_available)
+            com.owncloud.gshare.utils.DisplayUtils.startIntentIfAppAvailable(intent, this, R.string.no_browser_available)
         }
         Toast.makeText(this, R.string.copied_to_clipboard, Toast.LENGTH_LONG).show()
     }

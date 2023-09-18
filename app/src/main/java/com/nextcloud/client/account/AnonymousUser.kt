@@ -25,7 +25,7 @@ import android.content.Context
 import android.net.Uri
 import android.os.Parcel
 import android.os.Parcelable
-import com.owncloud.android.MainApp
+import com.owncloud.gshare.MainApp
 import com.owncloud.android.R
 import com.owncloud.android.lib.common.OwnCloudAccount
 import com.owncloud.android.lib.common.OwnCloudBasicCredentials
@@ -57,7 +57,7 @@ internal data class AnonymousUser(private val accountType: String) : User, Parce
     )
 
     override val accountName: String = "anonymous@nohost"
-    override val server = Server(URI.create(""), MainApp.MINIMUM_SUPPORTED_SERVER_VERSION)
+    override val server = Server(URI.create(""), com.owncloud.gshare.MainApp.MINIMUM_SUPPORTED_SERVER_VERSION)
     override val isAnonymous = true
 
     override fun toPlatformAccount(): Account {

@@ -19,7 +19,7 @@
  */
 package com.nextcloud.client.files.downloader
 
-import com.owncloud.android.operations.UploadFileOperation
+import com.owncloud.gshare.operations.UploadFileOperation
 
 /**
  * Upload transfer trigger.
@@ -29,24 +29,24 @@ enum class UploadTrigger(val value: Int) {
     /**
      * Transfer triggered manually by the user.
      */
-    USER(UploadFileOperation.CREATED_BY_USER),
+    USER(com.owncloud.gshare.operations.UploadFileOperation.CREATED_BY_USER),
 
     /**
      * Transfer triggered automatically by taking a photo.
      */
-    PHOTO(UploadFileOperation.CREATED_AS_INSTANT_PICTURE),
+    PHOTO(com.owncloud.gshare.operations.UploadFileOperation.CREATED_AS_INSTANT_PICTURE),
 
     /**
      * Transfer triggered automatically by making a video.
      */
-    VIDEO(UploadFileOperation.CREATED_AS_INSTANT_VIDEO);
+    VIDEO(com.owncloud.gshare.operations.UploadFileOperation.CREATED_AS_INSTANT_VIDEO);
 
     companion object {
         @JvmStatic
         fun fromValue(value: Int) = when (value) {
-            UploadFileOperation.CREATED_BY_USER -> USER
-            UploadFileOperation.CREATED_AS_INSTANT_PICTURE -> PHOTO
-            UploadFileOperation.CREATED_AS_INSTANT_VIDEO -> VIDEO
+            com.owncloud.gshare.operations.UploadFileOperation.CREATED_BY_USER -> USER
+            com.owncloud.gshare.operations.UploadFileOperation.CREATED_AS_INSTANT_PICTURE -> PHOTO
+            com.owncloud.gshare.operations.UploadFileOperation.CREATED_AS_INSTANT_VIDEO -> VIDEO
             else -> USER
         }
     }

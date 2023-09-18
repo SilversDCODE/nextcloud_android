@@ -19,7 +19,7 @@
  */
 package com.nextcloud.client.files.downloader
 
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import java.util.UUID
 
 /**
@@ -40,7 +40,7 @@ data class Transfer(
     val uuid: UUID,
     val state: TransferState,
     val progress: Int,
-    val file: OCFile,
+    val file: com.owncloud.gshare.datamodel.OCFile,
     val request: Request
 ) {
     /**

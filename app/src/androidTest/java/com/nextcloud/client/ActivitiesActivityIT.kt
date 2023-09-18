@@ -26,25 +26,25 @@ import androidx.test.espresso.contrib.DrawerActions
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import com.facebook.testing.screenshot.Screenshot
-import com.owncloud.android.AbstractIT
+import com.owncloud.gshare.AbstractIT
 import com.owncloud.android.R
 import com.owncloud.android.lib.resources.activities.model.Activity
 import com.owncloud.android.lib.resources.activities.model.RichElement
 import com.owncloud.android.lib.resources.activities.model.RichObject
 import com.owncloud.android.lib.resources.activities.models.PreviewObject
 import com.owncloud.android.lib.resources.status.OCCapability
-import com.owncloud.android.ui.activities.ActivitiesActivity
-import com.owncloud.android.utils.ScreenshotTest
+import com.owncloud.gshare.ui.activities.ActivitiesActivity
+import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 import java.util.GregorianCalendar
 
-class ActivitiesActivityIT : AbstractIT() {
+class ActivitiesActivityIT : com.owncloud.gshare.AbstractIT() {
     @get:Rule
-    var activityRule = IntentsTestRule(ActivitiesActivity::class.java, true, false)
+    var activityRule = IntentsTestRule(com.owncloud.gshare.ui.activities.ActivitiesActivity::class.java, true, false)
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun openDrawer() {
         val sut = activityRule.launchActivity(null)
         shortSleep()
@@ -58,9 +58,9 @@ class ActivitiesActivityIT : AbstractIT() {
     }
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun loading() {
-        val sut: ActivitiesActivity = activityRule.launchActivity(null)
+        val sut: com.owncloud.gshare.ui.activities.ActivitiesActivity = activityRule.launchActivity(null)
         sut.runOnUiThread {
             sut.dismissSnackbar()
         }
@@ -72,9 +72,9 @@ class ActivitiesActivityIT : AbstractIT() {
     }
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun empty() {
-        val sut: ActivitiesActivity = activityRule.launchActivity(null)
+        val sut: com.owncloud.gshare.ui.activities.ActivitiesActivity = activityRule.launchActivity(null)
 
         sut.runOnUiThread {
             sut.showActivities(mutableListOf(), nextcloudClient, -1)
@@ -89,14 +89,14 @@ class ActivitiesActivityIT : AbstractIT() {
     }
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     @SuppressWarnings("MagicNumber")
     fun showActivities() {
         val capability = OCCapability()
         capability.versionMayor = 20
         fileDataStorageManager.saveCapabilities(capability)
 
-        val sut: ActivitiesActivity = activityRule.launchActivity(null)
+        val sut: com.owncloud.gshare.ui.activities.ActivitiesActivity = activityRule.launchActivity(null)
 
         val date = GregorianCalendar()
         date.set(2005, 4, 17, 10, 35, 30) // random date
@@ -181,9 +181,9 @@ class ActivitiesActivityIT : AbstractIT() {
     }
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun error() {
-        val sut: ActivitiesActivity = activityRule.launchActivity(null)
+        val sut: com.owncloud.gshare.ui.activities.ActivitiesActivity = activityRule.launchActivity(null)
 
         shortSleep()
 

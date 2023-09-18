@@ -26,21 +26,21 @@ import android.content.Intent
 import android.os.Looper
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import com.nextcloud.test.GrantStoragePermissionRule
-import com.owncloud.android.AbstractIT
-import com.owncloud.android.datamodel.ArbitraryDataProviderImpl
-import com.owncloud.android.ui.activity.RequestCredentialsActivity
-import com.owncloud.android.ui.activity.SettingsActivity
-import com.owncloud.android.utils.EncryptionUtils
-import com.owncloud.android.utils.ScreenshotTest
+import com.owncloud.gshare.AbstractIT
+import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl
+import com.owncloud.gshare.ui.activity.RequestCredentialsActivity
+import com.owncloud.gshare.ui.activity.SettingsActivity
+import com.owncloud.gshare.utils.EncryptionUtils
+import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 
 @Suppress("FunctionNaming")
-class SettingsActivityIT : AbstractIT() {
+class SettingsActivityIT : com.owncloud.gshare.AbstractIT() {
     @get:Rule
     val activityRule = IntentsTestRule(
-        SettingsActivity::class.java,
+        com.owncloud.gshare.ui.activity.SettingsActivity::class.java,
         true,
         false
     )
@@ -49,14 +49,14 @@ class SettingsActivityIT : AbstractIT() {
     val permissionRule = GrantStoragePermissionRule.grant()
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun open() {
         val sut: Activity = activityRule.launchActivity(null)
         screenshot(sut)
     }
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun showMnemonic_Error() {
         val sut = activityRule.launchActivity(null)
         sut.handleMnemonicRequest(null)
@@ -71,9 +71,9 @@ class SettingsActivityIT : AbstractIT() {
             Looper.prepare()
         }
         val intent = Intent()
-        intent.putExtra(RequestCredentialsActivity.KEY_CHECK_RESULT, RequestCredentialsActivity.KEY_CHECK_RESULT_TRUE)
-        val arbitraryDataProvider = ArbitraryDataProviderImpl(targetContext)
-        arbitraryDataProvider.storeOrUpdateKeyValue(user.accountName, EncryptionUtils.MNEMONIC, "Secret mnemonic")
+        intent.putExtra(com.owncloud.gshare.ui.activity.RequestCredentialsActivity.KEY_CHECK_RESULT, com.owncloud.gshare.ui.activity.RequestCredentialsActivity.KEY_CHECK_RESULT_TRUE)
+        val arbitraryDataProvider = com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl(targetContext)
+        arbitraryDataProvider.storeOrUpdateKeyValue(user.accountName, com.owncloud.gshare.utils.EncryptionUtils.MNEMONIC, "Secret mnemonic")
         val sut = activityRule.launchActivity(null)
         sut.runOnUiThread {
             sut.handleMnemonicRequest(intent)

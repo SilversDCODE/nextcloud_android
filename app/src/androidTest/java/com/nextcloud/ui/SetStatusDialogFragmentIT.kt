@@ -23,18 +23,18 @@
 package com.nextcloud.ui
 
 import androidx.test.espresso.intent.rule.IntentsTestRule
-import com.owncloud.android.AbstractIT
+import com.owncloud.gshare.AbstractIT
 import com.owncloud.android.lib.resources.users.ClearAt
 import com.owncloud.android.lib.resources.users.PredefinedStatus
 import com.owncloud.android.lib.resources.users.Status
 import com.owncloud.android.lib.resources.users.StatusType
-import com.owncloud.android.ui.activity.FileDisplayActivity
+import com.owncloud.gshare.ui.activity.FileDisplayActivity
 import org.junit.Rule
 import org.junit.Test
 
-class SetStatusDialogFragmentIT : AbstractIT() {
+class SetStatusDialogFragmentIT : com.owncloud.gshare.AbstractIT() {
     @get:Rule
-    var activityRule = IntentsTestRule(FileDisplayActivity::class.java, true, false)
+    var activityRule = IntentsTestRule(com.owncloud.gshare.ui.activity.FileDisplayActivity::class.java, true, false)
 
     @Test
     fun open() {

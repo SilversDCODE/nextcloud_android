@@ -41,13 +41,13 @@ import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.android.utils.BitmapUtils
-import com.owncloud.android.utils.DisplayUtils.SVG_SIZE
-import com.owncloud.android.utils.glide.CustomGlideStreamLoader
-import com.owncloud.android.utils.glide.CustomGlideUriLoader
-import com.owncloud.android.utils.svg.SVGorImage
-import com.owncloud.android.utils.svg.SvgOrImageBitmapTranscoder
-import com.owncloud.android.utils.svg.SvgOrImageDecoder
+import com.owncloud.gshare.utils.BitmapUtils
+import com.owncloud.gshare.utils.DisplayUtils.SVG_SIZE
+import com.owncloud.gshare.utils.glide.CustomGlideStreamLoader
+import com.owncloud.gshare.utils.glide.CustomGlideUriLoader
+import com.owncloud.gshare.utils.svg.SVGorImage
+import com.owncloud.gshare.utils.svg.SvgOrImageBitmapTranscoder
+import com.owncloud.gshare.utils.svg.SvgOrImageDecoder
 import dagger.android.AndroidInjection
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -174,21 +174,29 @@ class StackRemoteViewsFactory(
                 if (Uri.parse(widgetItem.iconUrl).encodedPath!!.endsWith(".svg")) {
                     glide = Glide.with(context)
                         .using(
-                            CustomGlideUriLoader(userAccountManager.user, clientFactory),
+                            com.owncloud.gshare.utils.glide.CustomGlideUriLoader(
+                                userAccountManager.user,
+                                clientFactory
+                            ),
                             InputStream::class.java
                         )
                         .from(Uri::class.java)
-                        .`as`(SVGorImage::class.java)
-                        .transcode(SvgOrImageBitmapTranscoder(SVG_SIZE, SVG_SIZE), Bitmap::class.java)
+                        .`as`(com.owncloud.gshare.utils.svg.SVGorImage::class.java)
+                        .transcode(com.owncloud.gshare.utils.svg.SvgOrImageBitmapTranscoder(SVG_SIZE, SVG_SIZE), Bitmap::class.java)
                         .sourceEncoder(StreamEncoder())
-                        .cacheDecoder(FileToStreamDecoder(SvgOrImageDecoder()))
-                        .decoder(SvgOrImageDecoder())
+                        .cacheDecoder(FileToStreamDecoder(com.owncloud.gshare.utils.svg.SvgOrImageDecoder()))
+                        .decoder(com.owncloud.gshare.utils.svg.SvgOrImageDecoder())
                         .diskCacheStrategy(DiskCacheStrategy.SOURCE)
                         .load(Uri.parse(widgetItem.iconUrl))
                         .into(SVG_SIZE, SVG_SIZE)
                 } else {
                     glide = Glide.with(context)
-                        .using(CustomGlideStreamLoader(widgetConfiguration.user.get(), clientFactory))
+                        .using(
+                            com.owncloud.gshare.utils.glide.CustomGlideStreamLoader(
+                                widgetConfiguration.user.get(),
+                                clientFactory
+                            )
+                        )
                         .load(widgetItem.iconUrl)
                         .asBitmap()
                         .into(SVG_SIZE, SVG_SIZE)
@@ -196,7 +204,7 @@ class StackRemoteViewsFactory(
 
                 try {
                     if (widgetConfiguration.roundIcon) {
-                        setImageViewBitmap(R.id.icon, BitmapUtils.roundBitmap(glide.get()))
+                        setImageViewBitmap(R.id.icon, com.owncloud.gshare.utils.BitmapUtils.roundBitmap(glide.get()))
                     } else {
                         setImageViewBitmap(R.id.icon, glide.get())
                     }

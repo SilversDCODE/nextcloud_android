@@ -35,15 +35,15 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.nextcloud.client.account.User
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.files.services.FileDownloader
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.files.services.FileDownloader
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.operations.DownloadType
-import com.owncloud.android.ui.dialog.SendShareDialog
-import com.owncloud.android.ui.notifications.NotificationUtils
+import com.owncloud.gshare.ui.dialog.SendShareDialog
+import com.owncloud.gshare.ui.notifications.NotificationUtils
 import com.owncloud.android.utils.FileExportUtils
-import com.owncloud.android.utils.FileStorageUtils
+import com.owncloud.gshare.utils.FileStorageUtils
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import java.security.SecureRandom
 
@@ -55,7 +55,7 @@ class FilesExportWork(
     params: WorkerParameters
 ) : Worker(appContext, params) {
 
-    private lateinit var storageManager: FileDataStorageManager
+    private lateinit var storageManager: com.owncloud.gshare.datamodel.FileDataStorageManager
 
     override fun doWork(): Result {
         val fileIDs = inputData.getLongArray(FILES_TO_DOWNLOAD) ?: LongArray(0)
@@ -65,7 +65,7 @@ class FilesExportWork(
             return Result.success()
         }
 
-        storageManager = FileDataStorageManager(user, contentResolver)
+        storageManager = com.owncloud.gshare.datamodel.FileDataStorageManager(user, contentResolver)
 
         val successfulExports = exportFiles(fileIDs)
 
@@ -82,7 +82,7 @@ class FilesExportWork(
             .map { storageManager.getFileById(it) }
             .filterNotNull()
             .forEach { ocFile ->
-                if (!FileStorageUtils.checkIfEnoughSpace(ocFile)) {
+                if (!com.owncloud.gshare.utils.FileStorageUtils.checkIfEnoughSpace(ocFile)) {
                     showErrorNotification(successfulExports)
                     return@forEach
                 }
@@ -104,17 +104,17 @@ class FilesExportWork(
     }
 
     @Throws(IllegalStateException::class)
-    private fun exportFile(ocFile: OCFile) {
+    private fun exportFile(ocFile: com.owncloud.gshare.datamodel.OCFile) {
         FileExportUtils().exportFile(ocFile.fileName, ocFile.mimeType, contentResolver, ocFile, null)
     }
 
-    private fun downloadFile(ocFile: OCFile) {
-        val i = Intent(appContext, FileDownloader::class.java)
-        i.putExtra(FileDownloader.EXTRA_USER, user)
-        i.putExtra(FileDownloader.EXTRA_FILE, ocFile)
-        i.putExtra(SendShareDialog.PACKAGE_NAME, "")
-        i.putExtra(SendShareDialog.ACTIVITY_NAME, "")
-        i.putExtra(FileDownloader.DOWNLOAD_TYPE, DownloadType.EXPORT)
+    private fun downloadFile(ocFile: com.owncloud.gshare.datamodel.OCFile) {
+        val i = Intent(appContext, com.owncloud.gshare.files.services.FileDownloader::class.java)
+        i.putExtra(com.owncloud.gshare.files.services.FileDownloader.EXTRA_USER, user)
+        i.putExtra(com.owncloud.gshare.files.services.FileDownloader.EXTRA_FILE, ocFile)
+        i.putExtra(com.owncloud.gshare.ui.dialog.SendShareDialog.PACKAGE_NAME, "")
+        i.putExtra(com.owncloud.gshare.ui.dialog.SendShareDialog.ACTIVITY_NAME, "")
+        i.putExtra(com.owncloud.gshare.files.services.FileDownloader.DOWNLOAD_TYPE, DownloadType.EXPORT)
         appContext.startService(i)
     }
 
@@ -149,7 +149,7 @@ class FilesExportWork(
 
         val notificationBuilder = NotificationCompat.Builder(
             appContext,
-            NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD
+            com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD
         )
             .setSmallIcon(R.drawable.notification_icon)
             .setLargeIcon(BitmapFactory.decodeResource(appContext.resources, R.drawable.notification_icon))

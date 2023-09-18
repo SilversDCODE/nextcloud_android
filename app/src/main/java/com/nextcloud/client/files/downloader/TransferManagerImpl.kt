@@ -23,8 +23,8 @@ import com.nextcloud.client.core.AsyncRunner
 import com.nextcloud.client.core.IsCancelled
 import com.nextcloud.client.core.OnProgressCallback
 import com.nextcloud.client.core.TaskFunction
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.operations.UploadFileOperation
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.operations.UploadFileOperation
 import java.util.UUID
 
 /**
@@ -92,7 +92,7 @@ class TransferManagerImpl(
 
     override fun getTransfer(uuid: UUID): Transfer? = registry.getTransfer(uuid)
 
-    override fun getTransfer(file: OCFile): Transfer? = registry.getTransfer(file)
+    override fun getTransfer(file: com.owncloud.gshare.datamodel.OCFile): Transfer? = registry.getTransfer(file)
 
     private fun onStartTransfer(uuid: UUID, request: Request) {
         if (request is DownloadRequest) {
@@ -129,7 +129,7 @@ class TransferManagerImpl(
     private fun createUploadTask(request: UploadRequest): TaskFunction<UploadTask.Result, Int> {
         return if (request.test) {
             { progress: OnProgressCallback<Int>, isCancelled: IsCancelled ->
-                val file = UploadFileOperation.obtainNewOCFileToUpload(
+                val file = com.owncloud.gshare.operations.UploadFileOperation.obtainNewOCFileToUpload(
                     request.upload.remotePath,
                     request.upload.localPath,
                     request.upload.mimeType
@@ -158,7 +158,7 @@ class TransferManagerImpl(
      *  any network traffic. It is used for development.
      */
     private fun testDownloadTask(
-        file: OCFile,
+        file: com.owncloud.gshare.datamodel.OCFile,
         onProgress: OnProgressCallback<Int>,
         isCancelled: IsCancelled
     ): DownloadTask.Result {
@@ -177,7 +177,7 @@ class TransferManagerImpl(
      *  any network traffic. It is used for development.
      */
     private fun testUploadTask(
-        file: OCFile,
+        file: com.owncloud.gshare.datamodel.OCFile,
         onProgress: OnProgressCallback<Int>,
         isCancelled: IsCancelled
     ): UploadTask.Result {

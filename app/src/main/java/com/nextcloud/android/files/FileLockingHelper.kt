@@ -21,7 +21,7 @@
 
 package com.nextcloud.android.files
 
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.resources.files.model.FileLockType
 
 object FileLockingHelper {
@@ -29,7 +29,7 @@ object FileLockingHelper {
      * Checks whether the given `userId` can unlock the [OCFile].
      */
     @JvmStatic
-    fun canUserUnlockFile(userId: String, file: OCFile): Boolean {
+    fun canUserUnlockFile(userId: String, file: com.owncloud.gshare.datamodel.OCFile): Boolean {
         if (!file.isLocked || file.lockOwnerId == null || file.lockType != FileLockType.MANUAL) {
             return false
         }

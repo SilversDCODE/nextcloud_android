@@ -19,7 +19,7 @@
  */
 package com.nextcloud.client.files.downloader
 
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import java.util.LinkedHashMap
 import java.util.UUID
 import kotlin.math.max
@@ -112,7 +112,7 @@ internal class Registry(
      * @param success if true, transfer will be marked as completed; if false - as failed
      * @param file if provided, update file in transfer status; if null, existing value is retained
      */
-    fun complete(uuid: UUID, success: Boolean, file: OCFile? = null) {
+    fun complete(uuid: UUID, success: Boolean, file: com.owncloud.gshare.datamodel.OCFile? = null) {
         val transfer = runningQueue.remove(uuid)
         if (transfer != null) {
             val status = if (success) {
@@ -135,7 +135,7 @@ internal class Registry(
      * @param file Search for a file transfer
      * @return transfer status if found, null otherwise
      */
-    fun getTransfer(file: OCFile): Transfer? {
+    fun getTransfer(file: com.owncloud.gshare.datamodel.OCFile): Transfer? {
         arrayOf(pendingQueue, runningQueue, completedQueue).forEach { queue ->
             queue.forEach { entry ->
                 if (entry.value.request.file.remotePath == file.remotePath) {

@@ -22,7 +22,7 @@ package com.nextcloud.client.files.downloader
 import android.content.ComponentName
 import android.content.Context
 import com.nextcloud.client.account.MockUser
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
@@ -56,7 +56,7 @@ class TransferManagerConnectionTest {
     @MockK
     lateinit var binder: FileTransferService.Binder
 
-    val file get() = OCFile("/path")
+    val file get() = com.owncloud.gshare.datamodel.OCFile("/path")
     val componentName = ComponentName("", FileTransferService::class.java.simpleName)
     val user = MockUser()
 

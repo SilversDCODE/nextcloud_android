@@ -25,9 +25,9 @@ package com.nextcloud.client;
 import android.app.Activity;
 
 import com.nextcloud.test.GrantStoragePermissionRule;
-import com.owncloud.android.AbstractIT;
-import com.owncloud.android.ui.activity.CommunityActivity;
-import com.owncloud.android.utils.ScreenshotTest;
+import com.owncloud.gshare.AbstractIT;
+import com.owncloud.gshare.ui.activity.CommunityActivity;
+import com.owncloud.gshare.utils.ScreenshotTest;
 
 import org.junit.Rule;
 import org.junit.Test;

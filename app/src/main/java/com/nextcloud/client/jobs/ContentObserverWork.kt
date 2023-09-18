@@ -25,7 +25,7 @@ import androidx.annotation.RequiresApi
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.nextcloud.client.device.PowerManagementService
-import com.owncloud.android.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.SyncedFolderProvider
 
 /**
  * This work is triggered when OS detects change in media folders.
@@ -38,7 +38,7 @@ import com.owncloud.android.datamodel.SyncedFolderProvider
 class ContentObserverWork(
     appContext: Context,
     private val params: WorkerParameters,
-    private val syncerFolderProvider: SyncedFolderProvider,
+    private val syncerFolderProvider: com.owncloud.gshare.datamodel.SyncedFolderProvider,
     private val powerManagementService: PowerManagementService,
     private val backgroundJobManager: BackgroundJobManager
 ) : Worker(appContext, params) {

@@ -53,10 +53,10 @@ import com.owncloud.android.lib.resources.users.ClearAt
 import com.owncloud.android.lib.resources.users.PredefinedStatus
 import com.owncloud.android.lib.resources.users.Status
 import com.owncloud.android.lib.resources.users.StatusType
-import com.owncloud.android.ui.activity.BaseActivity
+import com.owncloud.gshare.ui.activity.BaseActivity
 import com.owncloud.android.ui.adapter.PredefinedStatusClickListener
 import com.owncloud.android.ui.adapter.PredefinedStatusListAdapter
-import com.owncloud.android.utils.DisplayUtils
+import com.owncloud.gshare.utils.DisplayUtils
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import com.vanniktech.emoji.EmojiManager
 import com.vanniktech.emoji.EmojiPopup
@@ -147,7 +147,7 @@ class SetStatusDialogFragment :
     @SuppressLint("DefaultLocale")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        accountManager = (activity as BaseActivity).userAccountManager
+        accountManager = (activity as _root_ide_package_.com.owncloud.gshare.ui.activity.BaseActivity).userAccountManager
 
         currentStatus?.let {
             updateCurrentStatusViews(it)
@@ -224,7 +224,7 @@ class SetStatusDialogFragment :
             binding.remainingClearTime.apply {
                 binding.clearStatusMessageTextView.text = getString(R.string.clear_status_message)
                 visibility = View.VISIBLE
-                text = DisplayUtils.getRelativeTimestamp(context, it.clearAt * ONE_SECOND_IN_MILLIS, true)
+                text = _root_ide_package_.com.owncloud.gshare.utils.DisplayUtils.getRelativeTimestamp(context, it.clearAt * ONE_SECOND_IN_MILLIS, true)
                     .toString()
                     .replaceFirstChar { it.lowercase(Locale.getDefault()) }
                 setOnClickListener {

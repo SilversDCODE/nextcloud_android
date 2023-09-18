@@ -27,7 +27,7 @@ import android.os.Build
 import android.os.IBinder
 import android.widget.MediaController
 import com.nextcloud.client.account.User
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import java.lang.IllegalStateException
 
 @Suppress("TooManyFunctions") // implementing large interface
@@ -51,7 +51,7 @@ class PlayerServiceConnection(private val context: Context) : MediaController.Me
         }
     }
 
-    fun start(user: User, file: OCFile, playImmediately: Boolean, position: Long) {
+    fun start(user: User, file: com.owncloud.gshare.datamodel.OCFile, playImmediately: Boolean, position: Long) {
         val i = Intent(context, PlayerService::class.java)
         i.putExtra(PlayerService.EXTRA_USER, user)
         i.putExtra(PlayerService.EXTRA_FILE, file)
@@ -61,7 +61,7 @@ class PlayerServiceConnection(private val context: Context) : MediaController.Me
         startForegroundService(i)
     }
 
-    fun stop(file: OCFile) {
+    fun stop(file: com.owncloud.gshare.datamodel.OCFile) {
         val i = Intent(context, PlayerService::class.java)
         i.putExtra(PlayerService.EXTRA_FILE, file)
         i.action = PlayerService.ACTION_STOP_FILE

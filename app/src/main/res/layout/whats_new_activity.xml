@@ -66,13 +66,13 @@
             android:paddingRight="0dp"
             android:text="@string/whats_new_skip"/>
 
-        <com.owncloud.android.ui.whatsnew.ProgressIndicator
+        <com.owncloud.gshare.ui.whatsnew.ProgressIndicator
             android:id="@+id/progressIndicator"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical|center_horizontal"
             android:layout_weight="1">
-        </com.owncloud.android.ui.whatsnew.ProgressIndicator>
+        </com.owncloud.gshare.ui.whatsnew.ProgressIndicator>
 
         <LinearLayout
             android:layout_width="0dp"

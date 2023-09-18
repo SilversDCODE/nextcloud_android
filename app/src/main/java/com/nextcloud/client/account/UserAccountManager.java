@@ -25,8 +25,8 @@ import android.app.Activity;
 import android.content.Intent;
 
 import com.nextcloud.java.util.Optional;
-import com.owncloud.android.MainApp;
-import com.owncloud.android.datamodel.OCFile;
+import com.owncloud.gshare.MainApp;
+import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.OwnCloudAccount;
 import com.owncloud.android.lib.common.accounts.AccountUtils;
 import com.owncloud.android.lib.resources.status.OwnCloudVersion;

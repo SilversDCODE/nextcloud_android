@@ -24,7 +24,7 @@ import android.content.Intent
 import android.os.IBinder
 import com.nextcloud.client.account.User
 import com.nextcloud.client.core.LocalConnection
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import java.util.UUID
 
 class TransferManagerConnection(
@@ -45,7 +45,7 @@ class TransferManagerConnection(
 
     override fun getTransfer(uuid: UUID): Transfer? = binder?.getTransfer(uuid)
 
-    override fun getTransfer(file: OCFile): Transfer? = binder?.getTransfer(file)
+    override fun getTransfer(file: com.owncloud.gshare.datamodel.OCFile): Transfer? = binder?.getTransfer(file)
 
     override fun enqueue(request: Request) {
         val intent = FileTransferService.createTransferRequestIntent(context, request)

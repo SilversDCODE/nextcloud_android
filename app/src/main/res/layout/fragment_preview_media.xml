@@ -26,7 +26,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    tools:context=".ui.preview.PreviewMediaFragment">
+    tools:context="com.owncloud.gshare.ui.preview.PreviewMediaFragment">
 
     <ImageView
         android:id="@+id/image_preview"
@@ -46,7 +46,7 @@
         app:show_buffering="always"
         app:show_next_button="false" />
 
-    <com.owncloud.android.media.MediaControlView
+    <com.owncloud.gshare.media.MediaControlView
         android:id="@+id/media_controller"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

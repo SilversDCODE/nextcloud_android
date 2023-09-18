@@ -18,8 +18,8 @@ import com.nextcloud.client.files.downloader.Transfer
 import com.nextcloud.client.files.downloader.TransferManager
 import com.nextcloud.client.files.downloader.UploadRequest
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.db.OCUpload
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.db.OCUpload
 
 class EtmFileTransferFragment : EtmBaseFragment() {
 
@@ -146,7 +146,7 @@ class EtmFileTransferFragment : EtmBaseFragment() {
     private fun scheduleTestDownload() {
         val request = DownloadRequest(
             vm.currentUser,
-            OCFile(TEST_DOWNLOAD_DUMMY_PATH),
+            com.owncloud.gshare.datamodel.OCFile(TEST_DOWNLOAD_DUMMY_PATH),
             true
         )
         vm.transferManagerConnection.enqueue(request)
@@ -155,7 +155,11 @@ class EtmFileTransferFragment : EtmBaseFragment() {
     private fun scheduleTestUpload() {
         val request = UploadRequest(
             vm.currentUser,
-            OCUpload(TEST_DOWNLOAD_DUMMY_PATH, TEST_DOWNLOAD_DUMMY_PATH, vm.currentUser.accountName),
+            com.owncloud.gshare.db.OCUpload(
+                TEST_DOWNLOAD_DUMMY_PATH,
+                TEST_DOWNLOAD_DUMMY_PATH,
+                vm.currentUser.accountName
+            ),
             true
         )
         vm.transferManagerConnection.enqueue(request)

@@ -25,9 +25,9 @@ package com.nextcloud.client.utils
 import android.content.Context
 import android.content.Intent
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.owncloud.android.files.services.FileUploader
+import com.owncloud.gshare.files.services.FileUploader
 import com.owncloud.android.lib.common.operations.RemoteOperationResult
-import com.owncloud.android.operations.UploadFileOperation
+import com.owncloud.gshare.operations.UploadFileOperation
 
 class FileUploaderDelegate {
     /**
@@ -36,7 +36,7 @@ class FileUploaderDelegate {
      * TODO - no more broadcasts, replace with a callback to subscribed listeners once we drop FileUploader
      */
     fun sendBroadcastUploadsAdded(context: Context, localBroadcastManager: LocalBroadcastManager) {
-        val start = Intent(FileUploader.getUploadsAddedMessage())
+        val start = Intent(com.owncloud.gshare.files.services.FileUploader.getUploadsAddedMessage())
         // nothing else needed right now
         start.setPackage(context.packageName)
         localBroadcastManager.sendBroadcast(start)
@@ -50,14 +50,14 @@ class FileUploaderDelegate {
      * @param upload Finished upload operation
      */
     fun sendBroadcastUploadStarted(
-        upload: UploadFileOperation,
+        upload: com.owncloud.gshare.operations.UploadFileOperation,
         context: Context,
         localBroadcastManager: LocalBroadcastManager
     ) {
-        val start = Intent(FileUploader.getUploadStartMessage())
-        start.putExtra(FileUploader.EXTRA_REMOTE_PATH, upload.remotePath) // real remote
-        start.putExtra(FileUploader.EXTRA_OLD_FILE_PATH, upload.originalStoragePath)
-        start.putExtra(FileUploader.ACCOUNT_NAME, upload.user.accountName)
+        val start = Intent(com.owncloud.gshare.files.services.FileUploader.getUploadStartMessage())
+        start.putExtra(com.owncloud.gshare.files.services.FileUploader.EXTRA_REMOTE_PATH, upload.remotePath) // real remote
+        start.putExtra(com.owncloud.gshare.files.services.FileUploader.EXTRA_OLD_FILE_PATH, upload.originalStoragePath)
+        start.putExtra(com.owncloud.gshare.files.services.FileUploader.ACCOUNT_NAME, upload.user.accountName)
         start.setPackage(context.packageName)
         localBroadcastManager.sendBroadcast(start)
     }
@@ -72,23 +72,23 @@ class FileUploaderDelegate {
      * @param unlinkedFromRemotePath Path in the uploads tree where the upload was unlinked from
      */
     fun sendBroadcastUploadFinished(
-        upload: UploadFileOperation,
+        upload: com.owncloud.gshare.operations.UploadFileOperation,
         uploadResult: RemoteOperationResult<*>,
         unlinkedFromRemotePath: String?,
         context: Context,
         localBroadcastManager: LocalBroadcastManager
     ) {
-        val end = Intent(FileUploader.getUploadFinishMessage())
+        val end = Intent(com.owncloud.gshare.files.services.FileUploader.getUploadFinishMessage())
         // real remote path, after possible automatic renaming
-        end.putExtra(FileUploader.EXTRA_REMOTE_PATH, upload.remotePath)
+        end.putExtra(com.owncloud.gshare.files.services.FileUploader.EXTRA_REMOTE_PATH, upload.remotePath)
         if (upload.wasRenamed()) {
-            end.putExtra(FileUploader.EXTRA_OLD_REMOTE_PATH, upload.oldFile!!.remotePath)
+            end.putExtra(com.owncloud.gshare.files.services.FileUploader.EXTRA_OLD_REMOTE_PATH, upload.oldFile!!.remotePath)
         }
-        end.putExtra(FileUploader.EXTRA_OLD_FILE_PATH, upload.originalStoragePath)
-        end.putExtra(FileUploader.ACCOUNT_NAME, upload.user.accountName)
-        end.putExtra(FileUploader.EXTRA_UPLOAD_RESULT, uploadResult.isSuccess)
+        end.putExtra(com.owncloud.gshare.files.services.FileUploader.EXTRA_OLD_FILE_PATH, upload.originalStoragePath)
+        end.putExtra(com.owncloud.gshare.files.services.FileUploader.ACCOUNT_NAME, upload.user.accountName)
+        end.putExtra(com.owncloud.gshare.files.services.FileUploader.EXTRA_UPLOAD_RESULT, uploadResult.isSuccess)
         if (unlinkedFromRemotePath != null) {
-            end.putExtra(FileUploader.EXTRA_LINKED_TO_PATH, unlinkedFromRemotePath)
+            end.putExtra(com.owncloud.gshare.files.services.FileUploader.EXTRA_LINKED_TO_PATH, unlinkedFromRemotePath)
         }
         end.setPackage(context.packageName)
         localBroadcastManager.sendBroadcast(end)

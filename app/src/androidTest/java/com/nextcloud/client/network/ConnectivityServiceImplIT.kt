@@ -27,12 +27,12 @@ import android.net.ConnectivityManager
 import com.nextcloud.client.account.UserAccountManagerImpl
 import com.nextcloud.client.core.ClockImpl
 import com.nextcloud.client.network.ConnectivityServiceImpl.GetRequestBuilder
-import com.owncloud.android.AbstractOnServerIT
+import com.owncloud.gshare.AbstractOnServerIT
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
-class ConnectivityServiceImplIT : AbstractOnServerIT() {
+class ConnectivityServiceImplIT : com.owncloud.gshare.AbstractOnServerIT() {
     @Test
     fun testInternetWalled() {
         val connectivityManager = targetContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

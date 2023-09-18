@@ -22,11 +22,11 @@ package com.nextcloud.client.files.downloader
 import android.content.ContentResolver
 import android.content.Context
 import com.nextcloud.client.core.IsCancelled
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.OwnCloudClient
-import com.owncloud.android.operations.DownloadFileOperation
-import com.owncloud.android.utils.MimeTypeUtil
+import com.owncloud.gshare.operations.DownloadFileOperation
+import com.owncloud.gshare.utils.MimeTypeUtil
 import java.io.File
 
 /**
@@ -42,7 +42,7 @@ class DownloadTask(
     val clientProvider: () -> OwnCloudClient
 ) {
 
-    data class Result(val file: OCFile, val success: Boolean)
+    data class Result(val file: com.owncloud.gshare.datamodel.OCFile, val success: Boolean)
 
     /**
      * This class is a helper factory to to keep static dependencies
@@ -63,11 +63,11 @@ class DownloadTask(
     }
 
     fun download(request: DownloadRequest, progress: (Int) -> Unit, isCancelled: IsCancelled): Result {
-        val op = DownloadFileOperation(request.user, request.file, context)
+        val op = com.owncloud.gshare.operations.DownloadFileOperation(request.user, request.file, context)
         val client = clientProvider.invoke()
         val result = op.execute(client)
         if (result.isSuccess) {
-            val storageManager = FileDataStorageManager(
+            val storageManager = com.owncloud.gshare.datamodel.FileDataStorageManager(
                 request.user,
                 contentResolver
             )
@@ -78,8 +78,8 @@ class DownloadTask(
         }
     }
 
-    private fun saveDownloadedFile(op: DownloadFileOperation, storageManager: FileDataStorageManager): OCFile {
-        val file = storageManager.getFileById(op.getFile().getFileId()) as OCFile
+    private fun saveDownloadedFile(op: com.owncloud.gshare.operations.DownloadFileOperation, storageManager: com.owncloud.gshare.datamodel.FileDataStorageManager): com.owncloud.gshare.datamodel.OCFile {
+        val file = storageManager.getFileById(op.getFile().getFileId()) as com.owncloud.gshare.datamodel.OCFile
         val syncDate = System.currentTimeMillis()
         file.lastSyncDateForProperties = syncDate
         file.lastSyncDateForData = syncDate
@@ -92,8 +92,8 @@ class DownloadTask(
         file.fileLength = File(op.getSavePath()).length()
         file.remoteId = op.getFile().getRemoteId()
         storageManager.saveFile(file)
-        if (MimeTypeUtil.isMedia(op.getMimeType())) {
-            FileDataStorageManager.triggerMediaScan(file.storagePath)
+        if (com.owncloud.gshare.utils.MimeTypeUtil.isMedia(op.getMimeType())) {
+            com.owncloud.gshare.datamodel.FileDataStorageManager.triggerMediaScan(file.storagePath)
         }
         return file
     }

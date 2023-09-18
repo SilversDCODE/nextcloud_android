@@ -32,7 +32,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <com.owncloud.android.ui.EmptyRecyclerView
+            <com.owncloud.gshare.ui.EmptyRecyclerView
                 android:id="@+id/list_root"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />

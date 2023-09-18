@@ -23,7 +23,7 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import com.nextcloud.client.account.User
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 
 /**
  * This interface allows to control, schedule and monitor all application
@@ -127,7 +127,7 @@ interface BackgroundJobManager {
      */
     fun startImmediateCalendarImport(calendarPaths: Map<String, Int>): LiveData<JobInfo?>
 
-    fun startImmediateFilesExportJob(files: Collection<OCFile>): LiveData<JobInfo?>
+    fun startImmediateFilesExportJob(files: Collection<com.owncloud.gshare.datamodel.OCFile>): LiveData<JobInfo?>
 
     fun schedulePeriodicFilesSyncJob()
     fun startImmediateFilesSyncJob(skipCustomFolders: Boolean = false, overridePowerSaving: Boolean = false)

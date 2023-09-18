@@ -36,12 +36,12 @@ import android.text.TextUtils;
 
 import com.nextcloud.common.NextcloudClient;
 import com.nextcloud.java.util.Optional;
-import com.owncloud.android.MainApp;
+import com.owncloud.gshare.MainApp;
 import com.owncloud.android.R;
-import com.owncloud.android.authentication.AuthenticatorActivity;
+import com.owncloud.gshare.authentication.AuthenticatorActivity;
 import com.owncloud.android.datamodel.ArbitraryDataProvider;
-import com.owncloud.android.datamodel.ArbitraryDataProviderImpl;
-import com.owncloud.android.datamodel.OCFile;
+import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
+import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.OwnCloudAccount;
 import com.owncloud.android.lib.common.OwnCloudClientManagerFactory;
 import com.owncloud.android.lib.common.UserInfo;

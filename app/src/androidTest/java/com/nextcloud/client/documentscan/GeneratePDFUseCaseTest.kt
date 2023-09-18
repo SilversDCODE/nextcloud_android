@@ -25,7 +25,7 @@ package com.nextcloud.client.documentscan
 import android.graphics.pdf.PdfRenderer
 import android.os.ParcelFileDescriptor
 import com.nextcloud.client.logger.Logger
-import com.owncloud.android.AbstractIT
+import com.owncloud.gshare.AbstractIT
 import io.mockk.MockKAnnotations
 import io.mockk.impl.annotations.MockK
 import org.junit.Assert.assertFalse
@@ -34,7 +34,7 @@ import org.junit.Before
 import org.junit.Test
 import java.io.File
 
-internal class GeneratePDFUseCaseTest : AbstractIT() {
+internal class GeneratePDFUseCaseTest : com.owncloud.gshare.AbstractIT() {
 
     @MockK
     private lateinit var logger: Logger

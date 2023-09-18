@@ -28,18 +28,18 @@ import androidx.test.espresso.contrib.NavigationViewActions
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.rule.GrantPermissionRule
-import com.owncloud.android.AbstractIT
+import com.owncloud.gshare.AbstractIT
 import com.owncloud.android.R
-import com.owncloud.android.ui.activity.FileDisplayActivity
-import com.owncloud.android.utils.ScreenshotTest
+import com.owncloud.gshare.ui.activity.FileDisplayActivity
+import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 
-class FileDisplayActivityScreenshotIT : AbstractIT() {
+class FileDisplayActivityScreenshotIT : com.owncloud.gshare.AbstractIT() {
     @get:Rule
     val activityRule = IntentsTestRule(
-        FileDisplayActivity::class.java,
+        com.owncloud.gshare.ui.activity.FileDisplayActivity::class.java,
         true,
         false
     )
@@ -50,7 +50,7 @@ class FileDisplayActivityScreenshotIT : AbstractIT() {
     )
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun open() {
         val sut = activityRule.launchActivity(null)
 
@@ -67,7 +67,7 @@ class FileDisplayActivityScreenshotIT : AbstractIT() {
     }
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun showMediaThenAllFiles() {
         val fileDisplayActivity = activityRule.launchActivity(null)
         val sut = fileDisplayActivity.listOfFilesFragment
@@ -101,7 +101,7 @@ class FileDisplayActivityScreenshotIT : AbstractIT() {
     }
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun drawer() {
         val sut = activityRule.launchActivity(null)
         Espresso.onView(ViewMatchers.withId(R.id.drawer_layout)).perform(DrawerActions.open())

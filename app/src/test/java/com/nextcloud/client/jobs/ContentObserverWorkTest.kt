@@ -24,7 +24,7 @@ import android.content.Context
 import android.net.Uri
 import androidx.work.WorkerParameters
 import com.nextcloud.client.device.PowerManagementService
-import com.owncloud.android.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.SyncedFolderProvider
 import org.junit.Before
 import org.junit.Ignore
 import org.junit.Test
@@ -45,7 +45,7 @@ class ContentObserverWorkTest {
     lateinit var context: Context
 
     @Mock
-    lateinit var folderProvider: SyncedFolderProvider
+    lateinit var folderProvider: _root_ide_package_.com.owncloud.gshare.datamodel.SyncedFolderProvider
 
     @Mock
     lateinit var powerManagementService: PowerManagementService

@@ -75,7 +75,7 @@
         android:required="false" />
 
     <application
-        android:name=".MainApp"
+        android:name="com.owncloud.gshare.MainApp"
         android:allowBackup="false"
         android:fullBackupContent="@xml/backup_config"
         android:dataExtractionRules="@xml/backup_rules"
@@ -97,7 +97,7 @@
             android:required="false" />
 
         <activity
-            android:name=".ui.activity.FileDisplayActivity"
+            android:name="com.owncloud.gshare.ui.activity.FileDisplayActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:launchMode="singleTop"
@@ -130,19 +130,19 @@
                 android:resource="@xml/users_and_groups_searchable" />
         </activity>
         <activity
-            android:name=".ui.activity.ManageAccountsActivity"
+            android:name="com.owncloud.gshare.ui.activity.ManageAccountsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.UserInfoActivity"
+            android:name="com.owncloud.gshare.ui.activity.UserInfoActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.NotificationsActivity"
+            android:name="com.owncloud.gshare.ui.activity.NotificationsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.CommunityActivity"
+            android:name="com.owncloud.gshare.ui.activity.CommunityActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.ActivitiesActivity"
+            android:name="com.owncloud.gshare.ui.activities.ActivitiesActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="false" />
         <activity
@@ -175,15 +175,15 @@
         </receiver>
 
         <activity
-            android:name=".ui.activity.UploadFilesActivity"
+            android:name="com.owncloud.gshare.ui.activity.UploadFilesActivity"
             android:configChanges="orientation|screenSize"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.ExternalSiteWebView"
+            android:name="com.owncloud.gshare.ui.activity.ExternalSiteWebView"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.RichDocumentsEditorWebView"
+            android:name="com.owncloud.gshare.ui.activity.RichDocumentsEditorWebView"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
             android:exported="false" />
         <activity
@@ -195,11 +195,11 @@
             android:theme="@style/Theme.NoBackground"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.ContactsPreferenceActivity"
+            android:name="com.owncloud.gshare.ui.activity.ContactsPreferenceActivity"
             android:exported="false"
             android:launchMode="singleInstance" />
         <activity
-            android:name=".ui.activity.ReceiveExternalFilesActivity"
+            android:name="com.owncloud.gshare.ui.activity.ReceiveExternalFilesActivity"
             android:excludeFromRecents="true"
             android:exported="true"
             android:taskAffinity=""
@@ -216,15 +216,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.SettingsActivity"
+            android:name="com.owncloud.gshare.ui.activity.SettingsActivity"
             android:exported="false"
             android:theme="@style/PreferenceTheme" />
         <activity
-            android:name=".ui.preview.PreviewImageActivity"
+            android:name="com.owncloud.gshare.ui.preview.PreviewImageActivity"
             android:exported="false"
             android:theme="@style/Theme.ownCloud.Overlay" />
         <service
-            android:name=".authentication.AccountAuthenticatorService"
+            android:name="com.owncloud.gshare.authentication.AccountAuthenticatorService"
             android:exported="false">
             <intent-filter android:priority="100">
                 <action android:name="android.accounts.AccountAuthenticator" />
@@ -235,7 +235,7 @@
                 android:resource="@xml/authenticator" />
         </service>
         <service
-            android:name=".syncadapter.FileSyncService"
+            android:name="com.owncloud.gshare.syncadapter.FileSyncService"
             android:exported="true"
             tools:ignore="ExportedService">
             <intent-filter>
@@ -252,7 +252,7 @@
             android:exported="true" />
 
         <provider
-            android:name=".providers.FileContentProvider"
+            android:name="com.owncloud.gshare.providers.FileContentProvider"
             android:authorities="@string/authority"
             android:enabled="true"
             android:exported="true"
@@ -289,14 +289,14 @@
         </provider>
 
         <provider
-            android:name=".providers.UsersAndGroupsSearchProvider"
+            android:name="com.owncloud.gshare.providers.UsersAndGroupsSearchProvider"
             android:authorities="@string/users_and_groups_search_authority"
             android:enabled="true"
             android:exported="false"
             android:label="@string/share_search" />
 
         <provider
-            android:name=".providers.DocumentsStorageProvider"
+            android:name="com.owncloud.gshare.providers.DocumentsStorageProvider"
             android:authorities="@string/document_provider_authority"
             android:enabled="true"
             android:exported="true"
@@ -318,7 +318,7 @@
                 android:resource="@xml/exposed_filepaths" />
         </provider>
         <provider
-            android:name=".providers.DiskLruImageCacheFileProvider"
+            android:name="com.owncloud.gshare.providers.DiskLruImageCacheFileProvider"
             android:authorities="@string/image_cache_provider_authority"
             android:exported="true"
             android:grantUriPermissions="true"
@@ -337,7 +337,7 @@
         </provider>
 
         <activity
-            android:name=".authentication.AuthenticatorActivity"
+            android:name="com.owncloud.gshare.authentication.AuthenticatorActivity"
             android:configChanges="orientation|screenSize|keyboard|keyboardHidden"
             android:exported="true"
             android:launchMode="singleTask"
@@ -349,7 +349,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".authentication.DeepLinkLoginActivity"
+            android:name="com.owncloud.gshare.authentication.DeepLinkLoginActivity"
             android:clearTaskOnLaunch="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true"
@@ -368,34 +368,34 @@
         </activity>
 
         <service
-            android:name=".services.OperationsService"
+            android:name="com.owncloud.gshare.services.OperationsService"
             android:exported="false" />
         <service
-            android:name=".files.services.FileDownloader"
+            android:name="com.owncloud.gshare.files.services.FileDownloader"
             android:exported="false" />
         <service
             android:name="com.nextcloud.client.files.downloader.FileTransferService"
             android:exported="false" />
         <service
-            android:name=".files.services.FileUploader"
+            android:name="com.owncloud.gshare.files.services.FileUploader"
             android:exported="false" />
         <service
             android:name="com.nextcloud.client.media.PlayerService"
             android:exported="false" />
 
         <activity
-            android:name=".ui.activity.PassCodeActivity"
+            android:name="com.owncloud.gshare.ui.activity.PassCodeActivity"
             android:exported="false"
             android:launchMode="singleTask" />
         <activity
-            android:name=".ui.activity.RequestCredentialsActivity"
+            android:name="com.owncloud.gshare.ui.activity.RequestCredentialsActivity"
             android:exported="false"
             android:launchMode="singleTask" />
         <activity
-            android:name=".ui.activity.ConflictsResolveActivity"
+            android:name="com.owncloud.gshare.ui.activity.ConflictsResolveActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.ErrorsWhileCopyingHandlerActivity"
+            android:name="com.owncloud.gshare.ui.activity.ErrorsWhileCopyingHandlerActivity"
             android:exported="false" />
         <activity
             android:name="com.nextcloud.client.logger.ui.LogsActivity"
@@ -409,10 +409,10 @@
             android:process=":crash"
             android:theme="@style/Theme.ownCloud.Toolbar" />
         <activity
-            android:name=".ui.activity.UploadListActivity"
+            android:name="com.owncloud.gshare.ui.activity.UploadListActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.trashbin.TrashbinActivity"
+            android:name="com.owncloud.gshare.ui.trashbin.TrashbinActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="true" />
         <activity
@@ -425,7 +425,7 @@
             android:theme="@style/Theme.ownCloud.noActionBar.Login" />
 
         <receiver
-            android:name=".files.BootupBroadcastReceiver"
+            android:name="com.owncloud.gshare.files.BootupBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
@@ -436,7 +436,7 @@
         </receiver>
 
         <activity
-            android:name=".ui.activity.CopyToClipboardActivity"
+            android:name="com.owncloud.gshare.ui.activity.CopyToClipboardActivity"
             android:exported="false"
             android:icon="@drawable/shared_via_link"
             android:label="@string/copy_link" />
@@ -444,13 +444,13 @@
             android:name=".ui.activity.FolderPickerActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.FilePickerActivity"
+            android:name="com.owncloud.gshare.ui.activity.FilePickerActivity"
             android:exported="false"
             android:launchMode="singleTop"
             android:theme="@style/Theme.ownCloud.Dialog.NoTitle"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ui.activity.ShareActivity"
+            android:name="com.owncloud.gshare.ui.activity.ShareActivity"
             android:exported="false"
             android:label="@string/share_dialog_title"
             android:launchMode="singleTop"
@@ -470,13 +470,13 @@
             android:theme="@style/Theme.ownCloud" />
 
         <service
-            android:name=".services.AccountManagerService"
+            android:name="com.owncloud.gshare.services.AccountManagerService"
             android:enabled="true"
             android:exported="true"
             tools:ignore="ExportedService" />
 
         <activity
-            android:name=".ui.activity.SsoGrantPermissionActivity"
+            android:name="com.owncloud.gshare.ui.activity.SsoGrantPermissionActivity"
             android:exported="true"
             android:theme="@style/Theme.ownCloud.Dialog.NoTitle" />
         <activity

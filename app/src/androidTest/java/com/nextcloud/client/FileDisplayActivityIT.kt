@@ -37,7 +37,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.platform.app.InstrumentationRegistry
 import com.nextcloud.test.RetryTestRule
-import com.owncloud.android.AbstractOnServerIT
+import com.owncloud.gshare.AbstractOnServerIT
 import com.owncloud.android.R
 import com.owncloud.android.lib.resources.files.CreateFolderRemoteOperation
 import com.owncloud.android.lib.resources.files.ExistenceCheckRemoteOperation
@@ -45,17 +45,17 @@ import com.owncloud.android.lib.resources.files.ToggleFavoriteRemoteOperation
 import com.owncloud.android.lib.resources.shares.CreateShareRemoteOperation
 import com.owncloud.android.lib.resources.shares.OCShare
 import com.owncloud.android.lib.resources.shares.ShareType
-import com.owncloud.android.operations.CreateFolderOperation
-import com.owncloud.android.ui.activity.FileDisplayActivity
+import com.owncloud.gshare.operations.CreateFolderOperation
+import com.owncloud.gshare.ui.activity.FileDisplayActivity
 import com.owncloud.android.ui.adapter.OCFileListItemViewHolder
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test
 
-class FileDisplayActivityIT : AbstractOnServerIT() {
+class FileDisplayActivityIT : com.owncloud.gshare.AbstractOnServerIT() {
     @get:Rule
     val activityRule = IntentsTestRule(
-        FileDisplayActivity::class.java,
+        com.owncloud.gshare.ui.activity.FileDisplayActivity::class.java,
         true,
         false
     )
@@ -145,7 +145,7 @@ class FileDisplayActivityIT : AbstractOnServerIT() {
 
         // given test folder
         Assert.assertTrue(
-            CreateFolderOperation("/test/", user, targetContext, storageManager)
+            com.owncloud.gshare.operations.CreateFolderOperation("/test/", user, targetContext, storageManager)
                 .execute(client)
                 .isSuccess
         )
@@ -174,10 +174,15 @@ class FileDisplayActivityIT : AbstractOnServerIT() {
         val topFolder = "folder1"
         val childFolder = "folder2"
 
-        CreateFolderOperation("/$topFolder/", user, targetContext, storageManager)
+        com.owncloud.gshare.operations.CreateFolderOperation("/$topFolder/", user, targetContext, storageManager)
             .execute(client)
 
-        CreateFolderOperation("/$topFolder/$childFolder/", user, targetContext, storageManager)
+        com.owncloud.gshare.operations.CreateFolderOperation(
+            "/$topFolder/$childFolder/",
+            user,
+            targetContext,
+            storageManager
+        )
             .execute(client)
 
         activityRule.launchActivity(null)
@@ -221,7 +226,7 @@ class FileDisplayActivityIT : AbstractOnServerIT() {
         // Create folder structure
         val topFolder = "folder1"
 
-        CreateFolderOperation("/$topFolder/", user, targetContext, storageManager)
+        com.owncloud.gshare.operations.CreateFolderOperation("/$topFolder/", user, targetContext, storageManager)
             .execute(client)
         ToggleFavoriteRemoteOperation(true, "/$topFolder/")
             .execute(client)
@@ -259,7 +264,7 @@ class FileDisplayActivityIT : AbstractOnServerIT() {
     fun switchToGridView() {
         activityRule.launchActivity(null)
         Assert.assertTrue(
-            CreateFolderOperation("/test/", user, targetContext, storageManager)
+            com.owncloud.gshare.operations.CreateFolderOperation("/test/", user, targetContext, storageManager)
                 .execute(client)
                 .isSuccess
         )

@@ -34,7 +34,7 @@
 	<PreferenceCategory
 		android:title="@string/drawer_synced_folders"
 		android:key="synced_folders_category">
-		<com.owncloud.android.ui.ThemeableSwitchPreference
+		<com.owncloud.gshare.ui.ThemeableSwitchPreference
 			android:title="@string/auto_upload_on_wifi"
 			android:key="synced_folder_on_wifi"/>
         <Preference
@@ -49,11 +49,11 @@
 			android:key="lock"
 			android:dialogTitle="@string/prefs_lock_title"
 			android:defaultValue="none"/>
-		<com.owncloud.android.ui.ThemeableSwitchPreference
+		<com.owncloud.gshare.ui.ThemeableSwitchPreference
 
 			android:title="@string/prefs_show_hidden_files"
 			android:key="show_hidden_files"/>
-        <com.owncloud.android.ui.ThemeableSwitchPreference
+        <com.owncloud.gshare.ui.ThemeableSwitchPreference
             android:title="@string/prefs_enable_media_scan_notifications"
             android:summary="@string/prefs_enable_media_scan_notifications_summary"
             android:key="show_media_scan_notifications"/>

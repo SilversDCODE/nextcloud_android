@@ -31,17 +31,17 @@ import androidx.lifecycle.viewModelScope
 import com.nextcloud.client.account.CurrentAccountProvider
 import com.nextcloud.client.logger.Logger
 import com.nextcloud.utils.TimeConstants
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.files.FileMenuFilter
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.files.FileMenuFilter
 import com.owncloud.android.lib.resources.files.model.FileLockType
-import com.owncloud.android.ui.activity.ComponentsGetter
+import com.owncloud.gshare.ui.activity.ComponentsGetter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class FileActionsViewModel @Inject constructor(
     private val currentAccountProvider: CurrentAccountProvider,
-    private val filterFactory: FileMenuFilter.Factory,
+    private val filterFactory: _root_ide_package_.com.owncloud.gshare.files.FileMenuFilter.Factory,
     private val logger: Logger
 ) :
     ViewModel() {
@@ -53,7 +53,7 @@ class FileActionsViewModel @Inject constructor(
         object Error : UiState
         data class LoadedForSingleFile(
             val actions: List<FileAction>,
-            val titleFile: OCFile?,
+            val titleFile: _root_ide_package_.com.owncloud.gshare.datamodel.OCFile?,
             val lockInfo: LockInfo? = null
         ) : UiState
 
@@ -69,8 +69,8 @@ class FileActionsViewModel @Inject constructor(
         @IdRes
         get() = _clickActionId
 
-    fun load(arguments: Bundle, componentsGetter: ComponentsGetter) {
-        val files: List<OCFile>? = arguments.getParcelableArrayList(ARG_FILES)
+    fun load(arguments: Bundle, componentsGetter: _root_ide_package_.com.owncloud.gshare.ui.activity.ComponentsGetter) {
+        val files: List<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>? = arguments.getParcelableArrayList(ARG_FILES)
         val numberOfAllFiles: Int = arguments.getInt(ARG_ALL_FILES_COUNT, 1)
         val isOverflow = arguments.getBoolean(ARG_IS_OVERFLOW, false)
         val additionalFilter: IntArray? = arguments.getIntArray(ARG_ADDITIONAL_FILTER)
@@ -84,8 +84,8 @@ class FileActionsViewModel @Inject constructor(
     }
 
     private fun load(
-        componentsGetter: ComponentsGetter,
-        files: Collection<OCFile>,
+        componentsGetter: _root_ide_package_.com.owncloud.gshare.ui.activity.ComponentsGetter,
+        files: Collection<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>,
         numberOfAllFiles: Int?,
         isOverflow: Boolean?,
         additionalFilter: IntArray?
@@ -98,9 +98,9 @@ class FileActionsViewModel @Inject constructor(
     }
 
     private fun getHiddenActions(
-        componentsGetter: ComponentsGetter,
+        componentsGetter: _root_ide_package_.com.owncloud.gshare.ui.activity.ComponentsGetter,
         numberOfAllFiles: Int?,
-        files: Collection<OCFile>,
+        files: Collection<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>,
         isOverflow: Boolean?
     ): List<Int> {
         return filterFactory.newInstance(
@@ -121,7 +121,7 @@ class FileActionsViewModel @Inject constructor(
         .filter { it.id !in toHide }
 
     private fun updateStateLoaded(
-        files: Collection<OCFile>,
+        files: Collection<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>,
         availableActions: List<FileAction>
     ) {
         val state: UiState = when (files.size) {
@@ -134,7 +134,7 @@ class FileActionsViewModel @Inject constructor(
         _uiState.postValue(state)
     }
 
-    private fun getLockInfo(file: OCFile): LockInfo? {
+    private fun getLockInfo(file: _root_ide_package_.com.owncloud.gshare.datamodel.OCFile): LockInfo? {
         val lockType = file.lockType
         val username = file.lockOwnerDisplayName ?: file.lockOwnerId
         return if (file.isLocked && lockType != null && username != null) {
@@ -144,7 +144,7 @@ class FileActionsViewModel @Inject constructor(
         }
     }
 
-    private fun getLockedUntil(file: OCFile): Long? {
+    private fun getLockedUntil(file: _root_ide_package_.com.owncloud.gshare.datamodel.OCFile): Long? {
         return if (file.lockTimestamp == 0L || file.lockTimeout == 0L) {
             null
         } else {

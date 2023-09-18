@@ -44,7 +44,7 @@ import com.nextcloud.client.database.migrations.Migration67to68
 import com.nextcloud.client.database.migrations.Migration70to71
 import com.nextcloud.client.database.migrations.RoomMigration
 import com.nextcloud.client.database.migrations.addLegacyMigrations
-import com.owncloud.android.db.ProviderMeta
+import com.owncloud.gshare.db.ProviderMeta
 
 @Database(
     entities = [
@@ -58,7 +58,7 @@ import com.owncloud.android.db.ProviderMeta
         UploadEntity::class,
         VirtualEntity::class
     ],
-    version = ProviderMeta.DB_VERSION,
+    version = com.owncloud.gshare.db.ProviderMeta.DB_VERSION,
     autoMigrations = [
         AutoMigration(from = 65, to = 66),
         AutoMigration(from = 66, to = 67),
@@ -88,7 +88,7 @@ abstract class NextcloudDatabase : RoomDatabase() {
         fun getInstance(context: Context, clock: Clock): NextcloudDatabase {
             if (INSTANCE == null) {
                 INSTANCE = Room
-                    .databaseBuilder(context, NextcloudDatabase::class.java, ProviderMeta.DB_NAME)
+                    .databaseBuilder(context, NextcloudDatabase::class.java, com.owncloud.gshare.db.ProviderMeta.DB_NAME)
                     .allowMainThreadQueries()
                     .addLegacyMigrations(clock)
                     .addMigrations(RoomMigration())

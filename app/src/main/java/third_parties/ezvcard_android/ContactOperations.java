@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 import android.os.RemoteException;
 import android.provider.ContactsContract;
 
-import com.owncloud.android.utils.DisplayUtils;
+import com.owncloud.gshare.utils.DisplayUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.text.DateFormat;

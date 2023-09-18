@@ -23,7 +23,7 @@
 package com.nextcloud.client.media
 
 import android.os.AsyncTask
-import com.owncloud.android.files.StreamMediaFileOperation
+import com.owncloud.gshare.files.StreamMediaFileOperation
 import com.owncloud.android.lib.common.OwnCloudClient
 
 internal class LoadUrlTask(
@@ -33,7 +33,7 @@ internal class LoadUrlTask(
 ) : AsyncTask<Void, Void, String>() {
 
     override fun doInBackground(vararg args: Void): String? {
-        val operation = StreamMediaFileOperation(fileId)
+        val operation = com.owncloud.gshare.files.StreamMediaFileOperation(fileId)
         val result = operation.execute(client)
         return when (result.isSuccess) {
             true -> result.data[0] as String

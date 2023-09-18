@@ -229,7 +229,7 @@
             android:paddingEnd="@dimen/list_item_share_right_margin"
             android:src="@drawable/ic_unshared" />
 
-        <com.owncloud.android.ui.AvatarGroupLayout
+        <com.owncloud.gshare.ui.AvatarGroupLayout
             android:id="@+id/sharedAvatars"
             android:layout_width="100dp"
             android:layout_height="@dimen/min_list_item_size"

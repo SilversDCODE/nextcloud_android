@@ -21,8 +21,9 @@
 package com.nextcloud.client.preferences;
 
 import com.nextcloud.appReview.AppReviewShownModel;
-import com.owncloud.android.datamodel.OCFile;
+import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.utils.FileSortOrder;
+import com.owncloud.gshare.ui.fragment.OCFileListFragment;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -133,7 +134,7 @@ public interface AppPreferences {
      *
      * @param folder Folder
      * @return preference value, default is
-     * {@link com.owncloud.android.ui.fragment.OCFileListFragment#FOLDER_LAYOUT_LIST}
+     * {@link OCFileListFragment#FOLDER_LAYOUT_LIST}
      */
     String getFolderLayout(OCFile folder);
 

@@ -23,7 +23,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.nextcloud.client.account.User
 import com.nextcloud.client.core.ManualAsyncRunner
 import com.nextcloud.client.core.OnProgressCallback
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.OwnCloudClient
 import io.mockk.MockKAnnotations
 import io.mockk.every
@@ -122,7 +122,7 @@ class TransferManagerTest {
 
             // WHEN
             //      download is enqueued
-            val file = OCFile("/path")
+            val file = com.owncloud.gshare.datamodel.OCFile("/path")
             val request = DownloadRequest(user, file)
             transferManager.enqueue(request)
 
@@ -137,7 +137,7 @@ class TransferManagerTest {
             // GIVEN
             //      downloader is downloading max simultaneous files
             for (i in 0 until MAX_TRANSFER_THREADS) {
-                val file = OCFile("/running/download/path/$i")
+                val file = com.owncloud.gshare.datamodel.OCFile("/running/download/path/$i")
                 val request = DownloadRequest(user, file)
                 transferManager.enqueue(request)
                 val runningDownload = transferManager.getTransfer(request.uuid)
@@ -146,7 +146,7 @@ class TransferManagerTest {
 
             // WHEN
             //      another download is enqueued
-            val file = OCFile("/path")
+            val file = com.owncloud.gshare.datamodel.OCFile("/path")
             val request = DownloadRequest(user, file)
             transferManager.enqueue(request)
 
@@ -162,7 +162,7 @@ class TransferManagerTest {
         @get:Rule
         val rule = InstantTaskExecutorRule()
 
-        val file = OCFile("/path")
+        val file = com.owncloud.gshare.datamodel.OCFile("/path")
 
         @Test
         fun download_task_completes() {
@@ -255,7 +255,7 @@ class TransferManagerTest {
         fun is_running_flag_on_enqueue() {
             // WHEN
             //      download is enqueued
-            val file = OCFile("/path/to/file")
+            val file = com.owncloud.gshare.datamodel.OCFile("/path/to/file")
             val request = DownloadRequest(user, file)
             transferManager.enqueue(request)
 
@@ -268,7 +268,7 @@ class TransferManagerTest {
         fun is_running_flag_on_completion() {
             // GIVEN
             //      a download is in progress
-            val file = OCFile("/path/to/file")
+            val file = com.owncloud.gshare.datamodel.OCFile("/path/to/file")
             val request = DownloadRequest(user, file)
             transferManager.enqueue(request)
             assertTrue(transferManager.isRunning)

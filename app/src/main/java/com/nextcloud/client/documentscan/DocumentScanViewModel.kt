@@ -31,12 +31,12 @@ import com.nextcloud.client.account.CurrentAccountProvider
 import com.nextcloud.client.di.IoDispatcher
 import com.nextcloud.client.jobs.BackgroundJobManager
 import com.nextcloud.client.logger.Logger
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.files.services.FileUploader
-import com.owncloud.android.files.services.NameCollisionPolicy
-import com.owncloud.android.operations.UploadFileOperation
-import com.owncloud.android.ui.helpers.FileOperationsHelper
-import com.owncloud.android.utils.MimeType
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.files.services.FileUploader
+import com.owncloud.gshare.files.services.NameCollisionPolicy
+import com.owncloud.gshare.operations.UploadFileOperation
+import com.owncloud.gshare.ui.helpers.FileOperationsHelper
+import com.owncloud.gshare.utils.MimeType
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -112,7 +112,7 @@ class DocumentScanViewModel @Inject constructor(
         val renamedFile =
             File(
                 getApplication<Application>().cacheDir.path +
-                    File.separator + FileOperationsHelper.getCapturedImageName()
+                    File.separator + com.owncloud.gshare.ui.helpers.FileOperationsHelper.getCapturedImageName()
             )
         file.renameTo(renamedFile)
         return renamedFile.absolutePath
@@ -166,7 +166,7 @@ class DocumentScanViewModel @Inject constructor(
 
     private fun exportToPdf(pageList: List<String>) {
         val genPath =
-            getApplication<Application>().cacheDir.path + File.separator + FileOperationsHelper.getTimestampedFileName(
+            getApplication<Application>().cacheDir.path + File.separator + com.owncloud.gshare.ui.helpers.FileOperationsHelper.getTimestampedFileName(
                 ".pdf"
             )
         backgroundJobManager.startPdfGenerateAndUploadWork(
@@ -181,25 +181,25 @@ class DocumentScanViewModel @Inject constructor(
 
     private fun exportToImages(pageList: List<String>) {
         val uploadPaths = pageList.map {
-            uploadFolder + OCFile.PATH_SEPARATOR + File(it).name
+            uploadFolder + com.owncloud.gshare.datamodel.OCFile.PATH_SEPARATOR + File(it).name
         }.toTypedArray()
 
         val mimetypes = pageList.map {
-            MimeType.JPEG
+            com.owncloud.gshare.utils.MimeType.JPEG
         }.toTypedArray()
 
-        FileUploader.uploadNewFile(
+        com.owncloud.gshare.files.services.FileUploader.uploadNewFile(
             getApplication(),
             currentAccountProvider.user,
             pageList.toTypedArray(),
             uploadPaths,
             mimetypes,
-            FileUploader.LOCAL_BEHAVIOUR_DELETE,
+            com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_DELETE,
             true,
-            UploadFileOperation.CREATED_BY_USER,
+            com.owncloud.gshare.operations.UploadFileOperation.CREATED_BY_USER,
             false,
             false,
-            NameCollisionPolicy.ASK_USER
+            com.owncloud.gshare.files.services.NameCollisionPolicy.ASK_USER
         )
     }
 

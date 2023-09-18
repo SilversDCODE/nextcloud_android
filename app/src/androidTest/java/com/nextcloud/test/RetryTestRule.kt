@@ -22,7 +22,7 @@
 
 package com.nextcloud.test
 
-import com.owncloud.android.BuildConfig
+import com.owncloud.gshare.BuildConfig
 import com.owncloud.android.lib.common.utils.Log_OC
 import org.junit.rules.TestRule
 import org.junit.runner.Description
@@ -37,7 +37,7 @@ class RetryTestRule(val retryCount: Int = defaultRetryValue) : TestRule {
         private val TAG = RetryTestRule::class.java.simpleName
 
         @Suppress("MagicNumber")
-        private val defaultRetryValue: Int = if (BuildConfig.CI) 5 else 1
+        private val defaultRetryValue: Int = if (com.owncloud.gshare.BuildConfig.CI) 5 else 1
     }
 
     override fun apply(base: Statement, description: Description): Statement {

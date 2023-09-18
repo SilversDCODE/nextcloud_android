@@ -29,8 +29,8 @@ import android.provider.ContactsContract
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.nextcloud.client.logger.Logger
-import com.owncloud.android.ui.fragment.contactsbackup.BackupListFragment
-import com.owncloud.android.ui.fragment.contactsbackup.VCardComparator
+import com.owncloud.gshare.ui.fragment.contactsbackup.BackupListFragment
+import com.owncloud.gshare.ui.fragment.contactsbackup.VCardComparator
 import ezvcard.Ezvcard
 import ezvcard.VCard
 import third_parties.ezvcard_android.ContactOperations
@@ -72,7 +72,7 @@ class ContactsImportWork(
             vCards.addAll(Ezvcard.parse(inputStream).all())
             Collections.sort(
                 vCards,
-                VCardComparator()
+                com.owncloud.gshare.ui.fragment.contactsbackup.VCardComparator()
             )
             cursor = contentResolver.query(
                 ContactsContract.Contacts.CONTENT_URI,
@@ -81,7 +81,7 @@ class ContactsImportWork(
                 null,
                 null
             )
-            val ownContactMap = TreeMap<VCard, Long?>(VCardComparator())
+            val ownContactMap = TreeMap<VCard, Long?>(com.owncloud.gshare.ui.fragment.contactsbackup.VCardComparator())
             if (cursor != null && cursor.count > 0) {
                 cursor.moveToFirst()
                 for (i in 0 until cursor.count) {
@@ -94,7 +94,7 @@ class ContactsImportWork(
             }
             for (contactIndex in selectedContactsIndices) {
                 val vCard = vCards[contactIndex]
-                if (BackupListFragment.getDisplayName(vCard).isEmpty()) {
+                if (com.owncloud.gshare.ui.fragment.contactsbackup.BackupListFragment.getDisplayName(vCard).isEmpty()) {
                     if (!ownContactMap.containsKey(vCard)) {
                         operations.insertContact(vCard)
                     } else {

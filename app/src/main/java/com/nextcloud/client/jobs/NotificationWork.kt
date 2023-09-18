@@ -50,10 +50,10 @@ import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.notifications.DeleteNotificationRemoteOperation
 import com.owncloud.android.lib.resources.notifications.GetNotificationRemoteOperation
 import com.owncloud.android.lib.resources.notifications.models.Notification
-import com.owncloud.android.ui.activity.FileDisplayActivity
-import com.owncloud.android.ui.activity.NotificationsActivity
-import com.owncloud.android.ui.notifications.NotificationUtils
-import com.owncloud.android.utils.PushUtils
+import com.owncloud.gshare.ui.activity.FileDisplayActivity
+import com.owncloud.gshare.ui.activity.NotificationsActivity
+import com.owncloud.gshare.ui.notifications.NotificationUtils
+import com.owncloud.gshare.utils.PushUtils
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import dagger.android.AndroidInjection
 import org.apache.commons.httpclient.HttpMethod
@@ -98,9 +98,9 @@ class NotificationWork constructor(
             try {
                 val base64DecodedSubject = Base64.decode(subject, Base64.DEFAULT)
                 val base64DecodedSignature = Base64.decode(signature, Base64.DEFAULT)
-                val privateKey = PushUtils.readKeyFromFile(false) as PrivateKey
+                val privateKey = com.owncloud.gshare.utils.PushUtils.readKeyFromFile(false) as PrivateKey
                 try {
-                    val signatureVerification = PushUtils.verifySignature(
+                    val signatureVerification = com.owncloud.gshare.utils.PushUtils.verifySignature(
                         context,
                         accountManager,
                         base64DecodedSignature,
@@ -148,11 +148,11 @@ class NotificationWork constructor(
         } else {
             val intent: Intent
             if (file == null) {
-                intent = Intent(context, NotificationsActivity::class.java)
+                intent = Intent(context, com.owncloud.gshare.ui.activity.NotificationsActivity::class.java)
             } else {
-                intent = Intent(context, FileDisplayActivity::class.java)
+                intent = Intent(context, com.owncloud.gshare.ui.activity.FileDisplayActivity::class.java)
                 intent.action = Intent.ACTION_VIEW
-                intent.putExtra(FileDisplayActivity.KEY_FILE_ID, file.id)
+                intent.putExtra(com.owncloud.gshare.ui.activity.FileDisplayActivity.KEY_FILE_ID, file.id)
             }
             intent.putExtra(KEY_NOTIFICATION_ACCOUNT, user.accountName)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -165,7 +165,7 @@ class NotificationWork constructor(
         }
 
         val pushNotificationId = randomId.nextInt()
-        val notificationBuilder = NotificationCompat.Builder(context, NotificationUtils.NOTIFICATION_CHANNEL_PUSH)
+        val notificationBuilder = NotificationCompat.Builder(context, com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_PUSH)
             .setSmallIcon(R.drawable.notification_icon)
             .setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.notification_icon))
             .setShowWhen(true)
@@ -223,7 +223,7 @@ class NotificationWork constructor(
             }
         }
         notificationBuilder.setPublicVersion(
-            NotificationCompat.Builder(context, NotificationUtils.NOTIFICATION_CHANNEL_PUSH)
+            NotificationCompat.Builder(context, com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_PUSH)
                 .setSmallIcon(R.drawable.notification_icon)
                 .setLargeIcon(BitmapFactory.decodeResource(context.resources, R.drawable.notification_icon))
                 .setShowWhen(true)

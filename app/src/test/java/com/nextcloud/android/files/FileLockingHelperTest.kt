@@ -21,7 +21,7 @@
 
 package com.nextcloud.android.files
 
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.resources.files.model.FileLockType
 import org.junit.Assert
 import org.junit.Test
@@ -30,7 +30,7 @@ class FileLockingHelperTest {
 
     @Test
     fun fileNotLocked_cannotUnlock() {
-        val file = OCFile("/foo.md").apply {
+        val file = _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/foo.md").apply {
             isLocked = false
             lockOwnerId = USER_NAME
             lockType = FileLockType.MANUAL
@@ -40,7 +40,7 @@ class FileLockingHelperTest {
 
     @Test
     fun ownerNotUser_cannotUnlock() {
-        val file = OCFile("/foo.md").apply {
+        val file = _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/foo.md").apply {
             isLocked = true
             lockOwnerId = "bloop"
             lockType = FileLockType.MANUAL
@@ -50,7 +50,7 @@ class FileLockingHelperTest {
 
     @Test
     fun typeNotManual_cannotUnlock() {
-        val file = OCFile("/foo.md").apply {
+        val file = _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/foo.md").apply {
             isLocked = true
             lockOwnerId = USER_NAME
             lockType = FileLockType.COLLABORATIVE
@@ -60,7 +60,7 @@ class FileLockingHelperTest {
 
     @Test
     fun canUnlock() {
-        val file = OCFile("/foo.md").apply {
+        val file = _root_ide_package_.com.owncloud.gshare.datamodel.OCFile("/foo.md").apply {
             isLocked = true
             lockOwnerId = USER_NAME
             lockType = FileLockType.MANUAL

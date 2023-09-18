@@ -27,11 +27,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
 
 import com.nextcloud.client.core.Clock;
-import com.owncloud.android.datamodel.SyncedFolder;
-import com.owncloud.android.db.ProviderMeta;
-import com.owncloud.android.files.services.NameCollisionPolicy;
+import com.owncloud.gshare.datamodel.SyncedFolder;
+import com.owncloud.gshare.db.ProviderMeta;
+import com.owncloud.gshare.files.services.NameCollisionPolicy;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.android.providers.FileContentProvider;
+import com.owncloud.gshare.providers.FileContentProvider;
 
 import java.util.Locale;
 

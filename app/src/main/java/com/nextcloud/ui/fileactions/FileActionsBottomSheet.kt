@@ -49,14 +49,14 @@ import com.nextcloud.client.di.ViewModelFactory
 import com.owncloud.android.R
 import com.owncloud.android.databinding.FileActionsBottomSheetBinding
 import com.owncloud.android.databinding.FileActionsBottomSheetItemBinding
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.datamodel.SyncedFolderProvider
-import com.owncloud.android.datamodel.ThumbnailsCacheManager
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
 import com.owncloud.android.lib.resources.files.model.FileLockType
-import com.owncloud.android.ui.activity.ComponentsGetter
-import com.owncloud.android.utils.DisplayUtils
-import com.owncloud.android.utils.DisplayUtils.AvatarGenerationListener
+import com.owncloud.gshare.ui.activity.ComponentsGetter
+import com.owncloud.gshare.utils.DisplayUtils
+import com.owncloud.gshare.utils.DisplayUtils.AvatarGenerationListener
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
@@ -72,10 +72,10 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
     lateinit var currentUserProvider: CurrentAccountProvider
 
     @Inject
-    lateinit var storageManager: FileDataStorageManager
+    lateinit var storageManager: _root_ide_package_.com.owncloud.gshare.datamodel.FileDataStorageManager
 
     @Inject
-    lateinit var syncedFolderProvider: SyncedFolderProvider
+    lateinit var syncedFolderProvider: _root_ide_package_.com.owncloud.gshare.datamodel.SyncedFolderProvider
 
     lateinit var viewModel: FileActionsViewModel
 
@@ -83,9 +83,9 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
     private val binding
         get() = _binding!!
 
-    lateinit var componentsGetter: ComponentsGetter
+    lateinit var componentsGetter: _root_ide_package_.com.owncloud.gshare.ui.activity.ComponentsGetter
 
-    private val thumbnailAsyncTasks = mutableListOf<ThumbnailsCacheManager.ThumbnailGenerationTask>()
+    private val thumbnailAsyncTasks = mutableListOf<_root_ide_package_.com.owncloud.gshare.datamodel.ThumbnailsCacheManager.ThumbnailGenerationTask>()
 
     interface ResultListener {
         fun onResult(@IdRes actionId: Int)
@@ -134,9 +134,9 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
         }
     }
 
-    private fun loadFileThumbnail(titleFile: OCFile?) {
+    private fun loadFileThumbnail(titleFile: _root_ide_package_.com.owncloud.gshare.datamodel.OCFile?) {
         titleFile?.let {
-            DisplayUtils.setThumbnail(
+            _root_ide_package_.com.owncloud.gshare.utils.DisplayUtils.setThumbnail(
                 it,
                 binding.thumbnailLayout.thumbnail,
                 currentUserProvider.user,
@@ -166,7 +166,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        require(context is ComponentsGetter) {
+        require(context is _root_ide_package_.com.owncloud.gshare.ui.activity.ComponentsGetter) {
             "Context is not a ComponentsGetter"
         }
         this.componentsGetter = context
@@ -208,7 +208,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
         }
     }
 
-    private fun displayTitle(titleFile: OCFile?) {
+    private fun displayTitle(titleFile: _root_ide_package_.com.owncloud.gshare.datamodel.OCFile?) {
         val decryptedFileName = titleFile?.decryptedFileName
         if (decryptedFileName != null) {
             decryptedFileName.let {
@@ -247,7 +247,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
                 return false
             }
         }
-        DisplayUtils.setAvatar(
+        _root_ide_package_.com.owncloud.gshare.utils.DisplayUtils.setAvatar(
             currentUserProvider.user,
             lockInfo.lockedBy,
             listener,
@@ -263,7 +263,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
             FileLockType.COLLABORATIVE -> R.string.locked_by_app
             else -> R.string.locked_by
         }
-        return DisplayUtils.createTextWithSpan(
+        return _root_ide_package_.com.owncloud.gshare.utils.DisplayUtils.createTextWithSpan(
             getString(resource, lockInfo.lockedBy),
             lockInfo.lockedBy,
             StyleSpan(Typeface.BOLD)
@@ -271,7 +271,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
     }
 
     private fun getLockedUntilText(lockInfo: FileActionsViewModel.LockInfo): CharSequence {
-        val relativeTimestamp = DisplayUtils.getRelativeTimestamp(context, lockInfo.lockedUntil!!, true)
+        val relativeTimestamp = _root_ide_package_.com.owncloud.gshare.utils.DisplayUtils.getRelativeTimestamp(context, lockInfo.lockedUntil!!, true)
         return getString(R.string.lock_expiration_info, relativeTimestamp)
     }
 
@@ -313,7 +313,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
         @JvmStatic
         @JvmOverloads
         fun newInstance(
-            file: OCFile,
+            file: _root_ide_package_.com.owncloud.gshare.datamodel.OCFile,
             isOverflow: Boolean,
             @IdRes
             additionalToHide: List<Int>? = null
@@ -325,7 +325,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
         @JvmOverloads
         fun newInstance(
             numberOfAllFiles: Int,
-            files: Collection<OCFile>,
+            files: Collection<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>,
             isOverflow: Boolean,
             @IdRes
             additionalToHide: List<Int>? = null
@@ -333,7 +333,7 @@ class FileActionsBottomSheet : BottomSheetDialogFragment(), Injectable {
             return FileActionsBottomSheet().apply {
                 val argsBundle = bundleOf(
                     FileActionsViewModel.ARG_ALL_FILES_COUNT to numberOfAllFiles,
-                    FileActionsViewModel.ARG_FILES to ArrayList<OCFile>(files),
+                    FileActionsViewModel.ARG_FILES to ArrayList<_root_ide_package_.com.owncloud.gshare.datamodel.OCFile>(files),
                     FileActionsViewModel.ARG_IS_OVERFLOW to isOverflow
                 )
                 additionalToHide?.let {

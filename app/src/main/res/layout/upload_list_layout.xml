@@ -44,7 +44,7 @@
                 android:footerDividersEnabled="false"
                 android:visibility="visible">
 
-                <com.owncloud.android.ui.EmptyRecyclerView
+                <com.owncloud.gshare.ui.EmptyRecyclerView
                     android:id="@android:id/list"
                     android:padding="@dimen/standard_half_padding"
                     android:layout_width="match_parent"

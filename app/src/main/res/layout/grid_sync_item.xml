@@ -24,7 +24,7 @@
     android:layout_gravity="center_horizontal"
     android:gravity="center_horizontal">
 
-    <com.owncloud.android.ui.SquareImageView
+    <com.owncloud.gshare.ui.SquareImageView
         android:id="@+id/thumbnail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

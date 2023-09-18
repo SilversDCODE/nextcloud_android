@@ -25,11 +25,11 @@ import android.Manifest
 import androidx.test.rule.GrantPermissionRule
 import androidx.work.WorkManager
 import com.nextcloud.client.core.ClockImpl
-import com.owncloud.android.AbstractIT
-import com.owncloud.android.AbstractOnServerIT
+import com.owncloud.gshare.AbstractIT
+import com.owncloud.gshare.AbstractOnServerIT
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.operations.DownloadFileOperation
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.operations.DownloadFileOperation
 import ezvcard.Ezvcard
 import ezvcard.VCard
 import junit.framework.Assert.assertEquals
@@ -40,7 +40,7 @@ import java.io.BufferedInputStream
 import java.io.File
 import java.io.FileInputStream
 
-class ContactsBackupIT : AbstractOnServerIT() {
+class ContactsBackupIT : com.owncloud.gshare.AbstractOnServerIT() {
     val workmanager = WorkManager.getInstance(targetContext)
     private val backgroundJobManager = BackgroundJobManagerImpl(workmanager, ClockImpl())
 
@@ -68,7 +68,7 @@ class ContactsBackupIT : AbstractOnServerIT() {
         longSleep()
 
         val backupFolder: String = targetContext.resources.getString(R.string.contacts_backup_folder) +
-            OCFile.PATH_SEPARATOR
+            com.owncloud.gshare.datamodel.OCFile.PATH_SEPARATOR
 
         refreshFolder("/")
         longSleep()
@@ -81,7 +81,12 @@ class ContactsBackupIT : AbstractOnServerIT() {
             false
         )[0]
 
-        assertTrue(DownloadFileOperation(user, backupOCFile, AbstractIT.targetContext).execute(client).isSuccess)
+        assertTrue(
+            com.owncloud.gshare.operations.DownloadFileOperation(
+                user,
+                backupOCFile,
+                com.owncloud.gshare.AbstractIT.targetContext
+            ).execute(client).isSuccess)
 
         val backupFile = File(backupOCFile.storagePath)
         val vcardInputStream = BufferedInputStream(FileInputStream(getFile(vcard)))

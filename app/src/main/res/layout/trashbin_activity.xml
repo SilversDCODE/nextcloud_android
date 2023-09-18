@@ -51,7 +51,7 @@
                 android:visibility="visible"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-                <com.owncloud.android.ui.EmptyRecyclerView
+                <com.owncloud.gshare.ui.EmptyRecyclerView
                     android:id="@android:id/list"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />

@@ -49,8 +49,8 @@ import com.nextcloud.client.files.downloader.UploadRequest;
 import com.nextcloud.client.files.downloader.UploadTrigger;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.owncloud.android.R;
-import com.owncloud.android.datamodel.OCFile;
-import com.owncloud.android.files.services.NameCollisionPolicy;
+import com.owncloud.gshare.datamodel.OCFile;
+import com.owncloud.gshare.files.services.NameCollisionPolicy;
 import com.owncloud.android.lib.common.utils.Log_OC;
 
 import net.fortuna.ical4j.data.CalendarOutputter;

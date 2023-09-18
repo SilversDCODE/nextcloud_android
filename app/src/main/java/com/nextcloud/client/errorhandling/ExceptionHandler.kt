@@ -28,7 +28,7 @@ package com.nextcloud.client.errorhandling
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import com.owncloud.android.BuildConfig
+import com.owncloud.gshare.BuildConfig
 import com.owncloud.android.R
 
 class ExceptionHandler(
@@ -98,9 +98,9 @@ class ExceptionHandler(
             |```
             |
             |### App information
-            |* ID: `${BuildConfig.APPLICATION_ID}`
-            |* Version: `${BuildConfig.VERSION_CODE}$buildNumberString`
-            |* Build flavor: `${BuildConfig.FLAVOR}`
+            |* ID: `${com.owncloud.gshare.BuildConfig.APPLICATION_ID}`
+            |* Version: `${com.owncloud.gshare.BuildConfig.VERSION_CODE}$buildNumberString`
+            |* Build flavor: `${com.owncloud.gshare.BuildConfig.FLAVOR}`
             |
             |### Device information
             |* Brand: `${Build.BRAND}`

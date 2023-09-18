@@ -30,29 +30,29 @@ import com.nextcloud.client.network.ConnectivityService
 import com.nextcloud.utils.EditorUtils
 import com.owncloud.android.R
 import com.owncloud.android.databinding.TestLayoutBinding
-import com.owncloud.android.datamodel.ArbitraryDataProviderImpl
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.files.services.FileDownloader
-import com.owncloud.android.files.services.FileUploader
+import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.files.services.FileDownloader
+import com.owncloud.gshare.files.services.FileUploader
 import com.owncloud.android.lib.resources.status.OCCapability
 import com.owncloud.android.lib.resources.status.OwnCloudVersion
-import com.owncloud.android.services.OperationsService
-import com.owncloud.android.ui.activity.FileActivity
-import com.owncloud.android.ui.activity.OnEnforceableRefreshListener
-import com.owncloud.android.ui.fragment.FileFragment
-import com.owncloud.android.ui.helpers.FileOperationsHelper
+import com.owncloud.gshare.services.OperationsService
+import com.owncloud.gshare.ui.activity.FileActivity
+import com.owncloud.gshare.ui.activity.OnEnforceableRefreshListener
+import com.owncloud.gshare.ui.fragment.FileFragment
+import com.owncloud.gshare.ui.helpers.FileOperationsHelper
 
 class TestActivity :
-    FileActivity(),
-    FileFragment.ContainerActivity,
+    com.owncloud.gshare.ui.activity.FileActivity(),
+    com.owncloud.gshare.ui.fragment.FileFragment.ContainerActivity,
     SwipeRefreshLayout.OnRefreshListener,
-    OnEnforceableRefreshListener {
+    com.owncloud.gshare.ui.activity.OnEnforceableRefreshListener {
     lateinit var fragment: Fragment
     lateinit var secondaryFragment: Fragment
 
-    private lateinit var storage: FileDataStorageManager
-    private lateinit var fileOperation: FileOperationsHelper
+    private lateinit var storage: com.owncloud.gshare.datamodel.FileDataStorageManager
+    private lateinit var fileOperation: com.owncloud.gshare.ui.helpers.FileOperationsHelper
     private lateinit var binding: TestLayoutBinding
 
     val connectivityServiceMock: ConnectivityService = object : ConnectivityService {
@@ -102,11 +102,11 @@ class TestActivity :
         }
     }
 
-    override fun onBrowsedDownTo(folder: OCFile?) {
+    override fun onBrowsedDownTo(folder: com.owncloud.gshare.datamodel.OCFile?) {
         TODO("Not yet implemented")
     }
 
-    override fun getOperationsServiceBinder(): OperationsService.OperationsServiceBinder? {
+    override fun getOperationsServiceBinder(): com.owncloud.gshare.services.OperationsService.OperationsServiceBinder? {
         return null
     }
 
@@ -114,25 +114,25 @@ class TestActivity :
         // not needed
     }
 
-    override fun showDetails(file: OCFile?) {
+    override fun showDetails(file: com.owncloud.gshare.datamodel.OCFile?) {
         TODO("Not yet implemented")
     }
 
-    override fun showDetails(file: OCFile?, activeTab: Int) {
+    override fun showDetails(file: com.owncloud.gshare.datamodel.OCFile?, activeTab: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun getFileUploaderBinder(): FileUploader.FileUploaderBinder? {
+    override fun getFileUploaderBinder(): com.owncloud.gshare.files.services.FileUploader.FileUploaderBinder? {
         return null
     }
 
-    override fun getFileDownloaderBinder(): FileDownloader.FileDownloaderBinder? {
+    override fun getFileDownloaderBinder(): com.owncloud.gshare.files.services.FileDownloader.FileDownloaderBinder? {
         return null
     }
 
-    override fun getStorageManager(): FileDataStorageManager {
+    override fun getStorageManager(): com.owncloud.gshare.datamodel.FileDataStorageManager {
         if (!this::storage.isInitialized) {
-            storage = FileDataStorageManager(user.get(), contentResolver)
+            storage = com.owncloud.gshare.datamodel.FileDataStorageManager(user.get(), contentResolver)
 
             if (!storage.capabilityExistsForAccount(account.name)) {
                 val ocCapability = OCCapability()
@@ -144,14 +144,14 @@ class TestActivity :
         return storage
     }
 
-    override fun getFileOperationsHelper(): FileOperationsHelper {
+    override fun getFileOperationsHelper(): com.owncloud.gshare.ui.helpers.FileOperationsHelper {
         if (!this::fileOperation.isInitialized) {
-            fileOperation = FileOperationsHelper(
+            fileOperation = com.owncloud.gshare.ui.helpers.FileOperationsHelper(
                 this,
                 userAccountManager,
                 connectivityServiceMock,
                 EditorUtils(
-                    ArbitraryDataProviderImpl(baseContext)
+                    com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl(baseContext)
                 )
             )
         }
@@ -159,7 +159,7 @@ class TestActivity :
         return fileOperation
     }
 
-    override fun onTransferStateChanged(file: OCFile?, downloading: Boolean, uploading: Boolean) {
+    override fun onTransferStateChanged(file: com.owncloud.gshare.datamodel.OCFile?, downloading: Boolean, uploading: Boolean) {
         TODO("Not yet implemented")
     }
 

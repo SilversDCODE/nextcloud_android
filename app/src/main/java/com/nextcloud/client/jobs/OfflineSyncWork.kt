@@ -29,13 +29,13 @@ import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.ConnectivityService
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.operations.RemoteOperationResult.ResultCode
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.files.CheckEtagRemoteOperation
-import com.owncloud.android.operations.SynchronizeFileOperation
-import com.owncloud.android.utils.FileStorageUtils
+import com.owncloud.gshare.operations.SynchronizeFileOperation
+import com.owncloud.gshare.utils.FileStorageUtils
 import java.io.File
 
 @Suppress("LongParameterList") // Legacy code
@@ -56,8 +56,8 @@ class OfflineSyncWork constructor(
         if (!powerManagementService.isPowerSavingEnabled) {
             val users = userAccountManager.allUsers
             for (user in users) {
-                val storageManager = FileDataStorageManager(user, contentResolver)
-                val ocRoot = storageManager.getFileByPath(OCFile.ROOT_PATH)
+                val storageManager = com.owncloud.gshare.datamodel.FileDataStorageManager(user, contentResolver)
+                val ocRoot = storageManager.getFileByPath(com.owncloud.gshare.datamodel.OCFile.ROOT_PATH)
                 if (ocRoot.storagePath == null) {
                     break
                 }
@@ -67,9 +67,9 @@ class OfflineSyncWork constructor(
         return Result.success()
     }
 
-    private fun recursive(folder: File, storageManager: FileDataStorageManager, user: User) {
-        val downloadFolder = FileStorageUtils.getSavePath(user.accountName)
-        val folderName = folder.absolutePath.replaceFirst(downloadFolder.toRegex(), "") + OCFile.PATH_SEPARATOR
+    private fun recursive(folder: File, storageManager: com.owncloud.gshare.datamodel.FileDataStorageManager, user: User) {
+        val downloadFolder = com.owncloud.gshare.utils.FileStorageUtils.getSavePath(user.accountName)
+        val folderName = folder.absolutePath.replaceFirst(downloadFolder.toRegex(), "") + com.owncloud.gshare.datamodel.OCFile.PATH_SEPARATOR
         Log_OC.d(TAG, "$folderName: enter")
         // exit
         if (folder.listFiles() == null) {
@@ -83,7 +83,7 @@ class OfflineSyncWork constructor(
         if (files != null) {
             for (file in files) {
                 val ocFile = storageManager.getFileByLocalPath(file.path)
-                val synchronizeFileOperation = SynchronizeFileOperation(
+                val synchronizeFileOperation = com.owncloud.gshare.operations.SynchronizeFileOperation(
                     ocFile?.remotePath,
                     user,
                     true,
@@ -114,7 +114,7 @@ class OfflineSyncWork constructor(
     /**
      * @return new etag if changed, `null` otherwise
      */
-    private fun checkEtagChanged(folderName: String, storageManager: FileDataStorageManager, user: User): String? {
+    private fun checkEtagChanged(folderName: String, storageManager: com.owncloud.gshare.datamodel.FileDataStorageManager, user: User): String? {
         val ocFolder = storageManager.getFileByPath(folderName)
         Log_OC.d(TAG, folderName + ": currentEtag: " + ocFolder.etag)
         // check for etag change, if false, skip

@@ -19,7 +19,7 @@
  */
 package com.nextcloud.client.files.downloader
 
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import java.util.UUID
 
 /**
@@ -97,5 +97,5 @@ interface TransferManager {
      * @param file Downloaded file
      * @return transfer status or null, if transfer does not exist
      */
-    fun getTransfer(file: OCFile): Transfer?
+    fun getTransfer(file: com.owncloud.gshare.datamodel.OCFile): Transfer?
 }

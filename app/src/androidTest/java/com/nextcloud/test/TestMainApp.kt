@@ -22,7 +22,7 @@
 
 package com.nextcloud.test
 
-import com.owncloud.android.MainApp
+import com.owncloud.gshare.MainApp
 import com.owncloud.android.lib.common.utils.Log_OC
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
@@ -33,7 +33,7 @@ import dagger.android.DispatchingAndroidInjector
  *
  * To automate its usage, pair with [InjectionOverrideRule]; or call [addTestInjector] manually for more control.
  */
-class TestMainApp : MainApp() {
+class TestMainApp : com.owncloud.gshare.MainApp() {
 
     val foo = "BAR"
     private var overrideInjectors: MutableMap<Class<*>, AndroidInjector<*>> = mutableMapOf()

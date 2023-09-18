@@ -34,7 +34,7 @@ import android.accounts.OperationCanceledException;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.owncloud.android.AbstractOnServerIT;
+import com.owncloud.gshare.AbstractOnServerIT;
 import com.owncloud.android.lib.common.OwnCloudAccount;
 import com.owncloud.android.lib.common.OwnCloudClient;
 import com.owncloud.android.lib.common.OwnCloudClientManager;

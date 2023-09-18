@@ -23,12 +23,12 @@ package com.nextcloud.client.utils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 
 object IntentUtil {
 
     @JvmStatic
-    public fun createSendIntent(context: Context, file: OCFile): Intent =
+    public fun createSendIntent(context: Context, file: com.owncloud.gshare.datamodel.OCFile): Intent =
         createBaseSendFileIntent().apply {
             action = Intent.ACTION_SEND
             type = file.mimeType
@@ -36,7 +36,7 @@ object IntentUtil {
         }
 
     @JvmStatic
-    public fun createSendIntent(context: Context, files: Array<OCFile>): Intent =
+    public fun createSendIntent(context: Context, files: Array<com.owncloud.gshare.datamodel.OCFile>): Intent =
         createBaseSendFileIntent().apply {
             action = Intent.ACTION_SEND_MULTIPLE
             type = getUniqueMimetype(files)
@@ -48,11 +48,11 @@ object IntentUtil {
             addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
 
-    private fun getUniqueMimetype(files: Array<OCFile>): String? = when {
+    private fun getUniqueMimetype(files: Array<com.owncloud.gshare.datamodel.OCFile>): String? = when {
         files.distinctBy { it.mimeType }.size > 1 -> "*/*"
         else -> files[0].mimeType
     }
 
-    private fun getExposedFileUris(context: Context, files: Array<OCFile>): ArrayList<Uri> =
+    private fun getExposedFileUris(context: Context, files: Array<com.owncloud.gshare.datamodel.OCFile>): ArrayList<Uri> =
         ArrayList(files.map { it.getExposedFileUri(context) })
 }

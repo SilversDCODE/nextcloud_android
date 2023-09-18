@@ -31,10 +31,10 @@ import com.nextcloud.client.jobs.JobsModule;
 import com.nextcloud.client.network.NetworkModule;
 import com.nextcloud.client.onboarding.OnboardingModule;
 import com.nextcloud.client.preferences.PreferencesModule;
-import com.owncloud.android.MainApp;
-import com.owncloud.android.media.MediaControlView;
-import com.owncloud.android.ui.ThemeableSwitchPreference;
-import com.owncloud.android.ui.whatsnew.ProgressIndicator;
+import com.owncloud.gshare.MainApp;
+import com.owncloud.gshare.media.MediaControlView;
+import com.owncloud.gshare.ui.ThemeableSwitchPreference;
+import com.owncloud.gshare.ui.whatsnew.ProgressIndicator;
 import com.owncloud.android.utils.FilesUploadHelper;
 
 import javax.inject.Singleton;

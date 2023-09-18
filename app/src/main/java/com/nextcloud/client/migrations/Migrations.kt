@@ -25,7 +25,7 @@ import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.jobs.BackgroundJobManager
 import com.nextcloud.client.logger.Logger
 import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.android.ui.activity.ContactsPreferenceActivity
+import com.owncloud.gshare.ui.activity.ContactsPreferenceActivity
 import javax.inject.Inject
 
 /**
@@ -108,7 +108,7 @@ class Migrations @Inject constructor(
             users.forEach {
                 val backupEnabled = arbitraryDataProvider.getBooleanValue(
                     it.accountName,
-                    ContactsPreferenceActivity.PREFERENCE_CONTACTS_AUTOMATIC_BACKUP
+                    com.owncloud.gshare.ui.activity.ContactsPreferenceActivity.PREFERENCE_CONTACTS_AUTOMATIC_BACKUP
                 )
                 if (backupEnabled) {
                     jobManager.schedulePeriodicContactsBackup(it)

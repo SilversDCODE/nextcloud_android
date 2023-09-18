@@ -25,12 +25,12 @@ package com.nextcloud.client;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.owncloud.android.AbstractIT;
-import com.owncloud.android.datamodel.MediaFolderType;
-import com.owncloud.android.datamodel.SyncedFolderDisplayItem;
+import com.owncloud.gshare.AbstractIT;
+import com.owncloud.gshare.datamodel.MediaFolderType;
+import com.owncloud.gshare.datamodel.SyncedFolderDisplayItem;
 import com.owncloud.android.ui.activity.SyncedFoldersActivity;
-import com.owncloud.android.ui.dialog.SyncedFolderPreferencesDialogFragment;
-import com.owncloud.android.utils.ScreenshotTest;
+import com.owncloud.gshare.ui.dialog.SyncedFolderPreferencesDialogFragment;
+import com.owncloud.gshare.utils.ScreenshotTest;
 
 import org.junit.Rule;
 import org.junit.Test;

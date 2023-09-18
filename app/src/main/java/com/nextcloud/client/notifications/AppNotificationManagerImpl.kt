@@ -11,11 +11,11 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.nextcloud.client.account.User
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.ui.activity.FileDisplayActivity
-import com.owncloud.android.ui.notifications.NotificationUtils
-import com.owncloud.android.ui.preview.PreviewImageActivity
-import com.owncloud.android.ui.preview.PreviewImageFragment
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.ui.activity.FileDisplayActivity
+import com.owncloud.gshare.ui.notifications.NotificationUtils
+import com.owncloud.gshare.ui.preview.PreviewImageActivity
+import com.owncloud.gshare.ui.preview.PreviewImageFragment
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
@@ -43,7 +43,7 @@ class AppNotificationManagerImpl @Inject constructor(
 
     override fun buildDownloadServiceForegroundNotification(): Notification {
         val icon = BitmapFactory.decodeResource(resources, R.drawable.notification_icon)
-        return builder(NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD)
+        return builder(com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD)
             .setContentTitle(resources.getString(R.string.app_name))
             .setContentText(resources.getString(R.string.foreground_service_download))
             .setSmallIcon(R.drawable.notification_icon)
@@ -51,8 +51,8 @@ class AppNotificationManagerImpl @Inject constructor(
             .build()
     }
 
-    override fun postDownloadTransferProgress(fileOwner: User, file: OCFile, progress: Int, allowPreview: Boolean) {
-        val builder = builder(NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD)
+    override fun postDownloadTransferProgress(fileOwner: User, file: com.owncloud.gshare.datamodel.OCFile, progress: Int, allowPreview: Boolean) {
+        val builder = builder(com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD)
         val content = resources.getString(
             R.string.downloader_download_in_progress_content,
             progress,
@@ -67,10 +67,10 @@ class AppNotificationManagerImpl @Inject constructor(
             .setContentText(content)
 
         if (allowPreview) {
-            val openFileIntent = if (PreviewImageFragment.canBePreviewed(file)) {
-                PreviewImageActivity.previewFileIntent(context, fileOwner, file)
+            val openFileIntent = if (com.owncloud.gshare.ui.preview.PreviewImageFragment.canBePreviewed(file)) {
+                com.owncloud.gshare.ui.preview.PreviewImageActivity.previewFileIntent(context, fileOwner, file)
             } else {
-                FileDisplayActivity.openFileIntent(context, fileOwner, file)
+                com.owncloud.gshare.ui.activity.FileDisplayActivity.openFileIntent(context, fileOwner, file)
             }
             openFileIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             val pendingOpenFileIntent = PendingIntent.getActivity(
@@ -84,8 +84,8 @@ class AppNotificationManagerImpl @Inject constructor(
         platformNotificationsManager.notify(AppNotificationManager.TRANSFER_NOTIFICATION_ID, builder.build())
     }
 
-    override fun postUploadTransferProgress(fileOwner: User, file: OCFile, progress: Int) {
-        val builder = builder(NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD)
+    override fun postUploadTransferProgress(fileOwner: User, file: com.owncloud.gshare.datamodel.OCFile, progress: Int) {
+        val builder = builder(com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_DOWNLOAD)
         val content = resources.getString(
             R.string.uploader_upload_in_progress_content,
             progress,

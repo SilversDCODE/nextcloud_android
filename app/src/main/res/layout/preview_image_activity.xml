@@ -22,7 +22,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.owncloud.android.ui.components.CustomViewPager
+    <com.owncloud.gshare.ui.components.CustomViewPager
         android:id="@+id/fragmentPager"
 		android:layout_width="match_parent"
         android:layout_height="match_parent"

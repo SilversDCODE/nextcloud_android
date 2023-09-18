@@ -35,12 +35,12 @@ import androidx.core.graphics.drawable.IconCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.nextcloud.client.account.User
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.datamodel.SyncedFolderProvider
-import com.owncloud.android.datamodel.ThumbnailsCacheManager
-import com.owncloud.android.ui.activity.FileActivity
-import com.owncloud.android.ui.activity.FileDisplayActivity
-import com.owncloud.android.utils.MimeTypeUtil
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
+import com.owncloud.gshare.ui.activity.FileActivity
+import com.owncloud.gshare.ui.activity.FileDisplayActivity
+import com.owncloud.gshare.utils.MimeTypeUtil
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
@@ -52,26 +52,26 @@ class ShortcutUtil @Inject constructor(private val mContext: Context) {
      * @param file The file/folder to which a pinned shortcut should be added to the home screen.
      */
     fun addShortcutToHomescreen(
-        file: OCFile,
+        file: _root_ide_package_.com.owncloud.gshare.datamodel.OCFile,
         viewThemeUtils: ViewThemeUtils,
         user: User,
-        syncedFolderProvider: SyncedFolderProvider
+        syncedFolderProvider: _root_ide_package_.com.owncloud.gshare.datamodel.SyncedFolderProvider
     ) {
         if (ShortcutManagerCompat.isRequestPinShortcutSupported(mContext)) {
-            val intent = Intent(mContext, FileDisplayActivity::class.java)
-            intent.action = FileDisplayActivity.OPEN_FILE
-            intent.putExtra(FileActivity.EXTRA_FILE, file.remotePath)
+            val intent = Intent(mContext, _root_ide_package_.com.owncloud.gshare.ui.activity.FileDisplayActivity::class.java)
+            intent.action = _root_ide_package_.com.owncloud.gshare.ui.activity.FileDisplayActivity.OPEN_FILE
+            intent.putExtra(_root_ide_package_.com.owncloud.gshare.ui.activity.FileActivity.EXTRA_FILE, file.remotePath)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             val shortcutId = "nextcloud_shortcut_" + file.remoteId
             val icon: IconCompat
-            var thumbnail = ThumbnailsCacheManager.getBitmapFromDiskCache(
-                ThumbnailsCacheManager.PREFIX_THUMBNAIL + file.remoteId
+            var thumbnail = _root_ide_package_.com.owncloud.gshare.datamodel.ThumbnailsCacheManager.getBitmapFromDiskCache(
+                _root_ide_package_.com.owncloud.gshare.datamodel.ThumbnailsCacheManager.PREFIX_THUMBNAIL + file.remoteId
             )
             if (thumbnail != null) {
                 thumbnail = bitmapToAdaptiveBitmap(thumbnail)
                 icon = IconCompat.createWithAdaptiveBitmap(thumbnail)
             } else if (file.isFolder) {
-                val bitmapIcon = MimeTypeUtil.getFolderTypeIcon(
+                val bitmapIcon = _root_ide_package_.com.owncloud.gshare.utils.MimeTypeUtil.getFolderTypeIcon(
                     file.isSharedWithMe || file.isSharedWithSharee,
                     file.isSharedViaLink,
                     file.isEncrypted,
@@ -85,7 +85,7 @@ class ShortcutUtil @Inject constructor(private val mContext: Context) {
             } else {
                 icon = IconCompat.createWithResource(
                     mContext,
-                    MimeTypeUtil.getFileTypeIconId(file.mimeType, file.fileName)
+                    _root_ide_package_.com.owncloud.gshare.utils.MimeTypeUtil.getFileTypeIconId(file.mimeType, file.fileName)
                 )
             }
             val longLabel = mContext.getString(R.string.pin_shortcut_label, file.fileName)

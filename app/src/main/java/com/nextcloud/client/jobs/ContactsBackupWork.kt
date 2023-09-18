@@ -41,13 +41,13 @@ import com.nextcloud.client.files.downloader.UploadRequest
 import com.nextcloud.client.files.downloader.UploadTrigger
 import com.owncloud.android.R
 import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.files.services.NameCollisionPolicy
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.files.services.NameCollisionPolicy
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.android.services.OperationsService
-import com.owncloud.android.services.OperationsService.OperationsServiceBinder
-import com.owncloud.android.ui.activity.ContactsPreferenceActivity
+import com.owncloud.gshare.services.OperationsService
+import com.owncloud.gshare.services.OperationsService.OperationsServiceBinder
+import com.owncloud.gshare.ui.activity.ContactsPreferenceActivity
 import ezvcard.Ezvcard
 import ezvcard.VCardVersion
 import java.io.File
@@ -92,12 +92,12 @@ class ContactsBackupWork(
         val user = optionalUser.get()
         val lastExecution = arbitraryDataProvider.getLongValue(
             user,
-            ContactsPreferenceActivity.PREFERENCE_CONTACTS_LAST_BACKUP
+            com.owncloud.gshare.ui.activity.ContactsPreferenceActivity.PREFERENCE_CONTACTS_LAST_BACKUP
         )
         val force = inputData.getBoolean(KEY_FORCE, false)
         if (force || lastExecution + JOB_INTERVAL_MS < Calendar.getInstance().timeInMillis) {
             Log_OC.d(TAG, "start contacts backup job")
-            val backupFolder: String = resources.getString(R.string.contacts_backup_folder) + OCFile.PATH_SEPARATOR
+            val backupFolder: String = resources.getString(R.string.contacts_backup_folder) + com.owncloud.gshare.datamodel.OCFile.PATH_SEPARATOR
             val daysToExpire: Int = applicationContext.getResources().getInteger(R.integer.contacts_backup_expire)
             backupContact(user, backupFolder)
             // bind to Operations Service
@@ -108,14 +108,14 @@ class ContactsBackupWork(
                 user
             )
             applicationContext.bindService(
-                Intent(applicationContext, OperationsService::class.java),
+                Intent(applicationContext, com.owncloud.gshare.services.OperationsService::class.java),
                 operationsServiceConnection as OperationsServiceConnection,
-                OperationsService.BIND_AUTO_CREATE
+                com.owncloud.gshare.services.OperationsService.BIND_AUTO_CREATE
             )
             // store execution date
             arbitraryDataProvider.storeOrUpdateKeyValue(
                 user.accountName,
-                ContactsPreferenceActivity.PREFERENCE_CONTACTS_LAST_BACKUP,
+                com.owncloud.gshare.ui.activity.ContactsPreferenceActivity.PREFERENCE_CONTACTS_LAST_BACKUP,
                 Calendar.getInstance().timeInMillis
             )
         } else {
@@ -164,7 +164,7 @@ class ContactsBackupWork(
 
         val request = UploadRequest.Builder(user, file.absolutePath, backupFolder + file.name)
             .setFileSize(file.length())
-            .setNameConflicPolicy(NameCollisionPolicy.RENAME)
+            .setNameConflicPolicy(com.owncloud.gshare.files.services.NameCollisionPolicy.RENAME)
             .setCreateRemoteFolder(true)
             .setTrigger(UploadTrigger.USER)
             .setPostAction(PostUploadAction.MOVE_TO_APP)
@@ -179,27 +179,27 @@ class ContactsBackupWork(
     private fun expireFiles(daysToExpire: Int, backupFolderString: String, user: User) {
         // -1 disables expiration
         if (daysToExpire > -1) {
-            val storageManager = FileDataStorageManager(
+            val storageManager = com.owncloud.gshare.datamodel.FileDataStorageManager(
                 user,
                 applicationContext.getContentResolver()
             )
-            val backupFolder: OCFile = storageManager.getFileByPath(backupFolderString)
+            val backupFolder: com.owncloud.gshare.datamodel.OCFile = storageManager.getFileByPath(backupFolderString)
             val cal = Calendar.getInstance()
             cal.add(Calendar.DAY_OF_YEAR, -daysToExpire)
             val timestampToExpire = cal.timeInMillis
             if (backupFolder != null) {
                 Log_OC.d(TAG, "expire: " + daysToExpire + " " + backupFolder.fileName)
             }
-            val backups: List<OCFile> = storageManager.getFolderContent(backupFolder, false)
+            val backups: List<com.owncloud.gshare.datamodel.OCFile> = storageManager.getFolderContent(backupFolder, false)
             for (backup in backups) {
                 if (timestampToExpire > backup.modificationTimestamp) {
                     Log_OC.d(TAG, "delete " + backup.remotePath)
                     // delete backups
-                    val service = Intent(applicationContext, OperationsService::class.java)
-                    service.action = OperationsService.ACTION_REMOVE
-                    service.putExtra(OperationsService.EXTRA_ACCOUNT, user.toPlatformAccount())
-                    service.putExtra(OperationsService.EXTRA_REMOTE_PATH, backup.remotePath)
-                    service.putExtra(OperationsService.EXTRA_REMOVE_ONLY_LOCAL, false)
+                    val service = Intent(applicationContext, com.owncloud.gshare.services.OperationsService::class.java)
+                    service.action = com.owncloud.gshare.services.OperationsService.ACTION_REMOVE
+                    service.putExtra(com.owncloud.gshare.services.OperationsService.EXTRA_ACCOUNT, user.toPlatformAccount())
+                    service.putExtra(com.owncloud.gshare.services.OperationsService.EXTRA_REMOTE_PATH, backup.remotePath)
+                    service.putExtra(com.owncloud.gshare.services.OperationsService.EXTRA_REMOVE_ONLY_LOCAL, false)
                     operationsServiceBinder!!.queueNewOperation(service)
                 }
             }
@@ -258,7 +258,7 @@ class ContactsBackupWork(
     ) : ServiceConnection {
         override fun onServiceConnected(component: ComponentName, service: IBinder) {
             Log_OC.d(TAG, "service connected")
-            if (component == ComponentName(worker.applicationContext, OperationsService::class.java)) {
+            if (component == ComponentName(worker.applicationContext, com.owncloud.gshare.services.OperationsService::class.java)) {
                 worker.operationsServiceBinder = service as OperationsServiceBinder
                 worker.expireFiles(daysToExpire, backupFolder, user)
             }
@@ -266,7 +266,7 @@ class ContactsBackupWork(
 
         override fun onServiceDisconnected(component: ComponentName) {
             Log_OC.d(TAG, "service disconnected")
-            if (component == ComponentName(worker.applicationContext, OperationsService::class.java)) {
+            if (component == ComponentName(worker.applicationContext, com.owncloud.gshare.services.OperationsService::class.java)) {
                 worker.operationsServiceBinder = null
             }
         }

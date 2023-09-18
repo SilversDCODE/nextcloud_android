@@ -26,9 +26,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.DocumentsContract.Document;
 
-import com.owncloud.android.datamodel.OCFile;
-import com.owncloud.android.providers.DocumentsStorageProvider;
-import com.owncloud.android.utils.MimeTypeUtil;
+import com.owncloud.gshare.datamodel.OCFile;
+import com.owncloud.gshare.providers.DocumentsStorageProvider;
+import com.owncloud.gshare.utils.MimeTypeUtil;
 
 public class FileCursor extends MatrixCursor {
 

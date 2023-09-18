@@ -34,12 +34,12 @@ import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.logger.Logger
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.files.services.FileUploader
-import com.owncloud.android.files.services.NameCollisionPolicy
-import com.owncloud.android.operations.UploadFileOperation
-import com.owncloud.android.ui.notifications.NotificationUtils
-import com.owncloud.android.utils.MimeType
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.files.services.FileUploader
+import com.owncloud.gshare.files.services.NameCollisionPolicy
+import com.owncloud.gshare.operations.UploadFileOperation
+import com.owncloud.gshare.ui.notifications.NotificationUtils
+import com.owncloud.gshare.utils.MimeType
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import java.io.File
 import java.security.SecureRandom
@@ -106,7 +106,7 @@ class GeneratePdfFromImagesWork(
 
         val notificationBuilder = NotificationCompat.Builder(
             appContext,
-            NotificationUtils.NOTIFICATION_CHANNEL_GENERAL
+            com.owncloud.gshare.ui.notifications.NotificationUtils.NOTIFICATION_CHANNEL_GENERAL
         )
             .setSmallIcon(R.drawable.notification_icon)
             .setLargeIcon(BitmapFactory.decodeResource(appContext.resources, R.drawable.notification_icon))
@@ -121,20 +121,20 @@ class GeneratePdfFromImagesWork(
     }
 
     private fun uploadFile(user: User, uploadFolder: String, pdfPath: String) {
-        val uploadPath = uploadFolder + OCFile.PATH_SEPARATOR + File(pdfPath).name
+        val uploadPath = uploadFolder + com.owncloud.gshare.datamodel.OCFile.PATH_SEPARATOR + File(pdfPath).name
 
-        FileUploader.uploadNewFile(
+        com.owncloud.gshare.files.services.FileUploader.uploadNewFile(
             appContext,
             user,
             pdfPath,
             uploadPath,
-            FileUploader.LOCAL_BEHAVIOUR_DELETE, // MIME type will be detected from file name
-            MimeType.PDF,
+            com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_DELETE, // MIME type will be detected from file name
+            com.owncloud.gshare.utils.MimeType.PDF,
             true,
-            UploadFileOperation.CREATED_BY_USER,
+            com.owncloud.gshare.operations.UploadFileOperation.CREATED_BY_USER,
             false,
             false,
-            NameCollisionPolicy.ASK_USER
+            com.owncloud.gshare.files.services.NameCollisionPolicy.ASK_USER
         )
     }
 

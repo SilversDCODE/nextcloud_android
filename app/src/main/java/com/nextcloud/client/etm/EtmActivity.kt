@@ -28,10 +28,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.nextcloud.client.di.Injectable
 import com.nextcloud.client.di.ViewModelFactory
 import com.owncloud.android.R
-import com.owncloud.android.ui.activity.ToolbarActivity
+import com.owncloud.gshare.ui.activity.ToolbarActivity
 import javax.inject.Inject
 
-class EtmActivity : ToolbarActivity(), Injectable {
+class EtmActivity : com.owncloud.gshare.ui.activity.ToolbarActivity(), Injectable {
 
     companion object {
         @JvmStatic

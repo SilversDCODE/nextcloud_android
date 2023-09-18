@@ -22,7 +22,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingBottom="@dimen/standard_padding"
-    tools:context="com.owncloud.android.ui.activity.ShareActivity">
+    tools:context="com.owncloud.android.com.owncloud.gshare.ui.activity.ShareActivity">
 
     <RelativeLayout
         android:id="@+id/shareHeaderContainer"

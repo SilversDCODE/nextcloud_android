@@ -20,10 +20,10 @@ package com.nextcloud.client.onboarding
 
 import android.app.Activity
 import android.content.Context
-import com.owncloud.android.features.FeatureItem
+import com.owncloud.gshare.features.FeatureItem
 
 interface OnboardingService {
-    val whatsNew: Array<FeatureItem>
+    val whatsNew: Array<com.owncloud.gshare.features.FeatureItem>
     val isFirstRun: Boolean
     fun launchActivityIfNeeded(activity: Activity)
     fun launchFirstRunIfNeeded(activity: Activity): Boolean

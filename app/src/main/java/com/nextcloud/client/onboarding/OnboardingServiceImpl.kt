@@ -24,11 +24,11 @@ import android.content.Intent
 import android.content.res.Resources
 import com.nextcloud.client.account.CurrentAccountProvider
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.android.BuildConfig
+import com.owncloud.gshare.BuildConfig
 import com.owncloud.android.R
-import com.owncloud.android.authentication.AuthenticatorActivity
-import com.owncloud.android.features.FeatureItem
-import com.owncloud.android.ui.activity.PassCodeActivity
+import com.owncloud.gshare.authentication.AuthenticatorActivity
+import com.owncloud.gshare.features.FeatureItem
+import com.owncloud.gshare.ui.activity.PassCodeActivity
 
 internal class OnboardingServiceImpl constructor(
     private val resources: Resources,
@@ -42,10 +42,10 @@ internal class OnboardingServiceImpl constructor(
 
     private val notSeenYet: Boolean
         get() {
-            return BuildConfig.VERSION_CODE >= ITEM_VERSION_CODE && preferences.lastSeenVersionCode < ITEM_VERSION_CODE
+            return com.owncloud.gshare.BuildConfig.VERSION_CODE >= ITEM_VERSION_CODE && preferences.lastSeenVersionCode < ITEM_VERSION_CODE
         }
 
-    override val whatsNew: Array<FeatureItem>
+    override val whatsNew: Array<com.owncloud.gshare.features.FeatureItem>
         get() = if (!isFirstRun && notSeenYet) {
             emptyArray()
         } else {
@@ -58,7 +58,7 @@ internal class OnboardingServiceImpl constructor(
         }
 
     override fun shouldShowWhatsNew(callingContext: Context): Boolean {
-        return callingContext !is PassCodeActivity && whatsNew.isNotEmpty()
+        return callingContext !is com.owncloud.gshare.ui.activity.PassCodeActivity && whatsNew.isNotEmpty()
     }
 
     override fun launchActivityIfNeeded(activity: Activity) {
@@ -73,10 +73,10 @@ internal class OnboardingServiceImpl constructor(
 
     override fun launchFirstRunIfNeeded(activity: Activity): Boolean {
         val isProviderOrOwnInstallationVisible = resources.getBoolean(R.bool.show_provider_or_own_installation)
-        val canLaunch = isProviderOrOwnInstallationVisible && isFirstRun && activity is AuthenticatorActivity
+        val canLaunch = isProviderOrOwnInstallationVisible && isFirstRun && activity is com.owncloud.gshare.authentication.AuthenticatorActivity
         if (canLaunch) {
             val intent = Intent(activity, FirstRunActivity::class.java)
-            activity.startActivityForResult(intent, AuthenticatorActivity.REQUEST_CODE_FIRST_RUN)
+            activity.startActivityForResult(intent, com.owncloud.gshare.authentication.AuthenticatorActivity.REQUEST_CODE_FIRST_RUN)
         }
         return canLaunch
     }

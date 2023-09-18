@@ -23,25 +23,25 @@ import android.content.Context
 import com.nextcloud.client.account.User
 import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.ConnectivityService
-import com.owncloud.android.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.datamodel.UploadsStorageManager
-import com.owncloud.android.db.OCUpload
-import com.owncloud.android.files.services.NameCollisionPolicy
+import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.datamodel.UploadsStorageManager
+import com.owncloud.gshare.db.OCUpload
+import com.owncloud.gshare.files.services.NameCollisionPolicy
 import com.owncloud.android.lib.common.OwnCloudClient
-import com.owncloud.android.operations.UploadFileOperation
+import com.owncloud.gshare.operations.UploadFileOperation
 
 @Suppress("LongParameterList")
 class UploadTask(
     private val applicationContext: Context,
-    private val uploadsStorageManager: UploadsStorageManager,
+    private val uploadsStorageManager: com.owncloud.gshare.datamodel.UploadsStorageManager,
     private val connectivityService: ConnectivityService,
     private val powerManagementService: PowerManagementService,
     private val clientProvider: () -> OwnCloudClient,
-    private val fileDataStorageManager: FileDataStorageManager
+    private val fileDataStorageManager: com.owncloud.gshare.datamodel.FileDataStorageManager
 ) {
 
-    data class Result(val file: OCFile, val success: Boolean)
+    data class Result(val file: com.owncloud.gshare.datamodel.OCFile, val success: Boolean)
 
     /**
      * This class is a helper factory to to keep static dependencies
@@ -50,11 +50,11 @@ class UploadTask(
     @Suppress("LongParameterList")
     class Factory(
         private val applicationContext: Context,
-        private val uploadsStorageManager: UploadsStorageManager,
+        private val uploadsStorageManager: com.owncloud.gshare.datamodel.UploadsStorageManager,
         private val connectivityService: ConnectivityService,
         private val powerManagementService: PowerManagementService,
         private val clientProvider: () -> OwnCloudClient,
-        private val fileDataStorageManager: FileDataStorageManager
+        private val fileDataStorageManager: com.owncloud.gshare.datamodel.FileDataStorageManager
     ) {
         fun create(): UploadTask {
             return UploadTask(
@@ -68,20 +68,20 @@ class UploadTask(
         }
     }
 
-    fun upload(user: User, upload: OCUpload): Result {
-        val file = UploadFileOperation.obtainNewOCFileToUpload(
+    fun upload(user: User, upload: com.owncloud.gshare.db.OCUpload): Result {
+        val file = com.owncloud.gshare.operations.UploadFileOperation.obtainNewOCFileToUpload(
             upload.remotePath,
             upload.localPath,
             upload.mimeType
         )
-        val op = UploadFileOperation(
+        val op = com.owncloud.gshare.operations.UploadFileOperation(
             uploadsStorageManager,
             connectivityService,
             powerManagementService,
             user,
             file,
             upload,
-            NameCollisionPolicy.ASK_USER,
+            com.owncloud.gshare.files.services.NameCollisionPolicy.ASK_USER,
             upload.localAction,
             applicationContext,
             upload.isUseWifiOnly,

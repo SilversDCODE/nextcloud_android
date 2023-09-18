@@ -27,19 +27,19 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import com.nextcloud.test.TestActivity
-import com.owncloud.android.AbstractIT
+import com.owncloud.gshare.AbstractIT
 import com.owncloud.android.R
-import com.owncloud.android.utils.BitmapUtils
-import com.owncloud.android.utils.ScreenshotTest
+import com.owncloud.gshare.utils.BitmapUtils
+import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 
-class BitmapIT : AbstractIT() {
+class BitmapIT : com.owncloud.gshare.AbstractIT() {
     @get:Rule
     val testActivityRule = IntentsTestRule(TestActivity::class.java, true, false)
 
     @Test
-    @ScreenshotTest
+    @com.owncloud.gshare.utils.ScreenshotTest
     fun roundBitmap() {
         val file = getFile("christine.jpg")
         val bitmap = BitmapFactory.decodeFile(file.absolutePath)
@@ -51,7 +51,7 @@ class BitmapIT : AbstractIT() {
 
         val bitmap2 = BitmapFactory.decodeFile(file.absolutePath)
         val imageView2 = ImageView(activity).apply {
-            setImageBitmap(BitmapUtils.roundBitmap(bitmap2))
+            setImageBitmap(com.owncloud.gshare.utils.BitmapUtils.roundBitmap(bitmap2))
         }
 
         val linearLayout = LinearLayout(activity).apply {

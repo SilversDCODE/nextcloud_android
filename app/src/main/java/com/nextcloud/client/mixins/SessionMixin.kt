@@ -28,10 +28,10 @@ import android.os.Bundle
 import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.java.util.Optional
-import com.owncloud.android.datamodel.FileDataStorageManager
+import com.owncloud.gshare.datamodel.FileDataStorageManager
 import com.owncloud.android.lib.resources.status.OCCapability
-import com.owncloud.android.ui.activity.BaseActivity
-import com.owncloud.android.utils.theme.CapabilityUtils
+import com.owncloud.gshare.ui.activity.BaseActivity
+import com.owncloud.gshare.utils.theme.CapabilityUtils
 
 /**
  * Session mixin collects all account / user handling logic currently
@@ -47,16 +47,16 @@ class SessionMixin constructor(
 ) : ActivityMixin {
 
     private companion object {
-        private val TAG = BaseActivity::class.java.simpleName
+        private val TAG = com.owncloud.gshare.ui.activity.BaseActivity::class.java.simpleName
     }
 
     var currentAccount: Account? = null
         private set
-    var storageManager: FileDataStorageManager? = null
+    var storageManager: com.owncloud.gshare.datamodel.FileDataStorageManager? = null
         private set
     val capabilities: OCCapability?
         get() = getUser()
-            .map { CapabilityUtils.getCapability(it, activity) }
+            .map { com.owncloud.gshare.utils.theme.CapabilityUtils.getCapability(it, activity) }
             .orElse(null)
 
     fun setAccount(account: Account?) {
@@ -68,7 +68,7 @@ class SessionMixin constructor(
         }
 
         currentAccount?.let {
-            val storageManager = FileDataStorageManager(getUser().get(), contentResolver)
+            val storageManager = com.owncloud.gshare.datamodel.FileDataStorageManager(getUser().get(), contentResolver)
             this.storageManager = storageManager
         }
     }

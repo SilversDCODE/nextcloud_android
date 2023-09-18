@@ -21,13 +21,13 @@ package com.nextcloud.client.appinfo
 
 import android.content.Context
 import android.content.pm.PackageManager
-import com.owncloud.android.BuildConfig
+import com.owncloud.gshare.BuildConfig
 import com.owncloud.android.lib.common.utils.Log_OC
 
 class AppInfoImpl : AppInfo {
-    override val versionName: String = BuildConfig.VERSION_NAME
-    override val versionCode: Int = BuildConfig.VERSION_CODE
-    override val isDebugBuild: Boolean = BuildConfig.DEBUG
+    override val versionName: String = com.owncloud.gshare.BuildConfig.VERSION_NAME
+    override val versionCode: Int = com.owncloud.gshare.BuildConfig.VERSION_CODE
+    override val isDebugBuild: Boolean = com.owncloud.gshare.BuildConfig.DEBUG
 
     override fun getAppVersion(context: Context): String {
         return try {

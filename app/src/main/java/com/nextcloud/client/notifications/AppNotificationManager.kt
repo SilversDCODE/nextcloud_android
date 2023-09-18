@@ -2,7 +2,7 @@ package com.nextcloud.client.notifications
 
 import android.app.Notification
 import com.nextcloud.client.account.User
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 
 /**
  * Application-specific notification manager interface.
@@ -31,7 +31,7 @@ interface AppNotificationManager {
      * @param progress Progress as percentage (0-100)
      * @param allowPreview if true, pending intent with preview action is added to the notification
      */
-    fun postDownloadTransferProgress(fileOwner: User, file: OCFile, progress: Int, allowPreview: Boolean = true)
+    fun postDownloadTransferProgress(fileOwner: User, file: com.owncloud.gshare.datamodel.OCFile, progress: Int, allowPreview: Boolean = true)
 
     /**
      * Post upload transfer progress notification. Subsequent calls will update
@@ -41,7 +41,7 @@ interface AppNotificationManager {
      * @param file File being downloaded
      * @param progress Progress as percentage (0-100)
      */
-    fun postUploadTransferProgress(fileOwner: User, file: OCFile, progress: Int)
+    fun postUploadTransferProgress(fileOwner: User, file: com.owncloud.gshare.datamodel.OCFile, progress: Int)
 
     /**
      * Removes download or upload progress notification.

@@ -20,7 +20,7 @@
 package com.nextcloud.client.files.downloader
 
 import com.nextcloud.client.account.User
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import io.mockk.CapturingSlot
 import io.mockk.MockKAnnotations
 import io.mockk.clearAllMocks
@@ -60,7 +60,7 @@ class RegistryTest {
         @MockK
         lateinit var user: User
 
-        lateinit var file: OCFile
+        lateinit var file: com.owncloud.gshare.datamodel.OCFile
 
         @MockK
         lateinit var onTransferStart: (UUID, Request) -> Unit
@@ -73,7 +73,7 @@ class RegistryTest {
         @Before
         fun setUpBase() {
             MockKAnnotations.init(this, relaxed = true)
-            file = OCFile("/test/path")
+            file = com.owncloud.gshare.datamodel.OCFile("/test/path")
             registry = Registry(onTransferStart, onTransferChanged, MAX_TRANSFER_THREADS)
             resetMocks()
         }
@@ -260,7 +260,7 @@ class RegistryTest {
             // WHEN
             //      transfer is completed
             //      file has been updated
-            val updatedFile = OCFile("/updated/file")
+            val updatedFile = com.owncloud.gshare.datamodel.OCFile("/updated/file")
             registry.complete(uuid, true, updatedFile)
 
             // THEN
@@ -310,9 +310,9 @@ class RegistryTest {
 
     class GetTransfers : Base() {
 
-        val pendingTransferFile = OCFile("/pending")
-        val runningTransferFile = OCFile("/running")
-        val completedTransferFile = OCFile("/completed")
+        val pendingTransferFile = com.owncloud.gshare.datamodel.OCFile("/pending")
+        val runningTransferFile = com.owncloud.gshare.datamodel.OCFile("/running")
+        val completedTransferFile = com.owncloud.gshare.datamodel.OCFile("/completed")
 
         lateinit var pendingTransferId: UUID
         lateinit var runningTransferId: UUID
@@ -429,7 +429,7 @@ class RegistryTest {
         fun not_found_by_path() {
             // GIVEN
             //      no transfer for a file
-            val nonExistingTransferFile = OCFile("/non-nexisting/transfer")
+            val nonExistingTransferFile = com.owncloud.gshare.datamodel.OCFile("/non-nexisting/transfer")
 
             // WHEN
             //      transfer status is retrieved for a file
@@ -475,7 +475,7 @@ class RegistryTest {
         fun request_pending() {
             // WHEN
             //      request is enqueued
-            val request = DownloadRequest(user, OCFile("/path/alpha/1"))
+            val request = DownloadRequest(user, com.owncloud.gshare.datamodel.OCFile("/path/alpha/1"))
             registry.add(request)
             assertEquals(1, registry.pending.size)
             assertEquals(0, registry.running.size)
@@ -490,7 +490,7 @@ class RegistryTest {
         fun request_running() {
             // WHEN
             //      request is running
-            val request = DownloadRequest(user, OCFile("/path/alpha/1"))
+            val request = DownloadRequest(user, com.owncloud.gshare.datamodel.OCFile("/path/alpha/1"))
             registry.add(request)
             registry.startNext()
             assertEquals(0, registry.pending.size)
@@ -506,7 +506,7 @@ class RegistryTest {
         fun request_completed() {
             // WHEN
             //      request is running
-            val request = DownloadRequest(user, OCFile("/path/alpha/1"))
+            val request = DownloadRequest(user, com.owncloud.gshare.datamodel.OCFile("/path/alpha/1"))
             val id = registry.add(request)
             registry.startNext()
             registry.complete(id, true)

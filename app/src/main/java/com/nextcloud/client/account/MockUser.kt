@@ -24,7 +24,7 @@ import android.accounts.Account
 import android.net.Uri
 import android.os.Parcel
 import android.os.Parcelable
-import com.owncloud.android.MainApp
+import com.owncloud.gshare.MainApp
 import com.owncloud.android.lib.common.OwnCloudAccount
 import com.owncloud.android.lib.common.OwnCloudBasicCredentials
 import java.net.URI
@@ -52,7 +52,7 @@ data class MockUser(override val accountName: String, val accountType: String) :
         source.readString() as String
     )
 
-    override val server = Server(URI.create(""), MainApp.MINIMUM_SUPPORTED_SERVER_VERSION)
+    override val server = Server(URI.create(""), com.owncloud.gshare.MainApp.MINIMUM_SUPPORTED_SERVER_VERSION)
     override val isAnonymous = false
 
     override fun toPlatformAccount(): Account {

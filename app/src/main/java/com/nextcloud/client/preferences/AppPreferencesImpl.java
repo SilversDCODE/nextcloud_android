@@ -31,11 +31,11 @@ import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.client.account.UserAccountManagerImpl;
 import com.owncloud.android.datamodel.ArbitraryDataProvider;
-import com.owncloud.android.datamodel.ArbitraryDataProviderImpl;
-import com.owncloud.android.datamodel.FileDataStorageManager;
-import com.owncloud.android.datamodel.OCFile;
-import com.owncloud.android.ui.activity.PassCodeActivity;
-import com.owncloud.android.ui.activity.SettingsActivity;
+import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
+import com.owncloud.gshare.datamodel.FileDataStorageManager;
+import com.owncloud.gshare.datamodel.OCFile;
+import com.owncloud.gshare.ui.activity.PassCodeActivity;
+import com.owncloud.gshare.ui.activity.SettingsActivity;
 import com.owncloud.android.utils.FileSortOrder;
 
 import java.util.Set;
@@ -45,7 +45,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 
-import static com.owncloud.android.ui.fragment.OCFileListFragment.FOLDER_LAYOUT_LIST;
+import static com.owncloud.gshare.ui.fragment.OCFileListFragment.FOLDER_LAYOUT_LIST;
 
 /**
  * Implementation of application-wide preferences using {@link SharedPreferences}.

@@ -38,11 +38,11 @@ import com.nextcloud.client.logger.Logger
 import com.owncloud.android.R
 import com.owncloud.android.databinding.ActivityDocumentScanBinding
 import com.owncloud.android.databinding.DialogScanExportTypeBinding
-import com.owncloud.android.ui.activity.ToolbarActivity
+import com.owncloud.gshare.ui.activity.ToolbarActivity
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
-class DocumentScanActivity : ToolbarActivity(), Injectable {
+class DocumentScanActivity : com.owncloud.gshare.ui.activity.ToolbarActivity(), Injectable {
 
     @Inject
     lateinit var vmFactory: ViewModelFactory

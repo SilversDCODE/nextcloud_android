@@ -41,8 +41,8 @@ import com.nextcloud.client.logger.Logger
 import com.nextcloud.client.network.ConnectivityService
 import com.nextcloud.client.preferences.AppPreferences
 import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.android.datamodel.SyncedFolderProvider
-import com.owncloud.android.datamodel.UploadsStorageManager
+import com.owncloud.gshare.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.UploadsStorageManager
 import com.owncloud.android.utils.theme.ViewThemeUtils
 import org.greenrobot.eventbus.EventBus
 import javax.inject.Inject
@@ -65,7 +65,7 @@ class BackgroundJobFactory @Inject constructor(
     private val accountManager: UserAccountManager,
     private val resources: Resources,
     private val dataProvider: ArbitraryDataProvider,
-    private val uploadsStorageManager: UploadsStorageManager,
+    private val uploadsStorageManager: com.owncloud.gshare.datamodel.UploadsStorageManager,
     private val connectivityService: ConnectivityService,
     private val notificationManager: NotificationManager,
     private val eventBus: EventBus,
@@ -73,7 +73,7 @@ class BackgroundJobFactory @Inject constructor(
     private val viewThemeUtils: Provider<ViewThemeUtils>,
     private val localBroadcastManager: Provider<LocalBroadcastManager>,
     private val generatePdfUseCase: GeneratePDFUseCase,
-    private val syncedFolderProvider: SyncedFolderProvider
+    private val syncedFolderProvider: com.owncloud.gshare.datamodel.SyncedFolderProvider
 ) : WorkerFactory() {
 
     @SuppressLint("NewApi")

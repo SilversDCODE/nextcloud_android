@@ -19,11 +19,11 @@
  */
 package com.nextcloud.client.files.downloader
 
-import com.owncloud.android.files.services.FileUploader
+import com.owncloud.gshare.files.services.FileUploader
 
 enum class PostUploadAction(val value: Int) {
-    NONE(FileUploader.LOCAL_BEHAVIOUR_FORGET),
-    COPY_TO_APP(FileUploader.LOCAL_BEHAVIOUR_COPY),
-    MOVE_TO_APP(FileUploader.LOCAL_BEHAVIOUR_MOVE),
-    DELETE_SOURCE(FileUploader.LOCAL_BEHAVIOUR_DELETE)
+    NONE(com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_FORGET),
+    COPY_TO_APP(com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_COPY),
+    MOVE_TO_APP(com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_MOVE),
+    DELETE_SOURCE(com.owncloud.gshare.files.services.FileUploader.LOCAL_BEHAVIOUR_DELETE)
 }

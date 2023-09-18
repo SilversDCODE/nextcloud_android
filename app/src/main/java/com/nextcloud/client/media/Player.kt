@@ -29,7 +29,7 @@ import com.nextcloud.client.media.PlayerStateMachine.Event
 import com.nextcloud.client.media.PlayerStateMachine.State
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.OCFile
+import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.utils.Log_OC
 
 @Suppress("TooManyFunctions")
@@ -48,7 +48,7 @@ internal class Player(
     }
 
     interface Listener {
-        fun onRunning(file: OCFile)
+        fun onRunning(file: com.owncloud.gshare.datamodel.OCFile)
         fun onStart()
         fun onPause()
         fun onStop()
@@ -60,7 +60,7 @@ internal class Player(
 
     private var enqueuedFile: PlaylistItem? = null
 
-    private var playedFile: OCFile? = null
+    private var playedFile: com.owncloud.gshare.datamodel.OCFile? = null
     private var startPositionMs: Long = 0
     private var autoPlay = true
     private var user: User? = null
@@ -194,7 +194,7 @@ internal class Player(
         stateMachine.post(Event.STOP)
     }
 
-    fun stop(file: OCFile) {
+    fun stop(file: com.owncloud.gshare.datamodel.OCFile) {
         if (playedFile == file) {
             stateMachine.post(Event.STOP)
         }

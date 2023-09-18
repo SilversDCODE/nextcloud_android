@@ -21,7 +21,7 @@
 
 package com.nextcloud.client.utils
 
-import com.owncloud.android.utils.FileStorageUtils
+import com.owncloud.gshare.utils.FileStorageUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.io.File
@@ -36,7 +36,7 @@ class FileStorageUtilsTest {
         val subFolderByDate = false
         val dateTaken = 123123123L
 
-        val result = FileStorageUtils.getInstantUploadFilePath(
+        val result = _root_ide_package_.com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             Locale.ROOT,
             syncedFolderRemotePath,
@@ -57,7 +57,7 @@ class FileStorageUtilsTest {
         val subFolderByDate = false
         val dateTaken = 123123123L
 
-        val result = FileStorageUtils.getInstantUploadFilePath(
+        val result = _root_ide_package_.com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             Locale.ROOT,
             syncedFolderRemotePath,
@@ -78,7 +78,7 @@ class FileStorageUtilsTest {
         val subFolderByDate = true
         val dateTaken = 0L
 
-        val result = FileStorageUtils.getInstantUploadFilePath(
+        val result = _root_ide_package_.com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             Locale.ROOT,
             syncedFolderRemotePath,
@@ -99,7 +99,7 @@ class FileStorageUtilsTest {
         val subFolderByDate = false
         val dateTaken = 123123123L
 
-        val result = FileStorageUtils.getInstantUploadFilePath(
+        val result = _root_ide_package_.com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             Locale.ROOT,
             syncedFolderRemotePath,
@@ -120,7 +120,7 @@ class FileStorageUtilsTest {
         val subFolderByDate = true
         val dateTaken = 1569918628000L
 
-        val result = FileStorageUtils.getInstantUploadFilePath(
+        val result = _root_ide_package_.com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             Locale.ROOT,
             syncedFolderRemotePath,
@@ -141,7 +141,7 @@ class FileStorageUtilsTest {
         val subFolderByDate = false
         val dateTaken = 123123123L
 
-        val result = FileStorageUtils.getInstantUploadFilePath(
+        val result = _root_ide_package_.com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             Locale.ROOT,
             syncedFolderRemotePath,
@@ -162,7 +162,7 @@ class FileStorageUtilsTest {
         val subFolderByDate = true
         val dateTaken = 1569918628000L
 
-        val result = FileStorageUtils.getInstantUploadFilePath(
+        val result = _root_ide_package_.com.owncloud.gshare.utils.FileStorageUtils.getInstantUploadFilePath(
             file,
             Locale.ROOT,
             syncedFolderRemotePath,

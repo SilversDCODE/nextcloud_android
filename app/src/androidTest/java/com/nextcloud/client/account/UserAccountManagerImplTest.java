@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 import com.nextcloud.client.preferences.AppPreferences;
 import com.nextcloud.client.preferences.AppPreferencesImpl;
-import com.owncloud.android.AbstractOnServerIT;
-import com.owncloud.android.datamodel.OCFile;
+import com.owncloud.gshare.AbstractOnServerIT;
+import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.accounts.AccountUtils;
 
 import org.junit.Before;

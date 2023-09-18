@@ -22,15 +22,15 @@ package com.nextcloud.client.files.downloader
 import android.os.Parcel
 import android.os.Parcelable
 import com.nextcloud.client.account.User
-import com.owncloud.android.datamodel.OCFile
-import com.owncloud.android.datamodel.UploadsStorageManager
-import com.owncloud.android.db.OCUpload
-import com.owncloud.android.files.services.NameCollisionPolicy
+import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.datamodel.UploadsStorageManager
+import com.owncloud.gshare.db.OCUpload
+import com.owncloud.gshare.files.services.NameCollisionPolicy
 import java.util.UUID
 
 sealed class Request(
     val user: User,
-    val file: OCFile,
+    val file: com.owncloud.gshare.datamodel.OCFile,
     val uuid: UUID,
     val type: Direction,
     val test: Boolean
@@ -51,7 +51,7 @@ sealed class Request(
  */
 class DownloadRequest internal constructor(
     user: User,
-    file: OCFile,
+    file: com.owncloud.gshare.datamodel.OCFile,
     uuid: UUID,
     type: Direction,
     test: Boolean = false
@@ -59,18 +59,18 @@ class DownloadRequest internal constructor(
 
     constructor(
         user: User,
-        file: OCFile
+        file: com.owncloud.gshare.datamodel.OCFile
     ) : this(user, file, UUID.randomUUID(), Direction.DOWNLOAD)
 
     constructor(
         user: User,
-        file: OCFile,
+        file: com.owncloud.gshare.datamodel.OCFile,
         test: Boolean
     ) : this(user, file, UUID.randomUUID(), Direction.DOWNLOAD, test)
 
     constructor(parcel: Parcel) : this(
         user = parcel.readParcelable<User>(User::class.java.classLoader) as User,
-        file = parcel.readParcelable<OCFile>(OCFile::class.java.classLoader) as OCFile,
+        file = parcel.readParcelable<com.owncloud.gshare.datamodel.OCFile>(com.owncloud.gshare.datamodel.OCFile::class.java.classLoader) as com.owncloud.gshare.datamodel.OCFile,
         uuid = parcel.readSerializable() as UUID,
         type = parcel.readSerializable() as Direction,
         test = parcel.readInt() != 0
@@ -102,8 +102,8 @@ class DownloadRequest internal constructor(
 @Suppress("LongParameterList")
 class UploadRequest internal constructor(
     user: User,
-    file: OCFile,
-    val upload: OCUpload,
+    file: com.owncloud.gshare.datamodel.OCFile,
+    val upload: com.owncloud.gshare.db.OCUpload,
     uuid: UUID,
     type: Direction,
     test: Boolean
@@ -111,11 +111,11 @@ class UploadRequest internal constructor(
 
     constructor(
         user: User,
-        upload: OCUpload,
+        upload: com.owncloud.gshare.db.OCUpload,
         test: Boolean
     ) : this(
         user,
-        OCFile(upload.remotePath).apply {
+        com.owncloud.gshare.datamodel.OCFile(upload.remotePath).apply {
             storagePath = upload.localPath
             fileLength = upload.fileSize
         },
@@ -127,13 +127,13 @@ class UploadRequest internal constructor(
 
     constructor(
         user: User,
-        upload: OCUpload
+        upload: com.owncloud.gshare.db.OCUpload
     ) : this(user, upload, false)
 
     constructor(parcel: Parcel) : this(
         user = parcel.readParcelable<User>(User::class.java.classLoader) as User,
-        file = parcel.readParcelable<OCFile>(OCFile::class.java.classLoader) as OCFile,
-        upload = parcel.readParcelable<OCUpload>(OCUpload::class.java.classLoader) as OCUpload,
+        file = parcel.readParcelable<com.owncloud.gshare.datamodel.OCFile>(com.owncloud.gshare.datamodel.OCFile::class.java.classLoader) as com.owncloud.gshare.datamodel.OCFile,
+        upload = parcel.readParcelable<com.owncloud.gshare.db.OCUpload>(com.owncloud.gshare.db.OCUpload::class.java.classLoader) as com.owncloud.gshare.db.OCUpload,
         uuid = parcel.readSerializable() as UUID,
         type = parcel.readSerializable() as Direction,
         test = parcel.readInt() != 0
@@ -167,7 +167,7 @@ class UploadRequest internal constructor(
      */
     class Builder(private val user: User, private var source: String, private var destination: String) {
         private var fileSize: Long = 0
-        private var nameConflictPolicy = NameCollisionPolicy.ASK_USER
+        private var nameConflictPolicy = com.owncloud.gshare.files.services.NameCollisionPolicy.ASK_USER
         private var createRemoteFolder = true
         private var trigger = UploadTrigger.USER
         private var requireWifi = false
@@ -185,7 +185,7 @@ class UploadRequest internal constructor(
             return this
         }
 
-        fun setNameConflicPolicy(policy: NameCollisionPolicy): Builder {
+        fun setNameConflicPolicy(policy: com.owncloud.gshare.files.services.NameCollisionPolicy): Builder {
             this.nameConflictPolicy = policy
             return this
         }
@@ -216,7 +216,7 @@ class UploadRequest internal constructor(
         }
 
         fun build(): Request {
-            val upload = OCUpload(source, destination, user.accountName)
+            val upload = com.owncloud.gshare.db.OCUpload(source, destination, user.accountName)
             upload.fileSize = fileSize
             upload.nameCollisionPolicy = this.nameConflictPolicy
             upload.isCreateRemoteFolder = this.createRemoteFolder
@@ -224,7 +224,7 @@ class UploadRequest internal constructor(
             upload.localAction = this.postUploadAction.value
             upload.isUseWifiOnly = this.requireWifi
             upload.isWhileChargingOnly = this.requireCharging
-            upload.uploadStatus = UploadsStorageManager.UploadStatus.UPLOAD_IN_PROGRESS
+            upload.uploadStatus = com.owncloud.gshare.datamodel.UploadsStorageManager.UploadStatus.UPLOAD_IN_PROGRESS
             return UploadRequest(user, upload)
         }
     }
