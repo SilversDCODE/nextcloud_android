@@ -31,9 +31,7 @@ import androidx.core.app.NotificationCompat
 import com.nextcloud.client.account.User
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.ui.notifications.NotificationUtils
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import dagger.android.AndroidInjection
 import java.util.Locale
 import javax.inject.Inject

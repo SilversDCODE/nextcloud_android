@@ -31,8 +31,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
-import com.owncloud.android.R
-import com.owncloud.gshare.ui.TextDrawable
+import com.owncloud.gshare.R
 
 internal class AvatarTestFragment : Fragment() {
     lateinit var list1: LinearLayout

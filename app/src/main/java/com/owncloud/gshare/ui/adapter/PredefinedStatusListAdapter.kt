@@ -26,7 +26,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.owncloud.android.databinding.PredefinedStatusBinding
+import com.owncloud.gshare.databinding.PredefinedStatusBinding
 import com.owncloud.android.lib.resources.users.PredefinedStatus
 
 class PredefinedStatusListAdapter(

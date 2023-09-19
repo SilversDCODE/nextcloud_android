@@ -25,7 +25,6 @@ import androidx.annotation.RequiresApi
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.nextcloud.client.device.PowerManagementService
-import com.owncloud.gshare.datamodel.SyncedFolderProvider
 
 /**
  * This work is triggered when OS detects change in media folders.

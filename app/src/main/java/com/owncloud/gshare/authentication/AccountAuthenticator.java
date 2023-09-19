@@ -36,7 +36,6 @@ import com.owncloud.gshare.MainApp;
 import com.owncloud.android.R;
 import com.owncloud.android.lib.common.accounts.AccountTypeUtils;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.gshare.MainApp;
 
 
 /**

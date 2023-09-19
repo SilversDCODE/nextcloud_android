@@ -40,12 +40,7 @@ import com.nextcloud.android.lib.resources.dashboard.DashboardButton
 import com.nextcloud.client.account.CurrentAccountProvider
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
-import com.owncloud.gshare.utils.BitmapUtils
 import com.owncloud.gshare.utils.DisplayUtils.SVG_SIZE
-import com.owncloud.gshare.utils.glide.CustomGlideUriLoader
-import com.owncloud.gshare.utils.svg.SVGorImage
-import com.owncloud.gshare.utils.svg.SvgOrImageBitmapTranscoder
-import com.owncloud.gshare.utils.svg.SvgOrImageDecoder
 import java.io.InputStream
 import javax.inject.Inject
 

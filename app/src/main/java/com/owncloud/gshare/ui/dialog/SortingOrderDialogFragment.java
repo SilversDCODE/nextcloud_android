@@ -30,11 +30,11 @@ import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.SortingOrderFragmentBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.SortingOrderFragmentBinding;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.android.utils.FileSortOrder;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.FileSortOrder;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

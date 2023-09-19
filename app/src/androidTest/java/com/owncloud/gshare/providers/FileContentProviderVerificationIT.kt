@@ -22,8 +22,6 @@
 package com.owncloud.gshare.providers
 
 import android.content.ContentValues
-import com.owncloud.gshare.db.ProviderMeta
-import com.owncloud.gshare.utils.MimeTypeUtil
 import org.junit.Test
 import java.lang.IllegalArgumentException
 

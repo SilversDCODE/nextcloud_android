@@ -29,8 +29,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.elyeproj.loaderviewlibrary.LoaderImageView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
-import com.owncloud.android.databinding.ListItemBinding
-import com.owncloud.gshare.ui.AvatarGroupLayout
+import com.owncloud.gshare.databinding.ListItemBinding
 
 internal class OCFileListItemViewHolder(private var binding: ListItemBinding) :
     RecyclerView.ViewHolder(

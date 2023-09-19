@@ -44,29 +44,20 @@ import com.nextcloud.client.jobs.BackgroundJobManager
 import com.nextcloud.client.jobs.MediaFoldersDetectionWork
 import com.nextcloud.client.jobs.NotificationWork
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.gshare.BuildConfig
+
 import com.owncloud.gshare.MainApp
-import com.owncloud.android.R
-import com.owncloud.android.databinding.SyncedFoldersLayoutBinding
-import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.SyncedFoldersLayoutBinding
+
 import com.owncloud.gshare.datamodel.MediaFolder
-import com.owncloud.gshare.datamodel.MediaFolderType
-import com.owncloud.gshare.datamodel.MediaProvider
-import com.owncloud.gshare.datamodel.OCFile
+
 import com.owncloud.gshare.datamodel.SyncedFolder
 import com.owncloud.gshare.datamodel.SyncedFolderDisplayItem
-import com.owncloud.gshare.datamodel.SyncedFolderProvider
-import com.owncloud.gshare.files.services.FileUploader
-import com.owncloud.gshare.files.services.NameCollisionPolicy
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.ui.adapter.SyncedFolderAdapter
-import com.owncloud.gshare.ui.decoration.MediaGridItemDecoration
-import com.owncloud.gshare.ui.dialog.SyncedFolderPreferencesDialogFragment
 import com.owncloud.gshare.ui.dialog.SyncedFolderPreferencesDialogFragment.OnSyncedFolderPreferenceListener
-import com.owncloud.gshare.ui.dialog.parcel.SyncedFolderParcelable
-import com.owncloud.android.utils.PermissionUtil
-import com.owncloud.android.utils.SyncedFolderUtils
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.utils.PermissionUtil
+import com.owncloud.gshare.utils.SyncedFolderUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

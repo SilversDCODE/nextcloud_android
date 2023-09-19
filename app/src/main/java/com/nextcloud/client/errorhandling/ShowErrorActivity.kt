@@ -29,8 +29,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import com.owncloud.android.R
 import com.owncloud.android.databinding.ActivityShowErrorBinding
-import com.owncloud.gshare.utils.ClipboardUtil
-import com.owncloud.gshare.utils.DisplayUtils
 import java.net.URLEncoder
 
 class ShowErrorActivity : AppCompatActivity() {

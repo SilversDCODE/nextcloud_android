@@ -39,22 +39,18 @@ import com.nextcloud.client.core.AsyncRunner
 import com.nextcloud.client.di.Injectable
 import com.nextcloud.client.di.ViewModelFactory
 import com.nextcloud.client.network.ClientFactory
-import com.owncloud.android.R
-import com.owncloud.android.databinding.ListFragmentBinding
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.ListFragmentBinding
 import com.owncloud.android.lib.common.SearchResultEntry
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.ui.activity.FileDisplayActivity
-import com.owncloud.android.ui.adapter.UnifiedSearchListAdapter
-import com.owncloud.android.ui.fragment.util.PairMediatorLiveData
-import com.owncloud.android.ui.interfaces.UnifiedSearchListInterface
-import com.owncloud.android.ui.unifiedsearch.IUnifiedSearchViewModel
-import com.owncloud.android.ui.unifiedsearch.ProviderID
-import com.owncloud.android.ui.unifiedsearch.UnifiedSearchSection
-import com.owncloud.android.ui.unifiedsearch.UnifiedSearchViewModel
-import com.owncloud.gshare.utils.DisplayUtils
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.ui.adapter.UnifiedSearchListAdapter
+import com.owncloud.gshare.ui.fragment.util.PairMediatorLiveData
+import com.owncloud.gshare.ui.interfaces.UnifiedSearchListInterface
+import com.owncloud.gshare.ui.unifiedsearch.IUnifiedSearchViewModel
+import com.owncloud.gshare.ui.unifiedsearch.ProviderID
+import com.owncloud.gshare.ui.unifiedsearch.UnifiedSearchSection
+import com.owncloud.gshare.ui.unifiedsearch.UnifiedSearchViewModel
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
 /**

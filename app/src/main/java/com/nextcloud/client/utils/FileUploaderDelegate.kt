@@ -25,9 +25,7 @@ package com.nextcloud.client.utils
 import android.content.Context
 import android.content.Intent
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.owncloud.gshare.files.services.FileUploader
 import com.owncloud.android.lib.common.operations.RemoteOperationResult
-import com.owncloud.gshare.operations.UploadFileOperation
 
 class FileUploaderDelegate {
     /**

@@ -24,7 +24,7 @@ package com.owncloud.gshare.ui.adapter;
 
 import android.view.View;
 
-import com.owncloud.android.databinding.FileDetailsSharePublicLinkAddNewItemBinding;
+import com.owncloud.gshare.databinding.FileDetailsSharePublicLinkAddNewItemBinding;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

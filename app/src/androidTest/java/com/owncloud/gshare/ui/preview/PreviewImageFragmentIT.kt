@@ -23,7 +23,6 @@ package com.owncloud.gshare.ui.preview
 
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
 import org.junit.Rule
 
 class PreviewImageFragmentIT : com.owncloud.gshare.AbstractIT() {

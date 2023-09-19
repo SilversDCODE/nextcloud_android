@@ -43,20 +43,13 @@ import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.core.Clock
 import com.nextcloud.client.preferences.AppPreferences
 import com.nextcloud.client.preferences.AppPreferencesImpl
-import com.owncloud.gshare.MainApp
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl
-import com.owncloud.gshare.datamodel.MediaFolderType
-import com.owncloud.gshare.datamodel.MediaFoldersModel
-import com.owncloud.gshare.datamodel.MediaProvider
-import com.owncloud.gshare.datamodel.SyncedFolderProvider
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.gshare.ui.activity.ManageAccountsActivity.PENDING_FOR_REMOVAL
-import com.owncloud.android.ui.activity.SyncedFoldersActivity
-import com.owncloud.gshare.ui.notifications.NotificationUtils
-import com.owncloud.android.utils.SyncedFolderUtils
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.ui.activity.SyncedFoldersActivity
+import com.owncloud.gshare.utils.SyncedFolderUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import java.util.Random
 
 @Suppress("LongParameterList") // dependencies injection

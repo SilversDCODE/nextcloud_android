@@ -4,7 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
+//import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +13,8 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.nextcloud.client.utils.IntentUtil;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.gshare.ui.adapter.SendButtonAdapter;
-import com.owncloud.gshare.ui.components.SendButtonData;
 import com.owncloud.gshare.ui.adapter.SendButtonAdapter;
 import com.owncloud.gshare.ui.components.SendButtonData;
 

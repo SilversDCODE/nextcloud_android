@@ -41,13 +41,8 @@ import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.utils.BitmapUtils
+
 import com.owncloud.gshare.utils.DisplayUtils.SVG_SIZE
-import com.owncloud.gshare.utils.glide.CustomGlideStreamLoader
-import com.owncloud.gshare.utils.glide.CustomGlideUriLoader
-import com.owncloud.gshare.utils.svg.SVGorImage
-import com.owncloud.gshare.utils.svg.SvgOrImageBitmapTranscoder
-import com.owncloud.gshare.utils.svg.SvgOrImageDecoder
 import dagger.android.AndroidInjection
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

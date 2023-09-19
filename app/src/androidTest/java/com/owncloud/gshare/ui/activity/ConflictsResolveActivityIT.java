@@ -26,14 +26,13 @@ import android.content.Intent;
 
 import com.nextcloud.client.account.UserAccountManagerImpl;
 import com.owncloud.gshare.AbstractIT;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.db.OCUpload;
 import com.owncloud.gshare.ui.dialog.ConflictsResolveDialog;
 import com.owncloud.gshare.utils.FileStorageUtils;
 import com.owncloud.gshare.utils.ScreenshotTest;
-import com.owncloud.gshare.AbstractIT;
 
 import org.junit.After;
 import org.junit.Rule;

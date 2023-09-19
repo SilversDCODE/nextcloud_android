@@ -25,8 +25,8 @@ import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.nextcloud.client.di.Injectable
-import com.owncloud.android.databinding.ActivityPreviewBitmapBinding
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.databinding.ActivityPreviewBitmapBinding
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
 /**

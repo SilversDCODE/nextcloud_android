@@ -28,11 +28,6 @@ import android.view.WindowManager
 import androidx.annotation.VisibleForTesting
 import com.nextcloud.client.core.Clock
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.gshare.MainApp
-import com.owncloud.gshare.ui.activity.PassCodeActivity
-import com.owncloud.gshare.ui.activity.RequestCredentialsActivity
-import com.owncloud.gshare.ui.activity.SettingsActivity
-import com.owncloud.gshare.utils.DeviceCredentialUtils
 import kotlin.math.abs
 
 @Suppress("TooManyFunctions")

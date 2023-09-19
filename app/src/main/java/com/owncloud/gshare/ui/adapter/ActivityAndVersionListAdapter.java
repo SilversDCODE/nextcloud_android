@@ -33,13 +33,13 @@ import android.view.ViewGroup;
 import com.nextcloud.client.account.CurrentAccountProvider;
 import com.nextcloud.client.network.ClientFactory;
 import com.nextcloud.common.NextcloudClient;
-import com.owncloud.android.databinding.VersionListItemBinding;
+import com.owncloud.gshare.databinding.VersionListItemBinding;
 import com.owncloud.android.lib.resources.activities.model.Activity;
 import com.owncloud.android.lib.resources.files.model.FileVersion;
 import com.owncloud.gshare.ui.interfaces.ActivityListInterface;
 import com.owncloud.gshare.ui.interfaces.VersionListInterface;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.Collections;
 import java.util.Date;

@@ -30,9 +30,7 @@ import com.nextcloud.android.common.ui.util.PlatformThemeUtil
 import com.nextcloud.client.appinfo.AppInfo
 import com.nextcloud.client.device.DeviceInfo
 import com.nextcloud.utils.EditorUtils
-import com.owncloud.android.R
-import com.owncloud.gshare.ui.asynctasks.TextEditorLoadUrlTask
-import com.owncloud.gshare.utils.theme.ThemeUtils
+import com.owncloud.gshare.R
 import javax.inject.Inject
 
 class TextEditorWebView : _root_ide_package_.com.owncloud.gshare.ui.activity.EditorWebView() {

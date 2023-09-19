@@ -27,8 +27,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.SslValidatorLayoutBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.SslValidatorLayoutBinding;
 import com.owncloud.android.lib.common.network.CertificateCombinedException;
 import com.owncloud.android.lib.common.network.NetworkUtils;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;

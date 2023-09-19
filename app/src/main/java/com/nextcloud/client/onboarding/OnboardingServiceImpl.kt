@@ -24,11 +24,7 @@ import android.content.Intent
 import android.content.res.Resources
 import com.nextcloud.client.account.CurrentAccountProvider
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.gshare.BuildConfig
 import com.owncloud.android.R
-import com.owncloud.gshare.authentication.AuthenticatorActivity
-import com.owncloud.gshare.features.FeatureItem
-import com.owncloud.gshare.ui.activity.PassCodeActivity
 
 internal class OnboardingServiceImpl constructor(
     private val resources: Resources,

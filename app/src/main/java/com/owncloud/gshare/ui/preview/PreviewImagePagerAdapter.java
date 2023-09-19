@@ -28,7 +28,7 @@ import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.VirtualFolderType;
 import com.owncloud.gshare.ui.fragment.FileFragment;
-import com.owncloud.android.utils.FileSortOrder;
+import com.owncloud.gshare.utils.FileSortOrder;
 import com.owncloud.gshare.utils.FileStorageUtils;
 
 import java.util.HashSet;

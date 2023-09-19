@@ -25,13 +25,8 @@ import android.graphics.BitmapFactory
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.resources.users.StatusType
-import com.owncloud.gshare.ui.TextDrawable
-import com.owncloud.gshare.utils.BitmapUtils
-import com.owncloud.gshare.utils.DisplayUtils
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 

@@ -23,9 +23,9 @@ package com.owncloud.gshare.ui.adapter
 
 import android.content.Context
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
-import com.owncloud.android.databinding.UnifiedSearchFooterBinding
-import com.owncloud.android.ui.interfaces.UnifiedSearchListInterface
-import com.owncloud.android.ui.unifiedsearch.UnifiedSearchSection
+import com.owncloud.gshare.databinding.UnifiedSearchFooterBinding
+import com.owncloud.gshare.ui.interfaces.UnifiedSearchListInterface
+import com.owncloud.gshare.ui.unifiedsearch.UnifiedSearchSection
 
 class UnifiedSearchFooterViewHolder(
     val binding: UnifiedSearchFooterBinding,

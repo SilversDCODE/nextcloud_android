@@ -1,7 +1,6 @@
 package com.owncloud.gshare.ui.adapter;
 
 import com.owncloud.gshare.ui.fragment.FeatureWebFragment;
-import com.owncloud.gshare.ui.fragment.FeatureWebFragment;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

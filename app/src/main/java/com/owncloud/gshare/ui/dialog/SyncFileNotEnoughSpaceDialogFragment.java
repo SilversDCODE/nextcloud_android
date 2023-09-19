@@ -26,12 +26,8 @@ import android.os.Bundle;
 import android.os.storage.StorageManager;
 
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.gshare.ui.dialog.ConfirmationDialogFragment.ConfirmationDialogFragmentListener;
-import com.owncloud.gshare.ui.fragment.OCFileListFragment;
-import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
 import com.owncloud.gshare.ui.fragment.OCFileListFragment;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.theme.ViewThemeUtils;

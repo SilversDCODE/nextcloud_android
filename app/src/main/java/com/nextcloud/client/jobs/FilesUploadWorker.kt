@@ -38,11 +38,6 @@ import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.ConnectivityService
 import com.nextcloud.client.utils.FileUploaderDelegate
 import com.owncloud.android.R
-import com.owncloud.gshare.authentication.AuthenticatorActivity
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
-import com.owncloud.gshare.datamodel.UploadsStorageManager
-import com.owncloud.gshare.db.OCUpload
 import com.owncloud.android.lib.common.OwnCloudAccount
 import com.owncloud.android.lib.common.OwnCloudClientManagerFactory
 import com.owncloud.android.lib.common.network.OnDatatransferProgressListener
@@ -50,12 +45,7 @@ import com.owncloud.android.lib.common.operations.RemoteOperationResult
 import com.owncloud.android.lib.common.operations.RemoteOperationResult.ResultCode
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.files.FileUtils
-import com.owncloud.gshare.operations.UploadFileOperation
-import com.owncloud.gshare.ui.activity.ConflictsResolveActivity
-import com.owncloud.gshare.ui.activity.UploadListActivity
-import com.owncloud.gshare.ui.notifications.NotificationUtils
-import com.owncloud.gshare.utils.ErrorMessageAdapter
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import java.io.File
 import java.security.SecureRandom
 

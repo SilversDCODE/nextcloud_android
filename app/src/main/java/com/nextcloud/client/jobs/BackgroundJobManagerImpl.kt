@@ -39,7 +39,6 @@ import androidx.work.workDataOf
 import com.nextcloud.client.account.User
 import com.nextcloud.client.core.Clock
 import com.nextcloud.client.documentscan.GeneratePdfFromImagesWork
-import com.owncloud.gshare.datamodel.OCFile
 import java.util.Date
 import java.util.UUID
 import java.util.concurrent.TimeUnit

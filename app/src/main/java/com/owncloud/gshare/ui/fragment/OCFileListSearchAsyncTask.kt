@@ -24,10 +24,9 @@ import android.os.AsyncTask
 import android.os.Handler
 import android.os.Looper
 import com.nextcloud.client.account.User
-import com.owncloud.gshare.datamodel.FileDataStorageManager
 import com.owncloud.android.lib.common.operations.RemoteOperation
 import com.owncloud.android.lib.common.operations.RemoteOperationResult
-import com.owncloud.android.ui.events.SearchEvent
+import com.owncloud.gshare.ui.events.SearchEvent
 import java.lang.ref.WeakReference
 
 class OCFileListSearchAsyncTask(

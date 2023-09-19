@@ -21,14 +21,13 @@
  */
 package com.owncloud.gshare.ui.asynctasks;
 
-import android.accounts.Account;
+//import android.accounts.Account;
 import android.os.AsyncTask;
 
 import com.nextcloud.client.account.User;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;
 import com.owncloud.gshare.operations.RichDocumentsUrlOperation;
-import com.owncloud.gshare.ui.activity.EditorWebView;
 import com.owncloud.gshare.ui.activity.EditorWebView;
 
 import java.lang.ref.WeakReference;

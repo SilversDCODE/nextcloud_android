@@ -27,15 +27,14 @@ import android.view.ViewGroup;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.QuickSharingPermissionsBottomSheetFragmentBinding;
-import com.owncloud.android.datamodel.QuickPermissionModel;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.QuickSharingPermissionsBottomSheetFragmentBinding;
+import com.owncloud.gshare.datamodel.QuickPermissionModel;
 import com.owncloud.android.lib.resources.shares.OCShare;
 import com.owncloud.gshare.ui.activity.FileActivity;
-import com.owncloud.android.ui.adapter.QuickSharingPermissionsAdapter;
+import com.owncloud.gshare.ui.adapter.QuickSharingPermissionsAdapter;
 import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activity.FileActivity;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -23,7 +23,6 @@
 package com.nextcloud.client.media
 
 import android.os.AsyncTask
-import com.owncloud.gshare.files.StreamMediaFileOperation
 import com.owncloud.android.lib.common.OwnCloudClient
 
 internal class LoadUrlTask(

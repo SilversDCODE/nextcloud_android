@@ -59,8 +59,8 @@ import com.nextcloud.client.media.PlayerServiceConnection;
 import com.nextcloud.client.network.ClientFactory;
 import com.nextcloud.common.NextcloudClient;
 import com.nextcloud.ui.fileactions.FileActionsBottomSheet;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.FragmentPreviewMediaBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.FragmentPreviewMediaBinding;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager;
 import com.owncloud.gshare.files.StreamMediaFileOperation;
@@ -73,7 +73,6 @@ import com.owncloud.gshare.ui.dialog.ConfirmationDialogFragment;
 import com.owncloud.gshare.ui.dialog.RemoveFilesDialogFragment;
 import com.owncloud.gshare.ui.fragment.FileFragment;
 import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.gshare.ui.activity.DrawerActivity;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

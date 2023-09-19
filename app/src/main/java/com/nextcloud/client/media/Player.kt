@@ -29,7 +29,6 @@ import com.nextcloud.client.media.PlayerStateMachine.Event
 import com.nextcloud.client.media.PlayerStateMachine.State
 import com.nextcloud.client.network.ClientFactory
 import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.utils.Log_OC
 
 @Suppress("TooManyFunctions")

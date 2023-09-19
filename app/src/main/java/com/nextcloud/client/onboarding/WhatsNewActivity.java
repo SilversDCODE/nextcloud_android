@@ -39,8 +39,7 @@ import com.owncloud.android.R;
 import com.owncloud.android.databinding.WhatsNewActivityBinding;
 import com.owncloud.gshare.ui.adapter.FeaturesViewAdapter;
 import com.owncloud.gshare.ui.adapter.FeaturesWebViewAdapter;
-import com.owncloud.gshare.ui.whatsnew.ProgressIndicator;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

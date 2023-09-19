@@ -24,9 +24,6 @@ package com.owncloud.gshare.ui.activity
 import android.content.Intent
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import com.nextcloud.test.GrantStoragePermissionRule
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.utils.FileStorageUtils
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule

@@ -34,11 +34,11 @@ import android.view.ViewGroup;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.nextcloud.android.lib.richWorkspace.RichWorkspaceDirectEditingRemoteOperation;
 import com.nextcloud.client.account.UserAccountManager;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

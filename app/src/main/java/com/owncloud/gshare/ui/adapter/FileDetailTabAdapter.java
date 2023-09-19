@@ -25,8 +25,6 @@ import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.ui.fragment.FileDetailActivitiesFragment;
 import com.owncloud.gshare.ui.fragment.FileDetailSharingFragment;
 import com.owncloud.gshare.utils.EncryptionUtils;
-import com.owncloud.gshare.ui.fragment.FileDetailActivitiesFragment;
-import com.owncloud.gshare.ui.fragment.FileDetailSharingFragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

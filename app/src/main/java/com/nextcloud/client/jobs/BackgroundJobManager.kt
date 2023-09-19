@@ -23,7 +23,6 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.LiveData
 import com.nextcloud.client.account.User
-import com.owncloud.gshare.datamodel.OCFile
 
 /**
  * This interface allows to control, schedule and monitor all application

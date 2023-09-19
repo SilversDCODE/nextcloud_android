@@ -25,8 +25,6 @@ package com.owncloud.gshare.ui.fragment
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import com.nextcloud.android.lib.resources.groupfolders.Groupfolder
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

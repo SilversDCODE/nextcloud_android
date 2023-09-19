@@ -23,7 +23,6 @@ package com.owncloud.gshare.providers
 
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractOnServerIT
 import org.junit.Rule
 import org.junit.Test
 

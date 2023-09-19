@@ -34,11 +34,11 @@ import android.widget.RelativeLayout;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.nextcloud.client.account.User;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.shares.ShareeUser;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.List;
 

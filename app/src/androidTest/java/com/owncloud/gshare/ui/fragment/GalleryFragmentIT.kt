@@ -28,14 +28,10 @@ import android.graphics.Color
 import android.graphics.Paint
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.android.datamodel.ImageDimension
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
+import com.owncloud.gshare.datamodel.ImageDimension
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager.InitDiskCacheTask
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager.PREFIX_RESIZED_IMAGE
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.After
 import org.junit.Assert.assertNotNull
 import org.junit.Before

@@ -37,8 +37,8 @@ import com.google.android.exoplayer2.ui.StyledPlayerView
 import com.nextcloud.client.media.ExoplayerListener
 import com.nextcloud.client.media.NextcloudExoPlayer
 import com.nextcloud.common.NextcloudClient
-import com.owncloud.android.R
-import com.owncloud.android.databinding.DialogPreviewVideoBinding
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.DialogPreviewVideoBinding
 import com.owncloud.android.lib.common.utils.Log_OC
 
 /**

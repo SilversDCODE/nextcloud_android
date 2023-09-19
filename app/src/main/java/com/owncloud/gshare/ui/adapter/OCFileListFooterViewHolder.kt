@@ -22,7 +22,7 @@
 package com.owncloud.gshare.ui.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import com.owncloud.android.databinding.ListFooterBinding
+import com.owncloud.gshare.databinding.ListFooterBinding
 
 internal class OCFileListFooterViewHolder(var binding: ListFooterBinding) : RecyclerView.ViewHolder(
     binding.root

@@ -26,7 +26,6 @@ import com.owncloud.gshare.AbstractIT;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.gshare.AbstractIT;
 
 import org.junit.Rule;
 import org.junit.Test;

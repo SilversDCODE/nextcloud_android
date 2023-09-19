@@ -30,7 +30,7 @@ import android.provider.DocumentsContract;
 import android.widget.Toast;
 
 import com.nextcloud.client.account.User;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.files.services.FileUploader;
 import com.owncloud.gshare.files.services.NameCollisionPolicy;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult.ResultCode;

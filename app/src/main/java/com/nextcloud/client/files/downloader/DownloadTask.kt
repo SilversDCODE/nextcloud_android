@@ -22,11 +22,7 @@ package com.nextcloud.client.files.downloader
 import android.content.ContentResolver
 import android.content.Context
 import com.nextcloud.client.core.IsCancelled
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.OwnCloudClient
-import com.owncloud.gshare.operations.DownloadFileOperation
-import com.owncloud.gshare.utils.MimeTypeUtil
 import java.io.File
 
 /**

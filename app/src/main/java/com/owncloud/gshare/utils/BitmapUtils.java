@@ -36,12 +36,10 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.users.Status;
 import com.owncloud.android.lib.resources.users.StatusType;
-import com.owncloud.gshare.ui.StatusDrawable;
-import com.owncloud.gshare.MainApp;
 import com.owncloud.gshare.ui.StatusDrawable;
 
 import org.apache.commons.codec.binary.Hex;

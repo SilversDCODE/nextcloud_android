@@ -23,6 +23,6 @@
 package com.owncloud.gshare.ui.adapter
 
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
-import com.owncloud.android.databinding.GalleryHeaderBinding
+import com.owncloud.gshare.databinding.GalleryHeaderBinding
 
 class GalleryHeaderViewHolder(val binding: GalleryHeaderBinding) : SectionedViewHolder(binding.root)

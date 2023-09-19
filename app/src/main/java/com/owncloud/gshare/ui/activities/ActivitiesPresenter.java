@@ -24,8 +24,6 @@ import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.ui.activities.data.activities.ActivitiesRepository;
 import com.owncloud.gshare.ui.activities.data.files.FilesRepository;
 import com.owncloud.gshare.ui.activity.BaseActivity;
-import com.owncloud.gshare.ui.activities.data.activities.ActivitiesRepository;
-import com.owncloud.gshare.ui.activity.BaseActivity;
 
 import java.util.List;
 

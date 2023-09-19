@@ -20,10 +20,6 @@
 
 package com.owncloud.gshare.utils
 
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.datamodel.MediaFolder
-import com.owncloud.gshare.datamodel.MediaFolderType
-import com.owncloud.gshare.datamodel.SyncedFolder
 import org.apache.commons.io.FileUtils
 import org.junit.AfterClass
 import org.junit.Assert

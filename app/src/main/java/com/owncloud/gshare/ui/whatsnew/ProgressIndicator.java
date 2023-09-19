@@ -33,9 +33,8 @@ import android.widget.LinearLayout;
 
 import com.nextcloud.android.common.ui.theme.utils.ColorRole;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.MainApp;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

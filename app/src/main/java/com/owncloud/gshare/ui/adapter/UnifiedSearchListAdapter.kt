@@ -31,16 +31,15 @@ import com.afollestad.sectionedrecyclerview.SectionedRecyclerViewAdapter
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
 import com.nextcloud.client.account.User
 import com.nextcloud.client.network.ClientFactory
-import com.owncloud.android.R
-import com.owncloud.android.databinding.UnifiedSearchEmptyBinding
-import com.owncloud.android.databinding.UnifiedSearchFooterBinding
-import com.owncloud.android.databinding.UnifiedSearchHeaderBinding
-import com.owncloud.android.databinding.UnifiedSearchItemBinding
-import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.UnifiedSearchEmptyBinding
+import com.owncloud.gshare.databinding.UnifiedSearchFooterBinding
+import com.owncloud.gshare.databinding.UnifiedSearchHeaderBinding
+import com.owncloud.gshare.databinding.UnifiedSearchItemBinding
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager.InitDiskCacheTask
-import com.owncloud.android.ui.interfaces.UnifiedSearchListInterface
-import com.owncloud.android.ui.unifiedsearch.UnifiedSearchSection
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.ui.interfaces.UnifiedSearchListInterface
+import com.owncloud.gshare.ui.unifiedsearch.UnifiedSearchSection
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 
 /**
  * This Adapter populates a SectionedRecyclerView with search results by unified search

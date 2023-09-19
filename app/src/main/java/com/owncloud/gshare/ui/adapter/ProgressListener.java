@@ -24,7 +24,6 @@ import android.widget.ProgressBar;
 
 import com.owncloud.gshare.db.OCUpload;
 import com.owncloud.android.lib.common.network.OnDatatransferProgressListener;
-import com.owncloud.gshare.db.OCUpload;
 
 import java.lang.ref.WeakReference;
 

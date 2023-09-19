@@ -44,7 +44,7 @@ import com.nextcloud.android.common.ui.theme.ViewThemeUtilsBase
 import com.nextcloud.android.common.ui.theme.utils.AndroidViewThemeUtils
 import com.nextcloud.android.common.ui.theme.utils.AndroidXViewThemeUtils
 import com.nextcloud.utils.view.FastScrollPopupBackground
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.shares.ShareType
 import me.zhanghai.android.fastscroll.FastScrollerBuilder

@@ -35,14 +35,14 @@ import android.widget.TextView;
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.ui.fileactions.FileActionsBottomSheet;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.ui.dialog.ConfirmationDialogFragment;
 import com.owncloud.gshare.ui.dialog.RemoveFilesDialogFragment;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import org.mozilla.universalchardet.ReaderFactory;
 

@@ -35,7 +35,6 @@ import com.owncloud.android.lib.resources.status.OCCapability;
 import com.owncloud.gshare.operations.RefreshFolderOperation;
 import com.owncloud.gshare.ui.fragment.GalleryFragment;
 import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.gshare.ui.fragment.GalleryFragment;
 
 import java.lang.ref.WeakReference;
 import java.text.SimpleDateFormat;

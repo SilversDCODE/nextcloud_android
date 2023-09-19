@@ -28,7 +28,6 @@ package com.nextcloud.client.errorhandling
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import com.owncloud.gshare.BuildConfig
 import com.owncloud.android.R
 
 class ExceptionHandler(

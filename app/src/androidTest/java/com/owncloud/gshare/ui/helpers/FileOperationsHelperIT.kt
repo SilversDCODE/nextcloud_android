@@ -21,7 +21,6 @@
  */
 package com.owncloud.gshare.ui.helpers
 
-import com.owncloud.gshare.MainApp
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
 import org.junit.Test

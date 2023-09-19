@@ -29,7 +29,7 @@ import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.client.network.ClientFactory;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.OwnCloudClient;
 import com.owncloud.android.lib.common.operations.RemoteOperation;
@@ -40,8 +40,6 @@ import com.owncloud.android.lib.resources.files.model.RemoteFile;
 import com.owncloud.gshare.operations.RefreshFolderOperation;
 import com.owncloud.gshare.ui.activity.BaseActivity;
 import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.gshare.MainApp;
-import com.owncloud.gshare.ui.activity.BaseActivity;
 
 /**
  * Implementation of the Files service API that communicates with the NextCloud remote server.

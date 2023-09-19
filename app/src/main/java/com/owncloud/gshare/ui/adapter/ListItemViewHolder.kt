@@ -27,7 +27,6 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import com.google.android.material.chip.Chip
 import com.google.android.material.chip.ChipGroup
-import com.owncloud.gshare.ui.AvatarGroupLayout
 
 internal interface ListItemViewHolder : ListGridItemViewHolder {
     val fileSize: TextView

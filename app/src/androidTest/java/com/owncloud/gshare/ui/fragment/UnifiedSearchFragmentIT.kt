@@ -23,11 +23,9 @@ package com.owncloud.gshare.ui.fragment
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.internal.runner.junit4.statement.UiThreadStatement
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.SearchResultEntry
-import com.owncloud.android.ui.unifiedsearch.UnifiedSearchSection
-import com.owncloud.android.ui.unifiedsearch.UnifiedSearchViewModel
+import com.owncloud.gshare.ui.unifiedsearch.UnifiedSearchSection
+import com.owncloud.gshare.ui.unifiedsearch.UnifiedSearchViewModel
 import org.junit.Rule
 import org.junit.Test
 import java.io.File

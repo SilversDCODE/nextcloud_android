@@ -40,10 +40,8 @@ import com.nextcloud.client.integrations.deck.DeckApi
 import com.nextcloud.client.logger.Logger
 import com.nextcloud.client.network.ConnectivityService
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.gshare.datamodel.SyncedFolderProvider
-import com.owncloud.gshare.datamodel.UploadsStorageManager
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import org.greenrobot.eventbus.EventBus
 import javax.inject.Inject
 import javax.inject.Provider

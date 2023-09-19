@@ -28,7 +28,7 @@ import android.os.Bundle;
 
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.jobs.BackgroundJobManager;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.ui.fragment.FileFragment;
 import com.owncloud.gshare.ui.fragment.contactsbackup.BackupFragment;

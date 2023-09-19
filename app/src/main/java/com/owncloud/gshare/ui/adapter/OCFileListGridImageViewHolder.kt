@@ -25,7 +25,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.elyeproj.loaderviewlibrary.LoaderImageView
-import com.owncloud.android.databinding.GridImageBinding
+import com.owncloud.gshare.databinding.GridImageBinding
 
 internal class OCFileListGridImageViewHolder(var binding: GridImageBinding) :
     RecyclerView.ViewHolder(

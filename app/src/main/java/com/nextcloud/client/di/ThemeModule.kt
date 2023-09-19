@@ -21,10 +21,9 @@
 package com.nextcloud.client.di
 
 import com.nextcloud.android.common.ui.theme.MaterialSchemes
-import com.owncloud.android.utils.theme.MaterialSchemesProvider
-import com.owncloud.android.utils.theme.MaterialSchemesProviderImpl
-import com.owncloud.gshare.utils.theme.ThemeColorUtils
-import com.owncloud.gshare.utils.theme.ThemeUtils
+import com.owncloud.gshare.utils.theme.MaterialSchemesProvider
+import com.owncloud.gshare.utils.theme.MaterialSchemesProviderImpl
+// import com.owncloud.gshare.utils.theme.ThemeColorUtils
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

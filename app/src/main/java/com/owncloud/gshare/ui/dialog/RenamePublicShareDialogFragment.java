@@ -30,16 +30,13 @@ import android.view.View;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.EditBoxDialogBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.EditBoxDialogBinding;
 import com.owncloud.android.lib.resources.shares.OCShare;
 import com.owncloud.gshare.ui.activity.ComponentsGetter;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.KeyboardUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activity.ComponentsGetter;
-import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.KeyboardUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

@@ -35,11 +35,10 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.nextcloud.android.lib.resources.profile.Action
 import com.nextcloud.android.lib.resources.profile.HoverCard
 import com.nextcloud.client.account.User
-import com.owncloud.android.R
-import com.owncloud.android.databinding.ProfileBottomSheetActionBinding
-import com.owncloud.android.databinding.ProfileBottomSheetFragmentBinding
-import com.owncloud.gshare.utils.DisplayUtils
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.ProfileBottomSheetActionBinding
+import com.owncloud.gshare.databinding.ProfileBottomSheetFragmentBinding
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 
 /**
  * Show actions of an user

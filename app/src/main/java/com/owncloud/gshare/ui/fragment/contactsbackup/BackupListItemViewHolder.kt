@@ -23,6 +23,6 @@
 package com.owncloud.gshare.ui.fragment.contactsbackup
 
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
-import com.owncloud.android.databinding.BackupListItemBinding
+import com.owncloud.gshare.databinding.BackupListItemBinding
 
 class BackupListItemViewHolder(val binding: BackupListItemBinding) : SectionedViewHolder(binding.root)

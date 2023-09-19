@@ -28,12 +28,11 @@ import com.nextcloud.android.lib.resources.profile.HoverCard;
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.network.ClientFactory;
 import com.nextcloud.common.NextcloudClient;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;
-import com.owncloud.android.ui.fragment.ProfileBottomSheetDialog;
-import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
 import com.owncloud.gshare.ui.fragment.ProfileBottomSheetDialog;
+import com.owncloud.gshare.utils.DisplayUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.lang.ref.WeakReference;
 

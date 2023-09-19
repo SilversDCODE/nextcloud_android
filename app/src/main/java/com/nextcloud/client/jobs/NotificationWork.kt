@@ -42,7 +42,7 @@ import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.integrations.deck.DeckApi
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.DecryptedPushMessage
+import com.owncloud.gshare.datamodel.DecryptedPushMessage
 import com.owncloud.android.lib.common.OwnCloudClient
 import com.owncloud.android.lib.common.OwnCloudClientManagerFactory
 import com.owncloud.android.lib.common.operations.RemoteOperation
@@ -50,11 +50,7 @@ import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.notifications.DeleteNotificationRemoteOperation
 import com.owncloud.android.lib.resources.notifications.GetNotificationRemoteOperation
 import com.owncloud.android.lib.resources.notifications.models.Notification
-import com.owncloud.gshare.ui.activity.FileDisplayActivity
-import com.owncloud.gshare.ui.activity.NotificationsActivity
-import com.owncloud.gshare.ui.notifications.NotificationUtils
-import com.owncloud.gshare.utils.PushUtils
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import dagger.android.AndroidInjection
 import org.apache.commons.httpclient.HttpMethod
 import org.apache.commons.httpclient.HttpStatus

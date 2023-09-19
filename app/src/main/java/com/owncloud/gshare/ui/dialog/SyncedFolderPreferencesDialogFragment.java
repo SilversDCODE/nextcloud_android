@@ -35,21 +35,18 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.SyncedFoldersSettingsLayoutBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.SyncedFoldersSettingsLayoutBinding;
 import com.owncloud.gshare.datamodel.MediaFolderType;
 import com.owncloud.gshare.datamodel.SyncedFolderDisplayItem;
 import com.owncloud.gshare.files.services.NameCollisionPolicy;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.android.ui.activity.FolderPickerActivity;
+import com.owncloud.gshare.ui.activity.FolderPickerActivity;
 import com.owncloud.gshare.ui.activity.UploadFilesActivity;
 import com.owncloud.gshare.ui.dialog.parcel.SyncedFolderParcelable;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activity.FolderPickerActivity;
-import com.owncloud.gshare.ui.activity.UploadFilesActivity;
-import com.owncloud.gshare.utils.DisplayUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.io.File;
 

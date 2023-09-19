@@ -55,23 +55,20 @@ import com.nextcloud.client.di.Injectable;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.nextcloud.client.preferences.AppPreferencesImpl;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.ListFragmentBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.ListFragmentBinding;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.files.SearchRemoteOperation;
 import com.owncloud.android.lib.resources.status.OwnCloudVersion;
 import com.owncloud.gshare.ui.EmptyRecyclerView;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
-import com.owncloud.android.ui.activity.FolderPickerActivity;
+import com.owncloud.gshare.ui.activity.FolderPickerActivity;
 import com.owncloud.gshare.ui.activity.OnEnforceableRefreshListener;
 import com.owncloud.gshare.ui.activity.UploadFilesActivity;
 import com.owncloud.gshare.ui.adapter.LocalFileListAdapter;
 import com.owncloud.gshare.ui.adapter.OCFileListAdapter;
-import com.owncloud.android.ui.events.SearchEvent;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activity.FileDisplayActivity;
-import com.owncloud.gshare.ui.activity.FolderPickerActivity;
-import com.owncloud.gshare.ui.activity.UploadFilesActivity;
+import com.owncloud.gshare.ui.events.SearchEvent;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import org.greenrobot.eventbus.EventBus;
 

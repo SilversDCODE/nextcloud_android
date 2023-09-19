@@ -32,15 +32,11 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.nextcloud.client.account.User
 import com.nextcloud.client.network.ClientFactory
-import com.owncloud.android.R
-import com.owncloud.android.databinding.UnifiedSearchItemBinding
-import com.owncloud.gshare.datamodel.FileDataStorageManager
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.UnifiedSearchItemBinding
 import com.owncloud.android.lib.common.SearchResultEntry
-import com.owncloud.android.ui.interfaces.UnifiedSearchListInterface
-import com.owncloud.gshare.utils.BitmapUtils
-import com.owncloud.gshare.utils.MimeTypeUtil
-import com.owncloud.gshare.utils.glide.CustomGlideStreamLoader
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.ui.interfaces.UnifiedSearchListInterface
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 
 @Suppress("LongParameterList")
 class UnifiedSearchItemViewHolder(

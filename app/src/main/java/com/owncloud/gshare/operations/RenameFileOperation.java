@@ -33,10 +33,6 @@ import com.owncloud.android.lib.resources.files.RenameFileRemoteOperation;
 import com.owncloud.gshare.operations.common.SyncOperation;
 import com.owncloud.gshare.utils.FileStorageUtils;
 import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.gshare.datamodel.FileDataStorageManager;
-import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.gshare.utils.MimeTypeUtil;
 
 import java.io.File;
 import java.io.IOException;

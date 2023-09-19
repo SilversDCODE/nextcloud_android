@@ -29,10 +29,10 @@ import android.view.ViewGroup
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import com.nextcloud.android.lib.resources.groupfolders.Groupfolder
-import com.owncloud.android.R
-import com.owncloud.android.databinding.ListItemBinding
-import com.owncloud.android.ui.interfaces.GroupfolderListInterface
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.ListItemBinding
+import com.owncloud.gshare.ui.interfaces.GroupfolderListInterface
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import java.io.File
 
 class GroupfolderListAdapter(

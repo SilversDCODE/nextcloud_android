@@ -30,7 +30,7 @@ import android.graphics.PixelFormat;
 import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.resources.users.Status;
 
 import androidx.annotation.DrawableRes;

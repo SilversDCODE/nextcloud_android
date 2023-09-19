@@ -25,7 +25,6 @@ import android.content.Intent;
 import com.owncloud.gshare.AbstractIT;
 import com.owncloud.android.lib.common.UserInfo;
 import com.owncloud.gshare.utils.ScreenshotTest;
-import com.owncloud.gshare.AbstractIT;
 
 import org.junit.Rule;
 import org.junit.Test;

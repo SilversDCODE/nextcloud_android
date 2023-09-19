@@ -38,8 +38,8 @@ import android.widget.TextView;
 import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.client.device.DeviceInfo;
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.TextFilePreviewBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.TextFilePreviewBinding;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
@@ -47,7 +47,7 @@ import com.owncloud.gshare.ui.fragment.FileFragment;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.MimeTypeUtil;
 import com.owncloud.gshare.utils.StringUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

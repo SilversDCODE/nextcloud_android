@@ -41,10 +41,9 @@ import com.owncloud.android.R
 import com.owncloud.android.databinding.DashboardWidgetConfigurationLayoutBinding
 import com.owncloud.android.lib.common.operations.RemoteOperationResult
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.android.ui.adapter.DashboardWidgetListAdapter
-import com.owncloud.android.ui.dialog.AccountChooserInterface
-import com.owncloud.gshare.ui.dialog.MultipleAccountsDialog
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.ui.adapter.DashboardWidgetListAdapter
+import com.owncloud.gshare.ui.dialog.AccountChooserInterface
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

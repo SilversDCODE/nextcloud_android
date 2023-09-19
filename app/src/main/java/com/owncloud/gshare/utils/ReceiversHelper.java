@@ -34,7 +34,6 @@ import com.nextcloud.client.network.WalledCheckCache;
 import com.nextcloud.common.DNSCache;
 import com.owncloud.gshare.MainApp;
 import com.owncloud.gshare.datamodel.UploadsStorageManager;
-import com.owncloud.gshare.MainApp;
 
 /**
  * Helper for setting up network and power receivers

@@ -41,13 +41,6 @@ import com.owncloud.gshare.operations.common.SyncOperation;
 import com.owncloud.gshare.services.OperationsService;
 import com.owncloud.gshare.utils.FileStorageUtils;
 import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.gshare.datamodel.DecryptedFolderMetadata;
-import com.owncloud.gshare.datamodel.FileDataStorageManager;
-import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.gshare.files.services.FileDownloader;
-import com.owncloud.gshare.services.OperationsService;
-import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.gshare.utils.MimeTypeUtil;
 
 import java.io.File;
 import java.util.ArrayList;

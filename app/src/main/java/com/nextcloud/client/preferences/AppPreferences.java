@@ -22,7 +22,7 @@ package com.nextcloud.client.preferences;
 
 import com.nextcloud.appReview.AppReviewShownModel;
 import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.android.utils.FileSortOrder;
+import com.owncloud.gshare.utils.FileSortOrder;
 import com.owncloud.gshare.ui.fragment.OCFileListFragment;
 
 import androidx.annotation.NonNull;

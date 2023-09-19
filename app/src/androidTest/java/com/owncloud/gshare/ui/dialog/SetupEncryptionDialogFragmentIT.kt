@@ -24,8 +24,6 @@ package com.owncloud.gshare.ui.dialog
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.internal.runner.junit4.statement.UiThreadStatement.runOnUiThread
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 

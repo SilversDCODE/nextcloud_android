@@ -26,7 +26,7 @@ import com.nextcloud.client.preferences.AppPreferencesImpl;
 import com.nextcloud.client.preferences.DarkMode;
 import com.nextcloud.common.NextcloudClient;
 import com.nextcloud.java.util.Optional;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.UploadsStorageManager;
@@ -69,7 +69,7 @@ import androidx.test.runner.lifecycle.Stage;
 
 import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
+//import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static com.owncloud.android.lib.common.accounts.AccountUtils.Constants.KEY_USER_ID;
 import static org.junit.Assert.assertTrue;
 

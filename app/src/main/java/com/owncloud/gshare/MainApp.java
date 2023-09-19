@@ -60,10 +60,10 @@ import com.nextcloud.client.onboarding.OnboardingService;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.nextcloud.client.preferences.AppPreferencesImpl;
 import com.nextcloud.client.preferences.DarkMode;
-import com.owncloud.android.R;
+//import com.owncloud.gshare.R;
 import com.owncloud.gshare.authentication.AuthenticatorActivity;
-import com.owncloud.android.authentication.PassCodeManager;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.authentication.PassCodeManager;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.MediaFolder;
 import com.owncloud.gshare.datamodel.MediaFolderType;
@@ -78,16 +78,15 @@ import com.owncloud.android.lib.common.OwnCloudClientManagerFactory;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.status.NextcloudVersion;
 import com.owncloud.android.lib.resources.status.OwnCloudVersion;
-import com.owncloud.android.ui.activity.SyncedFoldersActivity;
+import com.owncloud.gshare.ui.activity.SyncedFoldersActivity;
 import com.owncloud.gshare.ui.notifications.NotificationUtils;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.FilesSyncHelper;
-import com.owncloud.android.utils.PermissionUtil;
+import com.owncloud.gshare.utils.PermissionUtil;
 import com.owncloud.gshare.utils.ReceiversHelper;
 import com.owncloud.gshare.utils.SecurityUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 import com.owncloud.gshare.ui.activity.ContactsPreferenceActivity;
-import com.owncloud.gshare.ui.activity.SyncedFoldersActivity;
 
 import org.conscrypt.Conscrypt;
 import org.greenrobot.eventbus.EventBus;
@@ -121,7 +120,7 @@ import de.cotech.hw.SecurityKeyManager;
 import de.cotech.hw.SecurityKeyManagerConfig;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
-import static com.owncloud.gshare.ui.activity.ContactsPreferenceActivity.PREFERENCE_CONTACTS_AUTOMATIC_BACKUP;
+//import static com.owncloud.gshare.ui.activity.ContactsPreferenceActivity.PREFERENCE_CONTACTS_AUTOMATIC_BACKUP;
 
 
 /**

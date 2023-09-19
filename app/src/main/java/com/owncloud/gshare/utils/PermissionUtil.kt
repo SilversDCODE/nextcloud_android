@@ -41,9 +41,9 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.nextcloud.client.preferences.AppPreferences
 import com.nextcloud.client.preferences.AppPreferencesImpl
-import com.owncloud.android.R
-import com.owncloud.android.ui.dialog.StoragePermissionDialogFragment
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.R
+import com.owncloud.gshare.ui.dialog.StoragePermissionDialogFragment
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 
 object PermissionUtil {
     const val PERMISSIONS_EXTERNAL_STORAGE = 1

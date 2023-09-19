@@ -33,9 +33,8 @@ import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.client.account.UserAccountManagerImpl;
 import com.owncloud.gshare.AbstractIT;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.accounts.AccountUtils;
-import com.owncloud.gshare.AbstractIT;
 
 import org.junit.BeforeClass;
 import org.junit.Rule;

@@ -25,10 +25,7 @@ import android.accounts.Account
 import android.accounts.AccountManager
 import android.content.Intent
 import androidx.test.espresso.intent.rule.IntentsTestRule
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.MainApp
 import com.owncloud.android.lib.common.accounts.AccountUtils
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 

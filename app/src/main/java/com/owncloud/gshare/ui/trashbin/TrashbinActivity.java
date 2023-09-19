@@ -39,8 +39,8 @@ import com.nextcloud.client.di.Injectable;
 import com.nextcloud.client.network.ClientFactory;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.nextcloud.java.util.Optional;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.TrashbinActivityBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.TrashbinActivityBinding;
 import com.owncloud.android.lib.resources.trashbin.model.TrashbinFile;
 import com.owncloud.gshare.ui.EmptyRecyclerView;
 import com.owncloud.gshare.ui.activity.DrawerActivity;
@@ -48,9 +48,8 @@ import com.owncloud.gshare.ui.adapter.TrashbinListAdapter;
 import com.owncloud.gshare.ui.dialog.SortingOrderDialogFragment;
 import com.owncloud.gshare.ui.interfaces.TrashbinActivityInterface;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.FileSortOrder;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activity.DrawerActivity;
+import com.owncloud.gshare.utils.FileSortOrder;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.List;
 

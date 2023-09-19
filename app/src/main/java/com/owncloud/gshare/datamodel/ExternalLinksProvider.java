@@ -28,7 +28,6 @@ import com.owncloud.gshare.db.ProviderMeta;
 import com.owncloud.android.lib.common.ExternalLink;
 import com.owncloud.android.lib.common.ExternalLinkType;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.gshare.db.ProviderMeta;
 
 import java.util.ArrayList;
 import java.util.List;

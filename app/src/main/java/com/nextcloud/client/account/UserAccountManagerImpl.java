@@ -39,7 +39,7 @@ import com.nextcloud.java.util.Optional;
 import com.owncloud.gshare.MainApp;
 import com.owncloud.android.R;
 import com.owncloud.gshare.authentication.AuthenticatorActivity;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.OwnCloudAccount;

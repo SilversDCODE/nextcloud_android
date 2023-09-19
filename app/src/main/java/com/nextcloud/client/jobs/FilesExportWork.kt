@@ -35,16 +35,10 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.nextcloud.client.account.User
 import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.files.services.FileDownloader
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.android.operations.DownloadType
-import com.owncloud.gshare.ui.dialog.SendShareDialog
-import com.owncloud.gshare.ui.notifications.NotificationUtils
-import com.owncloud.android.utils.FileExportUtils
-import com.owncloud.gshare.utils.FileStorageUtils
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.operations.DownloadType
+import com.owncloud.gshare.utils.FileExportUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import java.security.SecureRandom
 
 class FilesExportWork(

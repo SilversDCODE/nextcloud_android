@@ -22,9 +22,8 @@ package com.owncloud.gshare.ui.adapter;
 
 import android.view.View;
 
-import com.owncloud.android.databinding.SslUntrustedCertLayoutBinding;
+import com.owncloud.gshare.databinding.SslUntrustedCertLayoutBinding;
 import com.owncloud.android.lib.common.network.CertificateCombinedException;
-import com.owncloud.gshare.ui.dialog.SslUntrustedCertDialog;
 import com.owncloud.gshare.ui.dialog.SslUntrustedCertDialog;
 
 /**

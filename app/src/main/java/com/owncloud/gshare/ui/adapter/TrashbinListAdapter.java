@@ -31,20 +31,16 @@ import android.widget.ImageView;
 
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.preferences.AppPreferences;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.ListFooterBinding;
-import com.owncloud.android.databinding.TrashbinItemBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.ListFooterBinding;
+import com.owncloud.gshare.databinding.TrashbinItemBinding;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.trashbin.model.TrashbinFile;
 import com.owncloud.gshare.ui.interfaces.TrashbinActivityInterface;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.FileSortOrder;
-import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.interfaces.TrashbinActivityInterface;
-import com.owncloud.gshare.utils.DisplayUtils;
+import com.owncloud.gshare.utils.FileSortOrder;
 import com.owncloud.gshare.utils.MimeTypeUtil;
 import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 

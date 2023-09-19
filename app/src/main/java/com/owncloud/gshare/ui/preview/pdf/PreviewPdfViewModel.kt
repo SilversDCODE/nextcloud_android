@@ -28,8 +28,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.gshare.MainApp
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.utils.Log_OC
 import java.io.File
 import java.io.FileOutputStream

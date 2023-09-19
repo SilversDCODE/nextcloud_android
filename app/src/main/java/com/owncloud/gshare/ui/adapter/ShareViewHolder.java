@@ -30,13 +30,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.nextcloud.client.account.User;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.FileDetailsShareShareItemBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.FileDetailsShareShareItemBinding;
 import com.owncloud.android.lib.resources.shares.OCShare;
-import com.owncloud.gshare.ui.TextDrawable;
-import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper;
-import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
 import com.owncloud.gshare.ui.TextDrawable;
 import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper;
 import com.owncloud.gshare.utils.DisplayUtils;

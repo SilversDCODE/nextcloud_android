@@ -35,7 +35,7 @@ import com.owncloud.gshare.MainApp;
 import com.owncloud.gshare.media.MediaControlView;
 import com.owncloud.gshare.ui.ThemeableSwitchPreference;
 import com.owncloud.gshare.ui.whatsnew.ProgressIndicator;
-import com.owncloud.android.utils.FilesUploadHelper;
+import com.owncloud.gshare.utils.FilesUploadHelper;
 
 import javax.inject.Singleton;
 

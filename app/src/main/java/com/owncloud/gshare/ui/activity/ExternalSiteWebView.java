@@ -34,10 +34,10 @@ import android.webkit.WebView;
 import android.widget.ProgressBar;
 
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.ExternalsiteWebviewBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.ExternalsiteWebviewBinding;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.android.ui.NextcloudWebViewClient;
+import com.owncloud.gshare.ui.NextcloudWebViewClient;
 import com.owncloud.gshare.utils.DisplayUtils;
 
 import java.io.InputStream;

@@ -23,9 +23,7 @@
 package com.owncloud.gshare.ui.adapter
 
 import com.nextcloud.client.account.User
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.android.utils.FileSortOrder
+import com.owncloud.gshare.utils.FileSortOrder
 
 interface CommonOCFileListAdapterInterface {
     fun isMultiSelect(): Boolean

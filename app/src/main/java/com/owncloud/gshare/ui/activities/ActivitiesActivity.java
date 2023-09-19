@@ -26,8 +26,8 @@ import android.view.View;
 import com.google.android.material.snackbar.Snackbar;
 import com.nextcloud.client.network.ClientFactory;
 import com.nextcloud.common.NextcloudClient;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.ActivityListLayoutBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.ActivityListLayoutBinding;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.activities.model.RichObject;
@@ -41,14 +41,8 @@ import com.owncloud.gshare.ui.interfaces.ActivityListInterface;
 import com.owncloud.gshare.ui.preview.PreviewImageActivity;
 import com.owncloud.gshare.ui.preview.PreviewImageFragment;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activities.data.activities.ActivitiesRepository;
-import com.owncloud.gshare.ui.activity.DrawerActivity;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 import com.owncloud.gshare.ui.activity.FileActivity;
-import com.owncloud.gshare.ui.activity.FileDisplayActivity;
-import com.owncloud.gshare.ui.adapter.ActivityListAdapter;
-import com.owncloud.gshare.ui.preview.PreviewImageActivity;
-import com.owncloud.gshare.ui.preview.PreviewImageFragment;
 
 import java.util.List;
 
@@ -59,8 +53,8 @@ import androidx.annotation.VisibleForTesting;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import static com.owncloud.gshare.ui.activity.FileActivity.EXTRA_FILE;
-import static com.owncloud.gshare.ui.activity.FileActivity.EXTRA_USER;
+//import static com.owncloud.gshare.ui.activity.FileActivity.EXTRA_FILE;
+//import static com.owncloud.gshare.ui.activity.FileActivity.EXTRA_USER;
 
 /**
  * This Activity presents activities feed.

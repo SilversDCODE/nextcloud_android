@@ -24,7 +24,7 @@ package com.owncloud.gshare.utils.theme
 
 import com.nextcloud.android.common.ui.color.ColorUtil
 import com.nextcloud.android.common.ui.theme.ServerTheme
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.resources.status.OCCapability
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedFactory

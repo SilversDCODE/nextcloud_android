@@ -24,10 +24,8 @@ import android.os.Bundle;
 import android.view.ActionMode;
 
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.gshare.ui.activity.ComponentsGetter;
-import com.owncloud.gshare.ui.dialog.ConfirmationDialogFragment.ConfirmationDialogFragmentListener;
 import com.owncloud.gshare.ui.activity.ComponentsGetter;
 
 import java.util.ArrayList;

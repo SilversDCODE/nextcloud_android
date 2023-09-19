@@ -29,8 +29,6 @@ import android.provider.ContactsContract
 import androidx.work.Worker
 import androidx.work.WorkerParameters
 import com.nextcloud.client.logger.Logger
-import com.owncloud.gshare.ui.fragment.contactsbackup.BackupListFragment
-import com.owncloud.gshare.ui.fragment.contactsbackup.VCardComparator
 import ezvcard.Ezvcard
 import ezvcard.VCard
 import third_parties.ezvcard_android.ContactOperations

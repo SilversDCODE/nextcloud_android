@@ -24,7 +24,6 @@ import android.accounts.Account
 import android.net.Uri
 import android.os.Parcel
 import android.os.Parcelable
-import com.owncloud.gshare.MainApp
 import com.owncloud.android.lib.common.OwnCloudAccount
 import com.owncloud.android.lib.common.OwnCloudBasicCredentials
 import java.net.URI

@@ -34,26 +34,13 @@ import com.nextcloud.client.core.Clock
 import com.nextcloud.client.preferences.AppPreferences
 import com.nextcloud.common.NextcloudClient
 import com.nextcloud.java.util.Optional
-import com.owncloud.gshare.MainApp
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.FilesystemDataProvider
-import com.owncloud.gshare.datamodel.PushConfigurationState
-import com.owncloud.gshare.datamodel.SyncedFolderProvider
-import com.owncloud.gshare.datamodel.UploadsStorageManager
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider
 import com.owncloud.android.lib.common.OwnCloudClient
 import com.owncloud.android.lib.common.OwnCloudClientManagerFactory
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.users.DeleteAppPasswordRemoteOperation
 import com.owncloud.android.lib.resources.users.RemoteWipeSuccessRemoteOperation
-import com.owncloud.gshare.providers.DocumentsStorageProvider
-import com.owncloud.gshare.ui.activity.ContactsPreferenceActivity
-import com.owncloud.gshare.ui.activity.ManageAccountsActivity
-import com.owncloud.gshare.ui.events.AccountRemovedEvent
-import com.owncloud.gshare.utils.EncryptionUtils
-import com.owncloud.gshare.utils.PushUtils
 import org.greenrobot.eventbus.EventBus
 
 /**

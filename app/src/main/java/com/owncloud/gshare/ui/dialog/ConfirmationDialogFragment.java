@@ -22,8 +22,8 @@ import android.os.Bundle;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

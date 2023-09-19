@@ -29,7 +29,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.di.Injectable
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.common.utils.Log_OC
 import java.io.File
 import javax.inject.Inject

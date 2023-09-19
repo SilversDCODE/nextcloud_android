@@ -111,24 +111,7 @@ import com.owncloud.android.lib.resources.status.NextcloudVersion;
 import com.owncloud.android.lib.resources.status.OCCapability;
 import com.owncloud.android.lib.resources.status.OwnCloudVersion;
 import com.owncloud.android.lib.resources.users.GetUserInfoRemoteOperation;
-import com.owncloud.gshare.operations.DetectAuthenticationMethodOperation.AuthenticationMethod;
-import com.owncloud.gshare.operations.GetCapabilitiesOperation;
-import com.owncloud.gshare.operations.GetServerInfoOperation;
-import com.owncloud.gshare.providers.DocumentsStorageProvider;
-import com.owncloud.gshare.services.OperationsService;
-import com.owncloud.gshare.services.OperationsService.OperationsServiceBinder;
-import com.owncloud.android.ui.NextcloudWebViewClient;
-import com.owncloud.gshare.ui.activity.FileDisplayActivity;
-import com.owncloud.gshare.ui.dialog.IndeterminateProgressDialog;
-import com.owncloud.gshare.ui.dialog.SslUntrustedCertDialog;
-import com.owncloud.gshare.ui.dialog.SslUntrustedCertDialog.OnSslUntrustedCertListener;
-import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.gshare.utils.ErrorMessageAdapter;
-import com.owncloud.android.utils.PermissionUtil;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.MainApp;
-import com.owncloud.gshare.datamodel.FileDataStorageManager;
-import com.owncloud.gshare.operations.DetectAuthenticationMethodOperation;
+
 import com.owncloud.gshare.operations.GetCapabilitiesOperation;
 import com.owncloud.gshare.operations.GetServerInfoOperation;
 import com.owncloud.gshare.providers.DocumentsStorageProvider;
@@ -141,6 +124,7 @@ import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.ErrorMessageAdapter;
 import com.owncloud.gshare.utils.PermissionUtil;
 import com.owncloud.gshare.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.operations.DetectAuthenticationMethodOperation;
 
 import java.io.InputStream;
 import java.net.URLDecoder;
@@ -166,7 +150,7 @@ import de.cotech.hw.fido2.WebViewWebauthnBridge;
 import de.cotech.hw.fido2.ui.WebauthnDialogOptions;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
-import static com.owncloud.android.utils.PermissionUtil.PERMISSIONS_CAMERA;
+import static com.owncloud.gshare.utils.PermissionUtil.PERMISSIONS_CAMERA;
 
 /**
  * This Activity is used to add an ownCloud account to the App

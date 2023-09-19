@@ -44,8 +44,8 @@ import com.nextcloud.client.device.PowerManagementService;
 import com.nextcloud.client.jobs.BackgroundJobManager;
 import com.nextcloud.client.network.ConnectivityService;
 import com.nextcloud.client.utils.Throttler;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.UploadListLayoutBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.UploadListLayoutBinding;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.UploadsStorageManager;
 import com.owncloud.gshare.files.services.FileUploader;
@@ -57,8 +57,7 @@ import com.owncloud.gshare.operations.CheckCurrentCredentialsOperation;
 import com.owncloud.gshare.ui.adapter.UploadListAdapter;
 import com.owncloud.gshare.ui.decoration.MediaGridItemDecoration;
 import com.owncloud.gshare.utils.FilesSyncHelper;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.adapter.UploadListAdapter;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

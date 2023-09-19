@@ -48,15 +48,6 @@ import com.owncloud.gshare.operations.UpdateOCVersionOperation;
 import com.owncloud.gshare.ui.activity.ErrorsWhileCopyingHandlerActivity;
 import com.owncloud.gshare.ui.notifications.NotificationUtils;
 import com.owncloud.gshare.utils.DataHolderUtil;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.datamodel.FileDataStorageManager;
-import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.gshare.operations.RefreshFolderOperation;
-import com.owncloud.gshare.operations.SynchronizeFolderOperation;
-import com.owncloud.gshare.operations.UpdateOCVersionOperation;
-import com.owncloud.gshare.ui.activity.ErrorsWhileCopyingHandlerActivity;
-import com.owncloud.gshare.ui.notifications.NotificationUtils;
-import com.owncloud.gshare.utils.DataHolderUtil;
 import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import org.apache.jackrabbit.webdav.DavException;

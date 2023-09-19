@@ -31,7 +31,6 @@ import com.owncloud.gshare.datamodel.SyncedFolder;
 import com.owncloud.gshare.db.ProviderMeta;
 import com.owncloud.gshare.files.services.NameCollisionPolicy;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.gshare.providers.FileContentProvider;
 
 import java.util.Locale;
 

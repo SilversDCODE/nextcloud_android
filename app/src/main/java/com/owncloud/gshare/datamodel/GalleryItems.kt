@@ -22,7 +22,6 @@
 
 package com.owncloud.gshare.datamodel
 
-import com.owncloud.gshare.utils.DisplayUtils
 
 data class GalleryItems(val date: Long, val rows: List<GalleryRow>) {
     override fun toString(): String {

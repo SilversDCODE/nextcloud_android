@@ -28,8 +28,8 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.google.android.material.button.MaterialButton;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.CommunityLayoutBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.CommunityLayoutBinding;
 import com.owncloud.gshare.utils.DisplayUtils;
 
 /**

@@ -37,13 +37,11 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.MultipleAccountsBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.MultipleAccountsBinding;
 import com.owncloud.gshare.ui.adapter.UserListAdapter;
 import com.owncloud.gshare.ui.adapter.UserListItem;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.adapter.UserListAdapter;
-import com.owncloud.gshare.ui.adapter.UserListItem;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;

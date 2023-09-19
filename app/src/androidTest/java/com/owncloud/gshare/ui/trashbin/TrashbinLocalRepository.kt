@@ -22,7 +22,7 @@
 
 package com.owncloud.gshare.ui.trashbin
 
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.resources.trashbin.model.TrashbinFile
 import com.owncloud.gshare.ui.trashbin.TrashbinRepository.LoadFolderCallback
 

@@ -30,8 +30,6 @@ import com.owncloud.android.lib.common.accounts.AccountUtils;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;
 import com.owncloud.android.lib.resources.users.GetUserInfoRemoteOperation;
 import com.owncloud.gshare.operations.common.SyncOperation;
-import com.owncloud.gshare.MainApp;
-import com.owncloud.gshare.datamodel.FileDataStorageManager;
 
 /**
  * Get and save user's profile from the server.

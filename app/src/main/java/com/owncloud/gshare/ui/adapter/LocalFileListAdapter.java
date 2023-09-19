@@ -33,15 +33,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nextcloud.client.preferences.AppPreferences;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.gshare.ui.interfaces.LocalFileListFragmentInterface;
-import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.FileSortOrder;
-import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.datamodel.ThumbnailsCacheManager;
 import com.owncloud.gshare.ui.interfaces.LocalFileListFragmentInterface;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.FileSortOrder;

@@ -23,8 +23,6 @@ package com.owncloud.gshare.utils
 
 import android.content.Context
 import androidx.test.core.app.ApplicationProvider
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.gshare.utils.FileStorageUtils.checkIfEnoughSpace
 import com.owncloud.gshare.utils.FileStorageUtils.pathToUserFriendlyDisplay
 import org.junit.Assert.assertEquals

@@ -23,13 +23,7 @@ import android.content.Context
 import com.nextcloud.client.account.User
 import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.ConnectivityService
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.datamodel.UploadsStorageManager
-import com.owncloud.gshare.db.OCUpload
-import com.owncloud.gshare.files.services.NameCollisionPolicy
 import com.owncloud.android.lib.common.OwnCloudClient
-import com.owncloud.gshare.operations.UploadFileOperation
 
 @Suppress("LongParameterList")
 class UploadTask(

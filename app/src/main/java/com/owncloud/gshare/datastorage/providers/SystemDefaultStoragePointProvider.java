@@ -24,8 +24,6 @@ package com.owncloud.gshare.datastorage.providers;
 import com.owncloud.gshare.MainApp;
 import com.owncloud.android.R;
 import com.owncloud.gshare.datastorage.StoragePoint;
-import com.owncloud.gshare.MainApp;
-import com.owncloud.gshare.datastorage.StoragePoint;
 
 import java.util.Vector;
 

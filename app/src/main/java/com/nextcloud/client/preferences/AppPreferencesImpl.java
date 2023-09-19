@@ -30,13 +30,13 @@ import com.nextcloud.appReview.AppReviewShownModel;
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
 import com.nextcloud.client.account.UserAccountManagerImpl;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.ui.activity.PassCodeActivity;
 import com.owncloud.gshare.ui.activity.SettingsActivity;
-import com.owncloud.android.utils.FileSortOrder;
+import com.owncloud.gshare.utils.FileSortOrder;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;

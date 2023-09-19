@@ -24,8 +24,7 @@ import android.os.AsyncTask
 import com.nextcloud.android.lib.resources.groupfolders.GetGroupfoldersRemoteOperation
 import com.nextcloud.android.lib.resources.groupfolders.Groupfolder
 import com.nextcloud.client.account.User
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.android.ui.fragment.GroupfolderListFragment
+import com.owncloud.gshare.ui.fragment.GroupfolderListFragment
 import java.lang.ref.WeakReference
 
 class GroupfoldersSearchTask(

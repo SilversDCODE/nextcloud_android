@@ -67,8 +67,8 @@ import com.nextcloud.client.account.User;
 import com.nextcloud.client.network.ClientFactory;
 import com.nextcloud.client.preferences.AppPreferences;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
@@ -79,16 +79,12 @@ import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.ui.TextDrawable;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 import com.owncloud.gshare.ui.dialog.SortingOrderDialogFragment;
-import com.owncloud.android.ui.events.SearchEvent;
+import com.owncloud.gshare.ui.events.SearchEvent;
 import com.owncloud.gshare.ui.fragment.OCFileListFragment;
 import com.owncloud.gshare.utils.glide.CustomGlideUriLoader;
 import com.owncloud.gshare.utils.svg.SvgDecoder;
 import com.owncloud.gshare.utils.svg.SvgDrawableTranscoder;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.MainApp;
-import com.owncloud.gshare.ui.TextDrawable;
-import com.owncloud.gshare.ui.activity.FileDisplayActivity;
-import com.owncloud.gshare.ui.fragment.OCFileListFragment;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -119,12 +115,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import static com.owncloud.gshare.ui.dialog.SortingOrderDialogFragment.SORTING_ORDER_FRAGMENT;
-import static com.owncloud.android.utils.FileSortOrder.sort_a_to_z_id;
-import static com.owncloud.android.utils.FileSortOrder.sort_big_to_small_id;
-import static com.owncloud.android.utils.FileSortOrder.sort_new_to_old_id;
-import static com.owncloud.android.utils.FileSortOrder.sort_old_to_new_id;
-import static com.owncloud.android.utils.FileSortOrder.sort_small_to_big_id;
-import static com.owncloud.android.utils.FileSortOrder.sort_z_to_a_id;
+import static com.owncloud.gshare.utils.FileSortOrder.sort_a_to_z_id;
+import static com.owncloud.gshare.utils.FileSortOrder.sort_big_to_small_id;
+import static com.owncloud.gshare.utils.FileSortOrder.sort_new_to_old_id;
+import static com.owncloud.gshare.utils.FileSortOrder.sort_old_to_new_id;
+import static com.owncloud.gshare.utils.FileSortOrder.sort_small_to_big_id;
+import static com.owncloud.gshare.utils.FileSortOrder.sort_z_to_a_id;
 
 /**
  * A helper class for UI/display related operations.
@@ -178,7 +174,7 @@ public final class DisplayUtils {
      * </ul>
      *
      * @param bytes Input file size
-     * @return something readable like "12 MB", {@link com.owncloud.android.R.string#common_pending} for negative
+     * @return something readable like "12 MB", {@link com.owncloud.gshare.R.string#common_pending} for negative
      * byte values
      */
     public static String bytesToHumanReadable(long bytes) {

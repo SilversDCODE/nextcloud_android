@@ -29,8 +29,6 @@ import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.ui.fragment.contactsbackup.BackupListFragment;
 import com.owncloud.gshare.ui.fragment.contactsbackup.VCardComparator;
-import com.owncloud.gshare.ui.fragment.contactsbackup.BackupListFragment;
-import com.owncloud.gshare.ui.fragment.contactsbackup.VCardComparator;
 
 import java.io.BufferedInputStream;
 import java.io.File;

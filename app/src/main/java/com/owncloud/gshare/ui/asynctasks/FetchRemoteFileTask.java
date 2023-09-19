@@ -24,7 +24,7 @@ package com.owncloud.gshare.ui.asynctasks;
 import android.os.AsyncTask;
 
 import com.nextcloud.client.account.User;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.operations.RemoteOperation;
@@ -35,7 +35,6 @@ import com.owncloud.android.lib.resources.files.model.RemoteFile;
 import com.owncloud.gshare.operations.RefreshFolderOperation;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 
 import static com.owncloud.android.lib.resources.files.SearchRemoteOperation.SearchType.FILE_ID_SEARCH;
 

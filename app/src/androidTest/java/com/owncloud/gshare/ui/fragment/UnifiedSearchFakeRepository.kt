@@ -24,9 +24,9 @@ package com.owncloud.gshare.ui.fragment
 
 import com.owncloud.android.lib.common.SearchResult
 import com.owncloud.android.lib.common.SearchResultEntry
-import com.owncloud.android.ui.unifiedsearch.IUnifiedSearchRepository
-import com.owncloud.android.ui.unifiedsearch.ProviderID
-import com.owncloud.android.ui.unifiedsearch.UnifiedSearchResult
+import com.owncloud.gshare.ui.unifiedsearch.IUnifiedSearchRepository
+import com.owncloud.gshare.ui.unifiedsearch.ProviderID
+import com.owncloud.gshare.ui.unifiedsearch.UnifiedSearchResult
 
 class UnifiedSearchFakeRepository : IUnifiedSearchRepository {
 

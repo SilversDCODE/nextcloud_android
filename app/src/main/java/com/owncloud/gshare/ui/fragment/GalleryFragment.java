@@ -35,22 +35,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.owncloud.gshare.BuildConfig;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
-import com.owncloud.android.ui.activity.FolderPickerActivity;
-import com.owncloud.gshare.ui.activity.ToolbarActivity;
-import com.owncloud.android.ui.adapter.CommonOCFileListAdapterInterface;
-import com.owncloud.android.ui.adapter.GalleryAdapter;
-import com.owncloud.gshare.ui.asynctasks.GallerySearchTask;
-import com.owncloud.gshare.ui.events.ChangeMenuEvent;
-import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 import com.owncloud.gshare.ui.activity.FolderPickerActivity;
 import com.owncloud.gshare.ui.activity.ToolbarActivity;
 import com.owncloud.gshare.ui.adapter.CommonOCFileListAdapterInterface;
+import com.owncloud.gshare.ui.adapter.GalleryAdapter;
+import com.owncloud.gshare.ui.asynctasks.GallerySearchTask;
+import com.owncloud.gshare.ui.events.ChangeMenuEvent;
 
 import javax.inject.Inject;
 

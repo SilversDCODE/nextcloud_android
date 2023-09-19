@@ -23,7 +23,6 @@ package com.owncloud.gshare.ui.adapter;
 import android.view.View;
 
 import com.owncloud.gshare.ui.activities.StickyHeaderItemDecoration;
-import com.owncloud.gshare.ui.activities.StickyHeaderItemDecoration;
 
 public interface StickyHeaderAdapter {
     /**

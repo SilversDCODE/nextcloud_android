@@ -25,7 +25,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.owncloud.android.databinding.SendButtonBinding;
+import com.owncloud.gshare.databinding.SendButtonBinding;
 import com.owncloud.gshare.ui.components.SendButtonData;
 
 import java.util.List;

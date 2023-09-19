@@ -22,11 +22,9 @@
 package com.owncloud.gshare.ui.activity
 
 import androidx.test.espresso.intent.rule.IntentsTestRule
-import com.owncloud.gshare.AbstractIT
 import com.owncloud.android.lib.resources.notifications.models.Action
 import com.owncloud.android.lib.resources.notifications.models.Notification
 import com.owncloud.android.lib.resources.notifications.models.RichObject
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 import java.util.GregorianCalendar

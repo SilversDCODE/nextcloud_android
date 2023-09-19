@@ -20,7 +20,6 @@
  */
 package com.owncloud.gshare.utils
 
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.resources.trashbin.model.TrashbinFile
 import java.io.File
 

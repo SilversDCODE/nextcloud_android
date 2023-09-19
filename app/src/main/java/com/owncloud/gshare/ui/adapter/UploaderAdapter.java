@@ -31,15 +31,12 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.nextcloud.client.account.User;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.SyncedFolderProvider;
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager;
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager.AsyncThumbnailDrawable;
-import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.gshare.utils.MimeTypeUtil;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.MimeTypeUtil;
 import com.owncloud.gshare.utils.theme.ViewThemeUtils;

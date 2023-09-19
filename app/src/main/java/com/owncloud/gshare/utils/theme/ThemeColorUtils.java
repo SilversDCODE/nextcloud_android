@@ -27,7 +27,7 @@ import android.content.Context;
 import android.graphics.Color;
 
 import com.nextcloud.android.common.ui.util.PlatformThemeUtil;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 
 import static com.owncloud.gshare.utils.theme.CapabilityUtils.getCapability;
 

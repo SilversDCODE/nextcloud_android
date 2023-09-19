@@ -25,10 +25,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.platform.app.InstrumentationRegistry
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.resources.status.OCCapability
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 

@@ -31,21 +31,11 @@ import androidx.core.content.res.ResourcesCompat
 import com.elyeproj.loaderviewlibrary.LoaderImageView
 import com.nextcloud.client.account.User
 import com.nextcloud.client.preferences.AppPreferences
-import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.datamodel.SyncedFolderProvider
-import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
+import com.owncloud.gshare.R
 import com.owncloud.gshare.datamodel.ThumbnailsCacheManager.GalleryImageGenerationTask.GalleryListener
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.ui.activity.ComponentsGetter
-import com.owncloud.android.ui.fragment.SearchType
-import com.owncloud.gshare.ui.interfaces.OCFileListFragmentInterface
-import com.owncloud.gshare.utils.BitmapUtils
-import com.owncloud.gshare.utils.DisplayUtils
-import com.owncloud.gshare.utils.EncryptionUtils
-import com.owncloud.gshare.utils.MimeTypeUtil
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.ui.fragment.SearchType
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 
 @Suppress("LongParameterList", "TooManyFunctions")
 class OCFileListDelegate(

@@ -22,7 +22,6 @@
 
 package com.owncloud.gshare.datamodel
 
-import com.owncloud.gshare.AbstractIT
 import com.owncloud.android.lib.resources.status.CapabilityBooleanType
 import com.owncloud.android.lib.resources.status.OCCapability
 import org.junit.Assert.assertEquals

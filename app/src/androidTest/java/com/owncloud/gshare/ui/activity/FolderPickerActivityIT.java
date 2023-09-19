@@ -22,10 +22,9 @@ package com.owncloud.gshare.ui.activity;
  */
 
 import com.owncloud.gshare.AbstractIT;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.utils.ScreenshotTest;
-import com.owncloud.gshare.AbstractIT;
 
 import org.junit.Assert;
 import org.junit.Rule;

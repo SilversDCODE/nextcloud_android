@@ -24,11 +24,6 @@ package com.owncloud.gshare.utils
 
 import com.nextcloud.client.account.User
 import com.nextcloud.client.jobs.BackgroundJobManager
-import com.owncloud.gshare.MainApp
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.datamodel.UploadsStorageManager
-import com.owncloud.gshare.db.OCUpload
-import com.owncloud.gshare.files.services.NameCollisionPolicy
 import com.owncloud.android.lib.common.utils.Log_OC
 import javax.inject.Inject
 

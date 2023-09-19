@@ -25,7 +25,6 @@ package com.owncloud.gshare.operations;
 import com.owncloud.gshare.AbstractOnServerIT;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.db.OCUpload;
-import com.owncloud.gshare.AbstractOnServerIT;
 
 import org.junit.Test;
 

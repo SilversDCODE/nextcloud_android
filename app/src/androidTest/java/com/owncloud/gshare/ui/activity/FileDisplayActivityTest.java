@@ -4,7 +4,6 @@ import android.app.Activity;
 
 import com.nextcloud.client.onboarding.WhatsNewActivity;
 import com.owncloud.gshare.AbstractIT;
-import com.owncloud.gshare.AbstractIT;
 
 import org.junit.Test;
 

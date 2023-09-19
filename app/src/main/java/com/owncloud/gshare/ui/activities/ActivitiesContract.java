@@ -21,7 +21,6 @@ package com.owncloud.gshare.ui.activities;
 import com.nextcloud.common.NextcloudClient;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.ui.activity.BaseActivity;
-import com.owncloud.gshare.ui.activity.BaseActivity;
 
 import java.util.List;
 

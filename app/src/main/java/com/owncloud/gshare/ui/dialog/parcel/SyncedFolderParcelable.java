@@ -27,8 +27,6 @@ import com.owncloud.gshare.datamodel.MediaFolderType;
 import com.owncloud.gshare.datamodel.SyncedFolderDisplayItem;
 import com.owncloud.gshare.files.services.FileUploader;
 import com.owncloud.gshare.files.services.NameCollisionPolicy;
-import com.owncloud.gshare.files.services.FileUploader;
-import com.owncloud.gshare.files.services.NameCollisionPolicy;
 
 /**
  * Parcelable for {@link SyncedFolderDisplayItem} objects to transport them from/to dialog fragments.

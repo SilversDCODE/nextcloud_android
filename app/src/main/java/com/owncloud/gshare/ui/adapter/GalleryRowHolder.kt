@@ -28,15 +28,10 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.get
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
 import com.elyeproj.loaderviewlibrary.LoaderImageView
-import com.owncloud.android.R
-import com.owncloud.android.databinding.GalleryRowBinding
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.android.datamodel.GalleryRow
-import com.owncloud.android.datamodel.ImageDimension
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
-import com.owncloud.gshare.utils.BitmapUtils
-import com.owncloud.gshare.utils.DisplayUtils
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.GalleryRowBinding
+import com.owncloud.gshare.datamodel.GalleryRow
+import com.owncloud.gshare.datamodel.ImageDimension
 
 class GalleryRowHolder(
     val binding: GalleryRowBinding,

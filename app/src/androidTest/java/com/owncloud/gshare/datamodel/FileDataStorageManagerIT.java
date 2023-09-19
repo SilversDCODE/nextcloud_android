@@ -36,7 +36,6 @@ import com.owncloud.android.lib.resources.status.GetCapabilitiesRemoteOperation;
 import com.owncloud.android.lib.resources.status.OCCapability;
 import com.owncloud.gshare.operations.RefreshFolderOperation;
 import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.gshare.AbstractOnServerIT;
 
 import junit.framework.TestCase;
 

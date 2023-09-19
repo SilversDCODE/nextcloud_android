@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 import com.nextcloud.client.account.User;
 import com.nextcloud.java.util.Optional;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.UploadsStorageManager;
 import com.owncloud.gshare.db.OCUpload;

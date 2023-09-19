@@ -29,14 +29,12 @@ import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
 
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.files.model.RemoteFile;
 import com.owncloud.android.lib.resources.shares.ShareeUser;
-import com.owncloud.gshare.ui.helpers.FileOperationsHelper;
-import com.owncloud.gshare.MainApp;
 import com.owncloud.gshare.ui.helpers.FileOperationsHelper;
 
 import java.io.File;

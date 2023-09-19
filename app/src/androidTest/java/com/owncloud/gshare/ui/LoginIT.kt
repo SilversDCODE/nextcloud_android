@@ -33,9 +33,7 @@ import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.account.UserAccountManagerImpl
 import com.nextcloud.test.GrantStoragePermissionRule
 import com.nextcloud.test.RetryTestRule
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.android.R
-import com.owncloud.gshare.authentication.AuthenticatorActivity
+import com.owncloud.gshare.R
 import org.junit.AfterClass
 import org.junit.Assert
 import org.junit.Before

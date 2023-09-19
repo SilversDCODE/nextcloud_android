@@ -30,12 +30,10 @@ import android.graphics.PorterDuff;
 import android.text.TextUtils;
 import android.view.View;
 
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.FileDetailsShareLinkShareItemBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.FileDetailsShareLinkShareItemBinding;
 import com.owncloud.android.lib.resources.shares.OCShare;
 import com.owncloud.android.lib.resources.shares.ShareType;
-import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
 import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper;
 import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 

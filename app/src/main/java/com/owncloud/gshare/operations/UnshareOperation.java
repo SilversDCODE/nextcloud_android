@@ -32,8 +32,6 @@ import com.owncloud.android.lib.resources.shares.OCShare;
 import com.owncloud.android.lib.resources.shares.RemoveShareRemoteOperation;
 import com.owncloud.android.lib.resources.shares.ShareType;
 import com.owncloud.gshare.operations.common.SyncOperation;
-import com.owncloud.gshare.datamodel.FileDataStorageManager;
-import com.owncloud.gshare.datamodel.OCFile;
 
 import java.util.List;
 

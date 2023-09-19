@@ -39,9 +39,7 @@ import com.google.android.apps.common.testing.accessibility.framework.Accessibil
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.nextcloud.test.RetryTestRule
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.resources.shares.OCShare
 import com.owncloud.android.lib.resources.shares.OCShare.Companion.CREATE_PERMISSION_FLAG
 import com.owncloud.android.lib.resources.shares.OCShare.Companion.DELETE_PERMISSION_FLAG
@@ -51,9 +49,6 @@ import com.owncloud.android.lib.resources.shares.OCShare.Companion.NO_PERMISSION
 import com.owncloud.android.lib.resources.shares.OCShare.Companion.READ_PERMISSION_FLAG
 import com.owncloud.android.lib.resources.shares.OCShare.Companion.SHARE_PERMISSION_FLAG
 import com.owncloud.android.lib.resources.shares.ShareType
-import com.owncloud.gshare.ui.activity.FileDisplayActivity
-import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.hamcrest.CoreMatchers.allOf
 import org.hamcrest.CoreMatchers.anyOf
 import org.hamcrest.CoreMatchers.`is`

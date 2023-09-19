@@ -20,9 +20,6 @@
  */
 package com.owncloud.gshare.utils
 
-import com.owncloud.gshare.datamodel.MediaFolder
-import com.owncloud.gshare.datamodel.MediaFolderType
-import com.owncloud.gshare.datamodel.SyncedFolder
 import java.io.File
 
 /**

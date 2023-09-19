@@ -23,7 +23,7 @@ package com.owncloud.gshare.ui.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.owncloud.android.databinding.FileDetailsShareSecureFileDropAddNewItemBinding
+import com.owncloud.gshare.databinding.FileDetailsShareSecureFileDropAddNewItemBinding
 
 internal class NewSecureFileDropViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var binding: FileDetailsShareSecureFileDropAddNewItemBinding? = null

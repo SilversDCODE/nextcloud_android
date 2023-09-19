@@ -23,16 +23,11 @@ import android.content.ContentResolver
 import android.net.Uri
 import android.os.Parcelable
 import com.nextcloud.client.account.User
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 import com.owncloud.gshare.files.services.FileUploader
-import com.owncloud.gshare.files.services.NameCollisionPolicy
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.operations.UploadFileOperation
-import com.owncloud.gshare.ui.activity.FileActivity
-import com.owncloud.gshare.ui.asynctasks.CopyAndUploadContentUrisTask
 import com.owncloud.gshare.ui.asynctasks.CopyAndUploadContentUrisTask.OnCopyTmpFilesTaskListener
-import com.owncloud.gshare.ui.fragment.TaskRetainerFragment
-import com.owncloud.android.utils.UriUtils.getDisplayNameForUri
+import com.owncloud.gshare.utils.UriUtils.getDisplayNameForUri
 
 /**
  * This class examines URIs pointing to files to upload and then requests [FileUploader] to upload them.

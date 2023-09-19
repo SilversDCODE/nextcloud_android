@@ -29,13 +29,9 @@ import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.ConnectivityService
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.operations.RemoteOperationResult.ResultCode
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.files.CheckEtagRemoteOperation
-import com.owncloud.gshare.operations.SynchronizeFileOperation
-import com.owncloud.gshare.utils.FileStorageUtils
 import java.io.File
 
 @Suppress("LongParameterList") // Legacy code

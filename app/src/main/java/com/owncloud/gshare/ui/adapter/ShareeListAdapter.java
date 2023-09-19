@@ -31,17 +31,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.nextcloud.client.account.User;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.FileDetailsShareInternalShareLinkBinding;
-import com.owncloud.android.databinding.FileDetailsShareLinkShareItemBinding;
-import com.owncloud.android.databinding.FileDetailsSharePublicLinkAddNewItemBinding;
-import com.owncloud.android.databinding.FileDetailsShareSecureFileDropAddNewItemBinding;
-import com.owncloud.android.databinding.FileDetailsShareShareItemBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.FileDetailsShareInternalShareLinkBinding;
+import com.owncloud.gshare.databinding.FileDetailsShareLinkShareItemBinding;
+import com.owncloud.gshare.databinding.FileDetailsSharePublicLinkAddNewItemBinding;
+import com.owncloud.gshare.databinding.FileDetailsShareSecureFileDropAddNewItemBinding;
+import com.owncloud.gshare.databinding.FileDetailsShareShareItemBinding;
 import com.owncloud.android.lib.resources.shares.OCShare;
 import com.owncloud.android.lib.resources.shares.ShareType;
 import com.owncloud.gshare.ui.activity.FileActivity;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;

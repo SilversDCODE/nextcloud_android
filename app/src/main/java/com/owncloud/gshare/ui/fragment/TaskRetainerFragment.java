@@ -23,7 +23,6 @@ import android.os.Bundle;
 
 import com.owncloud.gshare.ui.activity.ReceiveExternalFilesActivity;
 import com.owncloud.gshare.ui.asynctasks.CopyAndUploadContentUrisTask;
-import com.owncloud.gshare.ui.activity.ReceiveExternalFilesActivity;
 
 import androidx.fragment.app.Fragment;
 

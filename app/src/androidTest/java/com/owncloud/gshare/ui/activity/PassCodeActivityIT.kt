@@ -24,8 +24,6 @@ package com.owncloud.gshare.ui.activity
 import android.content.Intent
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.intent.rule.IntentsTestRule
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.utils.ScreenshotTest
 import org.junit.Rule
 import org.junit.Test
 

@@ -28,8 +28,7 @@ import android.view.ViewGroup;
 import android.widget.Switch;
 
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.MainApp;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

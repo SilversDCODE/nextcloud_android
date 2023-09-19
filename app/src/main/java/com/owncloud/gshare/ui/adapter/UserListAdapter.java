@@ -36,13 +36,13 @@ import android.widget.ImageView;
 
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.account.UserAccountManager;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.AccountActionBinding;
-import com.owncloud.android.databinding.AccountItemBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.AccountActionBinding;
+import com.owncloud.gshare.databinding.AccountItemBinding;
 import com.owncloud.android.lib.common.OwnCloudAccount;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -37,7 +37,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.gson.Gson;
 import com.nextcloud.android.common.ui.color.ColorUtil;
 import com.nextcloud.android.common.ui.theme.MaterialSchemes;
-import com.nextcloud.android.common.ui.theme.MaterialSchemesImpl;
+//import com.nextcloud.android.common.ui.theme.MaterialSchemesImpl;
 import com.nextcloud.android.lib.resources.profile.Action;
 import com.nextcloud.android.lib.resources.profile.HoverCard;
 import com.nextcloud.client.account.RegisteredUser;
@@ -51,8 +51,8 @@ import com.nextcloud.ui.fileactions.FileActionsBottomSheet;
 import com.nextcloud.utils.EditorUtils;
 import com.owncloud.gshare.AbstractIT;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
@@ -70,12 +70,12 @@ import com.owncloud.android.lib.resources.users.StatusType;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 import com.owncloud.gshare.ui.fragment.OCFileListBottomSheetActions;
 import com.owncloud.gshare.ui.fragment.OCFileListBottomSheetDialog;
-import com.owncloud.android.ui.fragment.ProfileBottomSheetDialog;
+import com.owncloud.gshare.ui.fragment.ProfileBottomSheetDialog;
 import com.owncloud.gshare.utils.MimeTypeUtil;
 import com.owncloud.gshare.utils.ScreenshotTest;
 import com.owncloud.gshare.utils.theme.CapabilityUtils;
-import com.owncloud.android.utils.theme.MaterialSchemesProvider;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.MaterialSchemesProvider;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import org.junit.After;
 import org.junit.Rule;
@@ -438,7 +438,9 @@ public class DialogFragmentIT extends AbstractIT {
             @NonNull
             @Override
             public MaterialSchemes getMaterialSchemesForCurrentUser() {
-                return new MaterialSchemesImpl(R.color.primary, false);
+//                return new MaterialSchemesImpl(R.color.primary, false);
+                return null;
+
             }
 
             @NonNull

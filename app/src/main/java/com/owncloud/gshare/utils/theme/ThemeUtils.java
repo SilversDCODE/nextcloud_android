@@ -23,12 +23,12 @@
 package com.owncloud.gshare.utils.theme;
 
 import android.content.Context;
-import android.content.res.Configuration;
+//import android.content.res.Configuration;
 
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.resources.status.OCCapability;
-import com.owncloud.gshare.MainApp;
+//import com.owncloud.gshare.MainApp;
 
 /**
  * Utility class with methods for client side theming.

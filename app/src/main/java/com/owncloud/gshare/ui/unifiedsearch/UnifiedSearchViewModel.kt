@@ -30,13 +30,11 @@ import com.nextcloud.client.account.CurrentAccountProvider
 import com.nextcloud.client.core.AsyncRunner
 import com.nextcloud.client.network.ClientFactory
 import com.nextcloud.client.network.ConnectivityService
-import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.common.SearchResult
 import com.owncloud.android.lib.common.SearchResultEntry
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.android.ui.asynctasks.GetRemoteFileTask
+import com.owncloud.gshare.ui.asynctasks.GetRemoteFileTask
 import javax.inject.Inject
 
 @Suppress("LongParameterList")

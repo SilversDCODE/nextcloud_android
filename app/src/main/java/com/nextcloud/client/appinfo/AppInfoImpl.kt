@@ -21,7 +21,6 @@ package com.nextcloud.client.appinfo
 
 import android.content.Context
 import android.content.pm.PackageManager
-import com.owncloud.gshare.BuildConfig
 import com.owncloud.android.lib.common.utils.Log_OC
 
 class AppInfoImpl : AppInfo {

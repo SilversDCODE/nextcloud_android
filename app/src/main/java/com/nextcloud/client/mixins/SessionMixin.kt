@@ -28,10 +28,7 @@ import android.os.Bundle
 import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.java.util.Optional
-import com.owncloud.gshare.datamodel.FileDataStorageManager
 import com.owncloud.android.lib.resources.status.OCCapability
-import com.owncloud.gshare.ui.activity.BaseActivity
-import com.owncloud.gshare.utils.theme.CapabilityUtils
 
 /**
  * Session mixin collects all account / user handling logic currently

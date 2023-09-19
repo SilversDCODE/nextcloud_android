@@ -31,7 +31,7 @@ import com.nextcloud.android.lib.resources.dashboard.DashboardWidget
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.network.ClientFactory
 import com.nextcloud.client.widget.DashboardWidgetConfigurationInterface
-import com.owncloud.android.databinding.WidgetListItemBinding
+import com.owncloud.gshare.databinding.WidgetListItemBinding
 
 class DashboardWidgetListAdapter(
     val accountManager: UserAccountManager,

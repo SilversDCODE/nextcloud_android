@@ -31,9 +31,9 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.nextcloud.client.di.Injectable
-import com.owncloud.android.R
-import com.owncloud.android.databinding.StoragePermissionDialogBinding
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.StoragePermissionDialogBinding
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import kotlinx.parcelize.Parcelize
 import javax.inject.Inject
 

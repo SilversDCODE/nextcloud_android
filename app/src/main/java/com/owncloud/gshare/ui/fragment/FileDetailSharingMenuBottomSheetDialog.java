@@ -27,14 +27,12 @@ import android.view.ViewGroup;
 
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.owncloud.android.databinding.FileDetailsSharingMenuBottomSheetFragmentBinding;
+import com.owncloud.gshare.databinding.FileDetailsSharingMenuBottomSheetFragmentBinding;
 import com.owncloud.android.lib.resources.shares.OCShare;
 import com.owncloud.android.lib.resources.shares.ShareType;
 import com.owncloud.gshare.ui.activity.FileActivity;
 import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activity.FileActivity;
-import com.owncloud.gshare.ui.fragment.util.SharingMenuHelper;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 /**
  * File Details Sharing option menus {@link android.app.Dialog} styled as a bottom sheet for main actions.

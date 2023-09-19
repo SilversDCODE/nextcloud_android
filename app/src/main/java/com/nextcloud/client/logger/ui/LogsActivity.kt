@@ -32,8 +32,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nextcloud.client.di.ViewModelFactory
 import com.owncloud.android.R
 import com.owncloud.android.databinding.LogsActivityBinding
-import com.owncloud.gshare.ui.activity.ToolbarActivity
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
 class LogsActivity : com.owncloud.gshare.ui.activity.ToolbarActivity() {

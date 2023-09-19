@@ -27,7 +27,7 @@ import android.os.AsyncTask;
 
 import com.nextcloud.client.account.User;
 import com.nextcloud.client.network.ClientFactory;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.OwnCloudClient;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;
 import com.owncloud.android.lib.common.utils.Log_OC;

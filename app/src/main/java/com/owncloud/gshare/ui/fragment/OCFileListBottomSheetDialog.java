@@ -30,10 +30,10 @@ import com.nextcloud.client.device.DeviceInfo;
 import com.nextcloud.client.di.Injectable;
 import com.nextcloud.client.documentscan.AppScanOptionalFeature;
 import com.nextcloud.utils.EditorUtils;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.FileListActionsBottomSheetCreatorBinding;
-import com.owncloud.android.databinding.FileListActionsBottomSheetFragmentBinding;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.FileListActionsBottomSheetCreatorBinding;
+import com.owncloud.gshare.databinding.FileListActionsBottomSheetFragmentBinding;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.Creator;
@@ -42,8 +42,7 @@ import com.owncloud.android.lib.resources.status.OCCapability;
 import com.owncloud.gshare.ui.activity.FileActivity;
 import com.owncloud.gshare.utils.MimeTypeUtil;
 import com.owncloud.gshare.utils.theme.ThemeUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.activity.FileActivity;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 /**
  * FAB menu {@link android.app.Dialog} styled as a bottom sheet for main actions.

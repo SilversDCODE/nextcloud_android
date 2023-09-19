@@ -34,13 +34,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.nextcloud.client.di.Injectable
 import com.nextcloud.client.di.ViewModelFactory
 import com.nextcloud.utils.MenuUtils
-import com.owncloud.android.R
-import com.owncloud.android.databinding.PreviewPdfFragmentBinding
-import com.owncloud.gshare.datamodel.OCFile
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.PreviewPdfFragmentBinding
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.ui.activity.FileDisplayActivity
-import com.owncloud.android.ui.preview.PreviewBitmapActivity
-import com.owncloud.gshare.utils.DisplayUtils
+
+import com.owncloud.gshare.ui.preview.PreviewBitmapActivity
 import javax.inject.Inject
 
 class PreviewPdfFragment : Fragment(), Injectable {

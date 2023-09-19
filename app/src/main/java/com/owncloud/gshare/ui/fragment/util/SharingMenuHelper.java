@@ -26,7 +26,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.view.MenuItem;
 
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.resources.shares.OCShare;
 
 import java.text.SimpleDateFormat;

@@ -21,8 +21,6 @@
  */
 package com.owncloud.gshare.ui.adapter
 
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.datamodel.OCFile
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

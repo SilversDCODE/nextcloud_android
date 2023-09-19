@@ -27,8 +27,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.nextcloud.client.account.User
-import com.owncloud.android.R
-import com.owncloud.gshare.ui.dialog.SetupEncryptionDialogFragment
+import com.owncloud.gshare.R
 
 class SetupEncryptionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

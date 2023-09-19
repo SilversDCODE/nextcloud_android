@@ -3,8 +3,6 @@ package com.owncloud.gshare.ui.helpers
 import android.net.Uri
 import androidx.test.core.app.launchActivity
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.gshare.files.services.FileUploader
 import org.junit.Assert
 import org.junit.Test
 

@@ -26,8 +26,8 @@ import android.content.Context;
 import android.graphics.PorterDuff;
 import android.view.View;
 
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.FileDetailsShareInternalShareLinkBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.FileDetailsShareInternalShareLinkBinding;
 import com.owncloud.android.lib.resources.shares.OCShare;
 
 import androidx.annotation.NonNull;

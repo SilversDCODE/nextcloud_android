@@ -1,12 +1,12 @@
 package com.owncloud.gshare;
 
-import com.owncloud.android.R;
+//import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;
 import com.owncloud.gshare.operations.CreateFolderOperation;
 import com.owncloud.gshare.operations.common.SyncOperation;
 import com.owncloud.gshare.ui.activity.FileDisplayActivity;
 import com.owncloud.gshare.ui.activity.SettingsActivity;
-import com.owncloud.android.ui.activity.SyncedFoldersActivity;
+import com.owncloud.gshare.ui.activity.SyncedFoldersActivity;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;

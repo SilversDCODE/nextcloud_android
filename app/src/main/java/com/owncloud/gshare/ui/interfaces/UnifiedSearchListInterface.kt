@@ -23,7 +23,7 @@
 package com.owncloud.gshare.ui.interfaces
 
 import com.owncloud.android.lib.common.SearchResultEntry
-import com.owncloud.android.ui.unifiedsearch.ProviderID
+import com.owncloud.gshare.ui.unifiedsearch.ProviderID
 
 interface UnifiedSearchListInterface {
 

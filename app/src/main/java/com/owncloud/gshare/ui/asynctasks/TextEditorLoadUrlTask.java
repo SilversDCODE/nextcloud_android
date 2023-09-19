@@ -29,7 +29,6 @@ import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.Editor;
 import com.owncloud.android.lib.common.operations.RemoteOperationResult;
 import com.owncloud.gshare.ui.activity.EditorWebView;
-import com.owncloud.gshare.ui.activity.EditorWebView;
 
 import java.lang.ref.WeakReference;
 

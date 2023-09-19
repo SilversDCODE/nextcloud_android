@@ -11,12 +11,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import com.nextcloud.client.account.User
 import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.ui.activity.FileDisplayActivity
-import com.owncloud.gshare.ui.notifications.NotificationUtils
-import com.owncloud.gshare.ui.preview.PreviewImageActivity
-import com.owncloud.gshare.ui.preview.PreviewImageFragment
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
 class AppNotificationManagerImpl @Inject constructor(

@@ -25,9 +25,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.owncloud.android.databinding.ItemQuickSharePermissionsBinding
-import com.owncloud.android.datamodel.QuickPermissionModel
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.databinding.ItemQuickSharePermissionsBinding
+import com.owncloud.gshare.datamodel.QuickPermissionModel
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 
 class QuickSharingPermissionsAdapter(
     private val quickPermissionList: MutableList<QuickPermissionModel>,

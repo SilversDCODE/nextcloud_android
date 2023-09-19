@@ -35,8 +35,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 import androidx.recyclerview.widget.RecyclerView.SimpleOnItemTouchListener
 import com.afollestad.sectionedrecyclerview.ItemCoord
-import com.owncloud.android.datamodel.GalleryItems
-import com.owncloud.android.ui.adapter.GalleryAdapter
+import com.owncloud.gshare.datamodel.GalleryItems
+import com.owncloud.gshare.ui.adapter.GalleryAdapter
 import me.zhanghai.android.fastscroll.FastScroller
 import me.zhanghai.android.fastscroll.PopupTextProvider
 import me.zhanghai.android.fastscroll.Predicate

@@ -25,7 +25,7 @@ import android.content.Context;
 import android.util.Pair;
 
 import com.nextcloud.client.account.User;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.DecryptedFolderMetadata;
 import com.owncloud.gshare.datamodel.EncryptedFolderMetadata;
@@ -44,23 +44,14 @@ import com.owncloud.gshare.operations.common.SyncOperation;
 import com.owncloud.gshare.utils.EncryptionUtils;
 import com.owncloud.gshare.utils.FileStorageUtils;
 import com.owncloud.gshare.utils.MimeType;
-import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
-import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
-import com.owncloud.gshare.datamodel.DecryptedFolderMetadata;
-import com.owncloud.gshare.datamodel.EncryptedFolderMetadata;
-import com.owncloud.gshare.datamodel.FileDataStorageManager;
-import com.owncloud.gshare.datamodel.OCFile;
-import com.owncloud.gshare.utils.EncryptionUtils;
-import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.gshare.utils.MimeType;
 
 import java.io.File;
 import java.util.UUID;
 
 import androidx.annotation.NonNull;
 
-import static com.owncloud.gshare.datamodel.OCFile.PATH_SEPARATOR;
-import static com.owncloud.gshare.datamodel.OCFile.ROOT_PATH;
+//import static com.owncloud.gshare.datamodel.OCFile.PATH_SEPARATOR;
+//import static com.owncloud.gshare.datamodel.OCFile.ROOT_PATH;
 
 /**
  * Access to remote operation performing the creation of a new folder in the ownCloud server.

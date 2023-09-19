@@ -29,14 +29,13 @@ import com.google.gson.reflect.TypeToken;
 import com.nextcloud.test.RandomStringGenerator;
 import com.nextcloud.test.RetryTestRule;
 import com.owncloud.gshare.AbstractIT;
-import com.owncloud.android.datamodel.ArbitraryDataProvider;
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider;
 import com.owncloud.gshare.datamodel.ArbitraryDataProviderImpl;
 import com.owncloud.gshare.datamodel.DecryptedFolderMetadata;
 import com.owncloud.gshare.datamodel.EncryptedFolderMetadata;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.utils.CsrHelper;
 import com.owncloud.gshare.utils.EncryptionUtils;
-import com.owncloud.gshare.AbstractIT;
 
 import org.apache.commons.codec.binary.Hex;
 import org.junit.Rule;

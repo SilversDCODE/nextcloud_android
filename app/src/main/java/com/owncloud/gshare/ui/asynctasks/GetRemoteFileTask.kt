@@ -21,14 +21,10 @@ package com.owncloud.gshare.ui.asynctasks
 
 import android.content.Context
 import com.nextcloud.client.account.User
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.OwnCloudClient
 import com.owncloud.android.lib.common.operations.RemoteOperation
 import com.owncloud.android.lib.resources.files.ReadFileRemoteOperation
 import com.owncloud.android.lib.resources.files.model.RemoteFile
-import com.owncloud.gshare.operations.RefreshFolderOperation
-import com.owncloud.gshare.utils.FileStorageUtils
 
 class GetRemoteFileTask(
     private val context: Context,

@@ -39,13 +39,11 @@ import android.text.TextUtils;
 
 import com.nextcloud.client.core.Clock;
 import com.nextcloud.client.database.NextcloudDatabase;
-import com.owncloud.android.R;
-import com.owncloud.gshare.db.ProviderMeta.ProviderTableMeta;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.shares.ShareType;
 import com.owncloud.gshare.utils.MimeType;
 import com.owncloud.gshare.db.ProviderMeta;
-import com.owncloud.gshare.utils.MimeType;
 
 import java.util.ArrayList;
 import java.util.Locale;

@@ -25,7 +25,7 @@ package com.owncloud.gshare.ui.activity;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.ComponentName;
-import android.content.Context;
+//import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
@@ -41,13 +41,13 @@ import android.text.style.StyleSpan;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.nextcloud.android.sso.Constants;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.DialogSsoGrantPermissionBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.DialogSsoGrantPermissionBinding;
 import com.owncloud.android.lib.common.OwnCloudAccount;
 import com.owncloud.android.lib.common.accounts.AccountUtils;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.utils.EncryptionUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.util.UUID;
 

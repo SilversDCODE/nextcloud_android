@@ -23,7 +23,6 @@ package com.owncloud.gshare.datastorage.providers;
 
 import com.owncloud.gshare.datastorage.StoragePoint;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.gshare.datastorage.StoragePoint;
 
 import java.util.List;
 import java.util.Vector;

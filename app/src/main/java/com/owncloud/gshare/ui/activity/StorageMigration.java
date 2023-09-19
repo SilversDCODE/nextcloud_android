@@ -32,7 +32,7 @@ import android.view.View;
 
 import com.nextcloud.client.account.User;
 import com.owncloud.gshare.MainApp;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.utils.FileStorageUtils;

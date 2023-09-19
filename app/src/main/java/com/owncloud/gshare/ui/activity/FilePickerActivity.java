@@ -24,7 +24,7 @@ package com.owncloud.gshare.ui.activity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.ui.fragment.OCFileListFragment;
 
 import androidx.fragment.app.FragmentTransaction;

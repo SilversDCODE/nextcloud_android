@@ -24,8 +24,7 @@ import androidx.work.WorkManager
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.jobs.BackgroundJobManager
 import com.nextcloud.client.logger.Logger
-import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.gshare.ui.activity.ContactsPreferenceActivity
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider
 import javax.inject.Inject
 
 /**

@@ -25,7 +25,7 @@ package com.owncloud.gshare.ui.fragment.contactsbackup
 import android.content.Context
 import android.widget.ArrayAdapter
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder
-import com.owncloud.android.databinding.BackupListItemHeaderBinding
+import com.owncloud.gshare.databinding.BackupListItemHeaderBinding
 import java.util.ArrayList
 
 class BackupListHeaderViewHolder(

@@ -18,7 +18,6 @@ import com.owncloud.gshare.db.UploadResult;
 import com.owncloud.gshare.files.services.NameCollisionPolicy;
 import com.owncloud.android.lib.common.accounts.AccountUtils;
 import com.owncloud.gshare.operations.UploadFileOperation;
-import com.owncloud.gshare.AbstractIT;
 
 import org.junit.After;
 import org.junit.Before;

@@ -28,8 +28,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import javax.inject.Inject;
 

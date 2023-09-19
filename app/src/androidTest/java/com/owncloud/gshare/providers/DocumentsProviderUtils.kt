@@ -14,8 +14,6 @@ import android.provider.DocumentsContract.buildTreeDocumentUri
 import android.provider.DocumentsContract.getDocumentId
 import androidx.annotation.VisibleForTesting
 import androidx.documentfile.provider.DocumentFile
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.OwnCloudClient
 import com.owncloud.android.lib.common.utils.Log_OC
 import com.owncloud.android.lib.resources.files.ExistenceCheckRemoteOperation

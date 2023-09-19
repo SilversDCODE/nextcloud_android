@@ -29,8 +29,9 @@ import com.nextcloud.client.account.AnonymousUser
 import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.logger.Logger
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 import com.owncloud.android.lib.resources.status.OCCapability
+import com.owncloud.gshare.utils.theme.CapabilityUtils.*
 import java.util.concurrent.ConcurrentHashMap
 import javax.inject.Inject
 
@@ -47,7 +48,7 @@ internal class MaterialSchemesProviderImpl @Inject constructor(
         val url: String = user.server.uri.toString()
 
         if (!themeCache.containsKey(url)) {
-            val capability = _root_ide_package_.com.owncloud.gshare.utils.theme.CapabilityUtils.getCapability(user, context)
+            val capability = getCapability(user, context)
             themeCache[url] = getMaterialSchemesForCapability(capability)
         }
 

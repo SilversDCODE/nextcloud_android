@@ -45,9 +45,6 @@ import com.owncloud.gshare.datamodel.UploadsStorageManager;
 import com.owncloud.gshare.db.OCUpload;
 import com.owncloud.gshare.files.services.FileUploader;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.gshare.MainApp;
-import com.owncloud.gshare.db.OCUpload;
-import com.owncloud.gshare.files.services.FileUploader;
 
 import org.lukhnos.nnio.file.FileVisitResult;
 import org.lukhnos.nnio.file.Files;

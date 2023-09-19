@@ -28,7 +28,7 @@ import android.os.SystemClock;
 import android.widget.Toast;
 
 import com.nextcloud.client.preferences.AppPreferencesImpl;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.utils.DeviceCredentialUtils;
 import com.owncloud.gshare.utils.DisplayUtils;

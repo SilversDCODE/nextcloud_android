@@ -28,7 +28,7 @@ import android.graphics.pdf.PdfRenderer
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.owncloud.android.databinding.PreviewPdfPageItemBinding
+import com.owncloud.gshare.databinding.PreviewPdfPageItemBinding
 
 /**
  * @param renderer an **open** [PdfRenderer]

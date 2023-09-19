@@ -31,8 +31,6 @@ import com.owncloud.android.lib.resources.notifications.models.Notification;
 import com.owncloud.gshare.ui.activity.NotificationsActivity;
 import com.owncloud.gshare.ui.adapter.NotificationListAdapter;
 import com.owncloud.gshare.ui.notifications.NotificationsContract;
-import com.owncloud.gshare.ui.activity.NotificationsActivity;
-import com.owncloud.gshare.ui.notifications.NotificationsContract;
 
 public class DeleteNotificationTask extends AsyncTask<Action, Void, Boolean> {
     private Notification notification;

@@ -34,13 +34,7 @@ import com.nextcloud.client.account.User
 import com.nextcloud.client.account.UserAccountManager
 import com.nextcloud.client.logger.Logger
 import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.files.services.FileUploader
-import com.owncloud.gshare.files.services.NameCollisionPolicy
-import com.owncloud.gshare.operations.UploadFileOperation
-import com.owncloud.gshare.ui.notifications.NotificationUtils
-import com.owncloud.gshare.utils.MimeType
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import java.io.File
 import java.security.SecureRandom
 

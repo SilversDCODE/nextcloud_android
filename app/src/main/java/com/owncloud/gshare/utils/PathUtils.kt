@@ -22,7 +22,6 @@
 
 package com.owncloud.gshare.utils
 
-import com.owncloud.gshare.datamodel.OCFile
 import java.io.File
 
 object PathUtils {

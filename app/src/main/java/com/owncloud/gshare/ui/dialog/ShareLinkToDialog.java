@@ -37,9 +37,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.gshare.ui.activity.CopyToClipboardActivity;
 import com.owncloud.gshare.ui.activity.CopyToClipboardActivity;
 
 import java.util.Arrays;

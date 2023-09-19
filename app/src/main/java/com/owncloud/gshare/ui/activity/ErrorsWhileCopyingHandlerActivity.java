@@ -36,7 +36,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.nextcloud.client.account.User;
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.android.lib.common.utils.Log_OC;

@@ -34,14 +34,8 @@ import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import androidx.core.graphics.drawable.toBitmap
 import com.nextcloud.client.account.User
-import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.datamodel.SyncedFolderProvider
-import com.owncloud.gshare.datamodel.ThumbnailsCacheManager
-import com.owncloud.gshare.ui.activity.FileActivity
-import com.owncloud.gshare.ui.activity.FileDisplayActivity
-import com.owncloud.gshare.utils.MimeTypeUtil
-import com.owncloud.android.utils.theme.ViewThemeUtils
+import com.owncloud.gshare.R
+import com.owncloud.gshare.utils.theme.ViewThemeUtils
 import javax.inject.Inject
 
 class ShortcutUtil @Inject constructor(private val mContext: Context) {

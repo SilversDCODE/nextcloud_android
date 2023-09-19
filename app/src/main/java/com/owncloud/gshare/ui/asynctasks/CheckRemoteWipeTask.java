@@ -31,7 +31,6 @@ import com.owncloud.android.lib.common.operations.RemoteOperationResult;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.android.lib.resources.users.CheckRemoteWipeRemoteOperation;
 import com.owncloud.gshare.ui.activity.FileActivity;
-import com.owncloud.gshare.ui.activity.FileActivity;
 
 import java.lang.ref.WeakReference;
 

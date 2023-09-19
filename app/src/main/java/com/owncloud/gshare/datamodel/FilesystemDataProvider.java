@@ -26,8 +26,6 @@ import android.net.Uri;
 
 import com.owncloud.gshare.db.ProviderMeta;
 import com.owncloud.android.lib.common.utils.Log_OC;
-import com.owncloud.android.utils.SyncedFolderUtils;
-import com.owncloud.gshare.db.ProviderMeta;
 import com.owncloud.gshare.utils.SyncedFolderUtils;
 
 import java.io.BufferedInputStream;

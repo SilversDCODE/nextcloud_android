@@ -22,12 +22,7 @@ package com.owncloud.gshare.ui.fragment
 import android.Manifest
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.rule.GrantPermissionRule
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.ui.activity.ContactsPreferenceActivity
-import com.owncloud.gshare.ui.fragment.contactsbackup.BackupListFragment
-import com.owncloud.gshare.utils.ScreenshotTest
+import com.owncloud.gshare.R
 import org.junit.Rule
 import org.junit.Test
 

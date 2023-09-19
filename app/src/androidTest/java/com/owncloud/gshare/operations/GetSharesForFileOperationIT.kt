@@ -21,7 +21,6 @@
  */
 package com.owncloud.gshare.operations
 
-import com.owncloud.gshare.AbstractOnServerIT
 import com.owncloud.android.lib.resources.files.CreateFolderRemoteOperation
 import com.owncloud.android.lib.resources.shares.CreateShareRemoteOperation
 import com.owncloud.android.lib.resources.shares.OCShare

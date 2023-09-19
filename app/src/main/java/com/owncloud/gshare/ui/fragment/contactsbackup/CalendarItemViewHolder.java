@@ -28,8 +28,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.afollestad.sectionedrecyclerview.SectionedViewHolder;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.CalendarlistListItemBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.CalendarlistListItemBinding;
 
 import java.util.ArrayList;
 

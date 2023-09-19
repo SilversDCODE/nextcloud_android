@@ -77,7 +77,7 @@ android {
     ndkVersion "${ndkEnv.get("NDK_VERSION")}"
 
 
-    namespace 'com.owncloud.android'
+    namespace 'com.owncloud.gshare'
     testNamespace "${namespace}.test"
 
 

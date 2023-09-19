@@ -9,7 +9,6 @@ import com.owncloud.android.lib.resources.notifications.models.Action;
 import com.owncloud.android.lib.resources.notifications.models.Notification;
 import com.owncloud.gshare.ui.activity.NotificationsActivity;
 import com.owncloud.gshare.ui.adapter.NotificationListAdapter;
-import com.owncloud.gshare.ui.activity.NotificationsActivity;
 
 import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.HttpStatus;

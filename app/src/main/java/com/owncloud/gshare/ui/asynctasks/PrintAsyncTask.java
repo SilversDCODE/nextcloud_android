@@ -26,13 +26,11 @@ import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.print.PrintManager;
 
-import com.owncloud.android.R;
+import com.owncloud.gshare.R;
 import com.owncloud.android.lib.common.utils.Log_OC;
 import com.owncloud.gshare.ui.activity.RichDocumentsEditorWebView;
 import com.owncloud.gshare.ui.adapter.PrintAdapter;
 import com.owncloud.gshare.utils.DisplayUtils;
-import com.owncloud.gshare.ui.activity.RichDocumentsEditorWebView;
-import com.owncloud.gshare.ui.adapter.PrintAdapter;
 
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HttpClient;

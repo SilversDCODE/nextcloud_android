@@ -25,7 +25,7 @@ package com.nextcloud.ui.fileactions
 import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
 import androidx.annotation.StringRes
-import com.owncloud.android.R
+import com.owncloud.gshare.R
 
 enum class FileAction(@IdRes val id: Int, @StringRes val title: Int, @DrawableRes val icon: Int? = null) {
     // selection

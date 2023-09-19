@@ -29,7 +29,6 @@ import com.owncloud.android.lib.resources.notifications.DeleteAllNotificationsRe
 import com.owncloud.android.lib.resources.notifications.models.Action;
 import com.owncloud.gshare.ui.activity.NotificationsActivity;
 import com.owncloud.gshare.ui.notifications.NotificationsContract;
-import com.owncloud.gshare.ui.activity.NotificationsActivity;
 
 public class DeleteAllNotificationsTask extends AsyncTask<Action, Void, Boolean> {
     private OwnCloudClient client;

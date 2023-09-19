@@ -29,13 +29,12 @@ import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.files.services.FileDownloader.FileDownloaderBinder;
 import com.owncloud.gshare.files.services.FileUploader.FileUploaderBinder;
 import com.owncloud.gshare.ui.activity.ComponentsGetter;
-import com.owncloud.gshare.ui.activity.ComponentsGetter;
 import com.owncloud.gshare.ui.activity.FileActivity;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import static com.owncloud.gshare.ui.activity.FileActivity.EXTRA_FILE;
+//import static com.owncloud.gshare.ui.activity.FileActivity.EXTRA_FILE;
 
 
 /**

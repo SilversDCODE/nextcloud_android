@@ -27,8 +27,8 @@ import android.os.Bundle;
 
 import com.nextcloud.client.account.User;
 import com.nextcloud.java.util.Optional;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.ShareActivityBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.ShareActivityBinding;
 import com.owncloud.gshare.datamodel.FileDataStorageManager;
 import com.owncloud.gshare.datamodel.OCFile;
 import com.owncloud.gshare.datamodel.SyncedFolderProvider;
@@ -41,7 +41,7 @@ import com.owncloud.android.lib.resources.files.model.RemoteFile;
 import com.owncloud.android.lib.resources.shares.ShareType;
 import com.owncloud.gshare.operations.GetSharesForFileOperation;
 import com.owncloud.gshare.ui.fragment.FileDetailSharingFragment;
-import com.owncloud.android.ui.fragment.FileDetailsSharingProcessFragment;
+import com.owncloud.gshare.ui.fragment.FileDetailsSharingProcessFragment;
 import com.owncloud.gshare.utils.DisplayUtils;
 import com.owncloud.gshare.utils.MimeTypeUtil;
 

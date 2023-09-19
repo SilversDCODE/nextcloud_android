@@ -29,13 +29,12 @@ import android.view.View;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.nextcloud.client.di.Injectable;
-import com.owncloud.android.R;
-import com.owncloud.android.databinding.StoragePathDialogBinding;
+import com.owncloud.gshare.R;
+import com.owncloud.gshare.databinding.StoragePathDialogBinding;
 import com.owncloud.gshare.ui.adapter.StoragePathAdapter;
 import com.owncloud.gshare.ui.adapter.StoragePathItem;
 import com.owncloud.gshare.utils.FileStorageUtils;
-import com.owncloud.android.utils.theme.ViewThemeUtils;
-import com.owncloud.gshare.ui.adapter.StoragePathAdapter;
+import com.owncloud.gshare.utils.theme.ViewThemeUtils;
 
 import java.io.File;
 import java.util.ArrayList;

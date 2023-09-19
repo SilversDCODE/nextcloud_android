@@ -19,7 +19,6 @@
  */
 package com.owncloud.gshare.utils
 
-import com.owncloud.gshare.AbstractIT
 import org.junit.Assert
 import org.junit.Test
 import java.io.File

@@ -28,14 +28,9 @@ import com.nextcloud.client.device.BatteryStatus
 import com.nextcloud.client.device.PowerManagementService
 import com.nextcloud.client.network.Connectivity
 import com.nextcloud.client.network.ConnectivityService
-import com.owncloud.gshare.AbstractOnServerIT
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.datamodel.UploadsStorageManager
-import com.owncloud.gshare.db.OCUpload
 import com.owncloud.android.lib.common.operations.OperationCancelledException
 import com.owncloud.android.lib.resources.files.ReadFileRemoteOperation
 import com.owncloud.android.lib.resources.files.model.RemoteFile
-import com.owncloud.gshare.operations.UploadFileOperation
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertFalse
 import junit.framework.Assert.assertTrue

@@ -26,10 +26,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.platform.app.InstrumentationRegistry
 import com.nextcloud.test.TestActivity
-import com.owncloud.gshare.AbstractIT
-import com.owncloud.android.R
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.utils.ScreenshotTest
+import com.owncloud.gshare.R
 import org.junit.Assert
 import org.junit.Rule
 import org.junit.Test

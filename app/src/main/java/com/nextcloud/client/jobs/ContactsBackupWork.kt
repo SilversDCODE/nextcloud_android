@@ -40,14 +40,9 @@ import com.nextcloud.client.files.downloader.TransferManagerConnection
 import com.nextcloud.client.files.downloader.UploadRequest
 import com.nextcloud.client.files.downloader.UploadTrigger
 import com.owncloud.android.R
-import com.owncloud.android.datamodel.ArbitraryDataProvider
-import com.owncloud.gshare.datamodel.FileDataStorageManager
-import com.owncloud.gshare.datamodel.OCFile
-import com.owncloud.gshare.files.services.NameCollisionPolicy
+import com.owncloud.gshare.datamodel.ArbitraryDataProvider
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.services.OperationsService
 import com.owncloud.gshare.services.OperationsService.OperationsServiceBinder
-import com.owncloud.gshare.ui.activity.ContactsPreferenceActivity
 import ezvcard.Ezvcard
 import ezvcard.VCardVersion
 import java.io.File

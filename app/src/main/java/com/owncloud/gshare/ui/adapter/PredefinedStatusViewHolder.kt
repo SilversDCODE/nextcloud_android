@@ -24,10 +24,9 @@ package com.owncloud.gshare.ui.adapter
 
 import android.content.Context
 import androidx.recyclerview.widget.RecyclerView
-import com.owncloud.android.R
-import com.owncloud.android.databinding.PredefinedStatusBinding
+import com.owncloud.gshare.R
+import com.owncloud.gshare.databinding.PredefinedStatusBinding
 import com.owncloud.android.lib.resources.users.PredefinedStatus
-import com.owncloud.gshare.utils.DisplayUtils
 
 private const val ONE_SECOND_IN_MILLIS = 1000
 

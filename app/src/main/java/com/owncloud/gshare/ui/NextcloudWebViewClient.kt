@@ -7,10 +7,8 @@ import android.webkit.SslErrorHandler
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.fragment.app.FragmentManager
-import com.owncloud.gshare.authentication.AuthenticatorActivity
 import com.owncloud.android.lib.common.network.NetworkUtils
 import com.owncloud.android.lib.common.utils.Log_OC
-import com.owncloud.gshare.ui.dialog.SslUntrustedCertDialog
 import java.io.ByteArrayInputStream
 import java.security.cert.CertificateException
 import java.security.cert.CertificateFactory

@@ -2,7 +2,6 @@ package com.owncloud.gshare.ui.unifiedsearch
 
 import android.net.Uri
 import androidx.lifecycle.LiveData
-import com.owncloud.gshare.datamodel.OCFile
 import com.owncloud.android.lib.common.SearchResultEntry
 
 interface IUnifiedSearchViewModel {
