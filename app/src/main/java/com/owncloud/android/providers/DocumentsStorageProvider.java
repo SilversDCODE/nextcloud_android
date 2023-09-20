@@ -75,8 +75,8 @@ import com.owncloud.android.utils.FileStorageUtils;
 import com.owncloud.android.utils.FileUtil;
 import com.owncloud.android.utils.MimeTypeUtil;
 
-import org.nextcloud.providers.cursors.FileCursor;
-import org.nextcloud.providers.cursors.RootCursor;
+import org.gshare.providers.cursors.FileCursor;
+import org.gshare.providers.cursors.RootCursor;
 
 import java.io.File;
 import java.io.FileNotFoundException;

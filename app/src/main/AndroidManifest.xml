@@ -322,7 +322,9 @@
             android:authorities="@string/image_cache_provider_authority"
             android:exported="true"
             android:grantUriPermissions="true"
-            android:permission="android.permission.MANAGE_DOCUMENTS"></provider> <!-- Disable WorkManager initialization. Whoever designed this, should pay closer attention -->
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+
+        </provider> <!-- Disable WorkManager initialization. Whoever designed this, should pay closer attention -->
         <!-- to "best before" dates in his fridge. -->
         <!-- disable default provider -->
         <provider

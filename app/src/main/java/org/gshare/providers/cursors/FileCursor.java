@@ -18,7 +18,7 @@
  *
  */
 
-package org.nextcloud.providers.cursors;
+package org.gshare.providers.cursors;
 
 import android.database.MatrixCursor;
 import android.os.AsyncTask;
