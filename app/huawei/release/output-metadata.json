@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.gov.mpt.gshare",
+  "variantName": "huaweiRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 20230925,
+      "versionName": "1.0.0",
+      "outputFile": "huawei-release-20230925.apk"
+    }
+  ],
+  "elementType": "File"
+}

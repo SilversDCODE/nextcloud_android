@@ -72,6 +72,14 @@ def perfAnalysis = project.hasProperty('perfAnalysis')
 
 android {
 
+    signingConfigs {
+        release {
+            storeFile file('/Users/laokyc/Documents/work/keystore_gshare/new/G-Share_key.jks')
+            storePassword 'Sblab@2023'
+            keyPassword 'Sblab@2023'
+            keyAlias 'upload_gshare'
+        }
+    }
     compileSdkVersion 33
     // install this NDK version and Cmake to produce smaller APKs. Build will still work if not installed
     ndkVersion "${ndkEnv.get("NDK_VERSION")}"
@@ -135,13 +143,15 @@ android {
             gplay {
                 applicationId 'com.gov.mpt.gshare'
                 dimension "default"
-                versionCode 20230920
+                versionCode 30190000
                 versionName "3.19.0"
             }
 
             huawei {
                 applicationId 'com.gov.mpt.gshare'
                 dimension "default"
+                versionCode 20230925
+                versionName "1.0.0"
             }
 
             versionDev {
@@ -233,6 +243,11 @@ android {
     sourceSets {
         // Adds exported schema location as test app assets.
         androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
     }
 }
 

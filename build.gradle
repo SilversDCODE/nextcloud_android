@@ -1,3 +1,6 @@
+ext {
+    var = '/Users/laokyc/Documents/work/keystore_gshare/keystore_gshare.jks'
+}
 buildscript {
     ext {
         androidPluginVersion = '8.0.2'
