@@ -126,18 +126,18 @@
 		<Preference android:title="@string/about_title" android:id="@+id/about_app" android:key="about_app" />
 	</PreferenceCategory>
 
-	<PreferenceCategory android:title="@string/prefs_category_dev" android:key="dev_category">
-		<Preference android:id="@+id/dev_link"
-            android:title="@string/download_latest_dev_version"
-					android:key="dev_link" />
+<!--	<PreferenceCategory android:title="@string/prefs_category_dev" android:key="dev_category">-->
+<!--		<Preference android:id="@+id/dev_link"-->
+<!--            android:title="@string/download_latest_dev_version"-->
+<!--					android:key="dev_link" />-->
 
-		<Preference android:id="@+id/changelog_link"
-            android:title="@string/changelog_dev_version"
-					android:key="changelog_link" />
+<!--		<Preference android:id="@+id/changelog_link"-->
+<!--            android:title="@string/changelog_dev_version"-->
+<!--					android:key="changelog_link" />-->
 
-        <Preference android:id="@+id/etm"
-                    android:title="@string/etm_title"
-                    android:key="etm" />
-	</PreferenceCategory>
+<!--        <Preference android:id="@+id/etm"-->
+<!--                    android:title="@string/etm_title"-->
+<!--                    android:key="etm" />-->
+<!--	</PreferenceCategory>-->
 
 </PreferenceScreen>

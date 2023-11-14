@@ -188,7 +188,7 @@ public class SettingsActivity extends PreferenceActivity
         setupAboutCategory(appVersion);
 
         // Dev
-        setupDevCategory(preferenceScreen);
+//        setupDevCategory(preferenceScreen);
 
         // workaround for mismatched color when app dark mode and system dark mode don't agree
         setListBackground();
