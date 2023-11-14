@@ -52,37 +52,37 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/menu_upload_files"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/bottom_sheet_item_height"
-                android:background="?android:attr/selectableItemBackground"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="@dimen/standard_padding"
-                android:paddingTop="@dimen/standard_half_padding"
-                android:paddingRight="@dimen/standard_padding"
-                android:paddingBottom="@dimen/standard_half_padding"
-                tools:ignore="UseCompoundDrawables">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/menu_upload_files"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/bottom_sheet_item_height"-->
+<!--                android:background="?android:attr/selectableItemBackground"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:paddingLeft="@dimen/standard_padding"-->
+<!--                android:paddingTop="@dimen/standard_half_padding"-->
+<!--                android:paddingRight="@dimen/standard_padding"-->
+<!--                android:paddingBottom="@dimen/standard_half_padding"-->
+<!--                tools:ignore="UseCompoundDrawables">-->
 
-                <ImageView
-                    android:id="@+id/menu_icon_upload_files"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@null"
-                    android:src="@drawable/ic_action_upload"
-                    app:tint="@color/primary" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/menu_icon_upload_files"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:contentDescription="@null"-->
+<!--                    android:src="@drawable/ic_action_upload"-->
+<!--                    app:tint="@color/primary" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginStart="@dimen/bottom_sheet_text_start_margin"
-                    android:text="@string/upload_files"
-                    android:textColor="@color/text_color"
-                    android:textSize="@dimen/bottom_sheet_text_size" />
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center_vertical"-->
+<!--                    android:layout_marginStart="@dimen/bottom_sheet_text_start_margin"-->
+<!--                    android:text="@string/upload_files"-->
+<!--                    android:textColor="@color/text_color"-->
+<!--                    android:textSize="@dimen/bottom_sheet_text_size" />-->
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/menu_upload_from_app"
@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@null"
-                    android:src="@drawable/ic_import"
+                    android:src="@drawable/ic_action_upload"
                     app:tint="@color/primary" />
 
                 <TextView
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginStart="@dimen/bottom_sheet_text_start_margin"
-                    android:text="@string/upload_content_from_other_apps"
+                    android:text="@string/upload_files"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/bottom_sheet_text_size" />
 
