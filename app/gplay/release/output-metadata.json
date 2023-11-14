@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 30190000,
+      "versionCode": 30190002,
       "versionName": "3.19.0",
-      "outputFile": "gplay-release-30190000.apk"
+      "outputFile": "gplay-release-30190002.apk"
     }
   ],
   "elementType": "File"

@@ -143,7 +143,7 @@ android {
             gplay {
                 applicationId 'com.gov.mpt.gshare'
                 dimension "default"
-                versionCode 30190000
+                versionCode 30190002
                 versionName "3.19.0"
             }
 
